@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>JSLooper</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+
+<!-- OG Facebook -->
+<meta property="og:url" content="https://gperilli.github.io/jslooper/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JSLooper" />
+<meta property="og:description" content="JSLooper" />
+<meta property="og:image" content="https://gperilli.github.io/jslooper/graphics/shareimg.png" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@flickr" />
+<meta name="twitter:title" content="JSLooper" />
+<meta name="twitter:description" content="JSLooper" />
+<meta name="twitter:image" content="https://gperilli.github.io/jslooper/graphics/shareimg.png" />
+
+<link rel="icon" href="graphics/jslfav.png">
+
+<!-- CSS files -->
+<link rel="stylesheet" type="text/css" href="looper.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+.border {
+border: 0px solid #ccc;
+}
+
+.centralcolumn {
+background-color: white;
+width: 1024px;
+padding-top: 10px;
+
+
+}
+
+.headercontainer {
+float: left;
+height: 50px;
+margin-bottom: 10px;
+cursor: pointer;
+}
+
+.topnav {
+	display: block;
+}
+.headercnt {
+	width: 100%; 
+	padding-left: 30px; 
+	float: left;
+	display: block;
+	color: blue;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+.BrgrExpdr {
+max-height:1.2em;
+border-bottom: 0px;
+background:#fff;
+color:white;
+z-index: 5;
+position: relative;
+padding-bottom: 23px;
+padding-top: 0px;
+width: 100%;
+-moz-transition: 1s;
+-ms-transition: 1s;
+-o-transition: 1s;
+-webkit-transition: 1s;
+transition: 1s;
+display: none;
+}
+
+.expand {
+max-height:999px;
+}
+
+.BrgrBtnCnt {
+position:relative;
+display: inline-block;
+width: 28px;
+height: 28px;
+z-index: 10;
+}
+.columnA {
+float: left;
+width: 30%;
+padding-right: 20px;
+padding-left: 20px;
+background-color: white;
+display: block;
+
+
+}
+.columnB {
+float: left;
+width: 70%;
+padding: 0px;
+background-color: white;
+position: relative; 
+z-index: 50;
+
+}
+
+.sharelikeA {
+width: 100%;
+margin-top: 10px;
+position: relative;
+border-bottom: 1px solid #808080;
+padding-bottom: 15px;
+border-top:1px solid #808080;
+padding-top: 5px;
+text-align: center;
+float: left;
+}
+
+.sharelikeB {
+width: 100%;
+margin-top: 10px;
+border-bottom:1px solid #808080;
+border-top:1px solid #808080;
+padding-bottom: 15px;
+display: none;
+background-color: white;
+text-align: center;
+z-index: 90;
+}
+
+.SocialBtnContainerClass {
+position:relative;
+display: inline-block;
+width: 50px;
+height: 50px;
+z-index: 10;
+}
+
+.SocialBtn-CircleClass {
+stroke: black;
+stroke-width: 6%;
+z-index: 1;
+}
+.SocialBtnContainer-TextImgClass {
+cursor: pointer;
+position: absolute;
+top: 10%;
+left: 10%;
+width: 80%;
+height: 80%;
+z-index: 6;
+fill: black;
+}
+.SocialBtnContainer-TextImgClass:hover {
+fill: white;
+}
+.SocialBtn-CircleContainerClass {
+position: absolute;
+width: 100%;
+height: 100%;
+fill: white;
+}
+.SocialBtnContainer-TextImgClass:hover ~ .SocialBtn-CircleContainerClass {
+fill: black;
+}
+
+.athird {
+float: left;
+height: 100%;
+width: 33.333%
+}
+
+.afifth {
+width: 20%;
+float: left;
+position: relative;
+display: inline-block;
+}
+
+.PlyAllBtn {
+	opacity: 0.7;
+	left: 50%;
+	margin-left: -50px;
+	z-index: 99;
+}
+
+.PlyAllBtn:hover {
+	opacity: 1;
+}
+
+.PlyAllBtnCrcle {
+stroke: #808080;
+stroke-width: 6%;
+z-index: 80;	
+}
+
+.blok {
+width: 50px;
+height: 50px;
+position: relative;
+cursor: pointer;
+
+}
+
+.blok:hover {
+background-color: blue;
+}
+
+.columns {
+display: flex;
+flex-flow: row wrap;
+justify-content: center;
+margin: 0px;
+padding: 5px;
+z-index: 5;
+}
+
+.Footer {
+width: 100%;
+border-top:0px solid #666;
+text-align: left;
+padding-left: 15px;
+float: left;
+display: inline-block;
+margin-top: 20px;
+}
+
+.AudBtn-PlayTri {
+	fill:#000;
+	stroke:#000;
+	stroke-width:17;
+	stroke-linejoin:round;
+}
+
+#PlyAllIcoOn {
+display: none;
+}
+
+.samplebx {
+display: inline-block;
+float: left;
+background-color: #fff;
+padding-bottom: 0px;
+}
+
+
+
+.SmpleDsp {
+display: block; 
+vertical-align: bottom;
+}
+
+
+.SmplSlctrL {
+margin-right: 5px;
+padding-top: 0px;
+width: 15px; 
+height: 50px; 
+float: left;
+opacity: 0.3;
+}
+
+.SmplSlctrR {
+margin-left: 5px;
+padding-top: 0px;
+width: 15px; 
+height: 50px; 
+float: right;
+opacity: 0.3;
+
+}
+
+
+
+
+.SmplSlctrOvly {
+z-index: 90;
+opacity: 1;
+border: 0px solid #000;
+background-color: transparent;
+float: left;
+width: 100%;
+display: inline-block;
+position: relative;
+}
+
+.SmplSlctrOvly:hover .SmplSlctrL {
+opacity: 1;
+}
+
+.SmplSlctrOvly:hover .SmplSlctrR {
+opacity: 1;
+}
+
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+.centralcolumn {
+width: 100%;
+}
+
+@media screen and (orientation: portrait) and (max-width: 980px) and (max-height: 980px) {
+
+.columnA {
+  display: none;
+}
+.columnB {
+  width: 100%;
+}
+.sharelikeB {
+display: block;
+}
+.Footer {
+	padding-left: 0px;
+	}
+}
+
+@media only screen and (orientation: landscape) and (max-width: 980px) and (max-height: 500px) { 
+	.columnA {
+		display: none;
+	}
+	.columnB {
+		width: 100%;
+	}
+	.sharelikeB {
+		display: block;
+	}
+	.headercnt {
+		display: none;
+	}
+	.Footer {
+	padding-left: 0px;
+	}
+}
+
+@media (max-width: 600px) {
+	.headercontainer {
+		height: 30px;
+	}
+	.topnav {
+		display: none;
+	}
+	.BrgrExpdr {
+		display: block;
+	}
+	.sharelikeB {
+		display: block;
+	}
+	.headercnt {
+		display: none;
+	}
+	.Footer {
+	padding-left: 0px;
+	}
+}
+</style>
+
+<script src="js/looper-core.js"></script>
+<script src="js/siema.js"></script>
+
+</head>     
+
+
+<body onload="jslooper()">
+
+
+<div align=center style="width: 100%;">
+
+<div id="CentralColumn" class="centralcolumn" align=left style="border: 1px solid blue; position: relative; display: inline-block;">
+<audio id="AudObjX"></audio>
+
+<div style="background-color: #fff;">
+	 <div class="headercontainer" style="background-color: #fff; z-index: 99; position: relative; border: 1px solid #000;">
+			<a href="index"><img border="0" src="graphics/jsttle.png" height="100%"/></a>
+	 </div>
+
+		<a class="topnav" style="float: right; margin-right: 20px;" id="menu-about" href="index">About</a>
+		 
+	 
+	 <div class="headercnt" style="border: 1px solid #000;">
+			<p id="Header">A loop machine for HTML and Javascript.</p>
+	 </div>
+	 
+	 
+
+	<!-- Start Acc. -->
+	<div class="BrgrExpdr" id="AccExsWIx" style="border: 1px solid #000; background-color: transparent;">
+		<!-- Exp. Btn -->
+		<div class="AccBtnCont" style="border: 0px solid #000; z-index: 10;" align=right>
+			<div class="BrgrBtnCnt" style="border: 0px solid #000; cursor: pointer;" align=left>
+				<!-- Button SVG Elements -->
+				<div class="" id="ACCWIx" style="z-index: 0;" onclick="brgrfunc('x')">
+					<svg class="StretchToContainer" viewbox="0 0 130 130">
+						<rect id="BrgrBtn-RectH1" width="80" height="20" x="23" y="22.5" fill="blue"/>
+						<rect id="BrgrBtn-RectH2" width="80" height="20" x="23" y="52.5" fill="blue"/>
+						<rect id="BrgrBtn-RectH3" width="80" height="20" x="23" y="82.5" fill="blue"/>
+						
+					</svg>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div align="right" style="z-index: 1; padding-right: 5px;">
+		
+		<div style="border-top: 1px solid #ddd; border-bottom: 0px solid #ccc; padding-top: 5px; padding-bottom: 5px; margin-left: 5px;">
+		<a id="Brgrmenu-about" href="about.html">About</a><br>
+		</div>
+		
+		
+		<div style="border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding-top: 5px; padding-bottom: 5px; margin-left: 5px;">
+				
+			<div style="display: inline-block; margin-right: 20px;">
+			<p style="display: inline-block; font-weight: bold;">Preset1:</p>
+			</div>
+			
+				
+		</div>	
+		
+		<div style="border-top: 0px solid #ccc; border-bottom: 1px solid #ddd; padding-top: 5px; padding-bottom: 5px; margin-left: 5px;">
+				
+			<div style="display: inline-block; margin-right: 20px;">
+			<p style="display: inline-block; margin-right: 0px; font-weight: bold;">Preset2:</p>
+			</div>
+			
+				
+		</div>		
+	
+		</div>
+			
+	</div>
+	<!-- End Acc. -->
+	 
+</div>
+
+<!--Start columnA-->
+<div class="columnA border" style="color: #818181;" >
+
+	<div class="sharelikeA">
+		
+		<p style="width: 100%; margin-bottom: 10px;">Samples</p>
+		
+		<div class="border" style="position: relative; float: left; width: 100%; margin-bottom: 10px;">
+		
+			<div class="afifth border" align=center>
+				<svg xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="" viewBox="0 0 67.733323 67.733331" width="100%">
+					<path class="SmplTp1" style="" d=""> </path>
+				</svg>
+			</div>
+			
+			<div class="afifth border" align=center>
+				<svg xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="" viewBox="0 0 67.733323 67.733331" width="100%">
+					<path class="SmplTp2" style="opacity:1;fill:#aa0000;"></path>
+				</svg>
+			</div>
+			
+			<div class="afifth border" align=center>
+				<svg xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="" viewBox="0 0 67.733323 67.733331" width="100%">
+					<path class="SmplTp3" style="opacity:1;fill:#aa0000;" d=""> </path>
+				</svg>
+			</div>
+			
+			<div class="afifth border" align=center>
+				<svg xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="" viewBox="0 0 67.733323 67.733331" width="100%">
+					<path class="SmplTp4" style="opacity:1;fill:#aa0000;" d=""> </path>
+				</svg>
+			</div>
+			
+			<div class="afifth border" align=center>
+				<svg xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="" viewBox="0 0 67.733323 67.733331" width="100%">
+					<path class="SmplTp5" style="opacity:1;fill:#aa0000;" d=""> </path>
+				</svg>
+			</div>
+		
+		</div>
+		
+		
+		
+	</div>
+	
+	<div class="sharelikeA">
+		
+		<p style="width: 100%; margin-bottom: 10px;">Share</p>
+		
+		<!-- Facebook Share Btn -->
+<div class="SocialBtnContainerClass" align=left>
+   <!-- Button SVG Elements -->
+   <div class="SocialBtnContainer-TextImgClass" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('${ShareAdr}'),'facebook-share-dialog','width=626,height=436'); return false;">
+	  <svg class="StretchToContainer" viewbox="0 0 115 115">
+		 <g transform="translate(1,1)">
+			<path class="FbBtn-logo" id="BtnTextID-Facebook">
+			</path>
+		 </g>
+	  </svg>
+   </div>
+   <div class="SocialBtn-CircleContainerClass">
+	  <svg class="StretchToContainer">
+		 <circle class="SocialBtn-CircleClass" cx="49%" cy="49%" id="BtnCircleID-Facebook" r="40%">
+			Sorry, your browser does not support inline SVG.
+		 </circle>
+	  </svg>
+   </div>
+</div>
+
+<!-- Twitter Share Btn -->
+<div class="SocialBtnContainerClass" align=left>
+   <!-- Button SVG Elements -->
+   <div class="SocialBtnContainer-TextImgClass"  onclick="window.open('https://twitter.com/home?status='+encodeURIComponent('${ShareAdr}'),'twitter-share-dialog','width=626,height=436'); return false;">
+	  <svg class="StretchToContainer" viewbox="0 0 115 115">
+		 <g transform="translate(1,1)">
+			<path class="TwBtn-logo" id="BtnTextID-Twitter">
+			</path>
+		 </g>
+	  </svg>
+   </div>
+   <div class="SocialBtn-CircleContainerClass">
+	  <svg class="StretchToContainer">
+		 <circle class="SocialBtn-CircleClass" cx="49%" cy="49%" id="BtnCircleID-Twitter" r="40%">
+			Sorry, your browser does not support inline SVG.
+		 </circle>
+	  </svg>
+   </div>
+</div>
+		
+	</div>
+	
+</div>
+
+<!--Start columnB-->
+<div class="columnB border" id="ColumnB" style="background-color: #fff;">
+
+<div class="athird border" align="center">
+	
+	<div style="width: 100%; position: relative;">
+	<div class="PlyAllBtn border" onClick="PlyAllAud()" style="width: 100px; height: 100px; position: absolute;">
+		<svg width="100%" height="100%">
+			<circle class="PlyAllBtnCrcle" cx="49%" cy="49%" r="40%" style="fill:#fff;">
+				Sorry, your browser does not support inline SVG.
+			</circle>
+			<svg id="PlyAllIcoOff" x="23%" y="15%" width="100%" height="100%" viewBox="0 0 300 300" style="">
+				<path style="fill:#808080;" d="m 35.514374,174.65227 -0.08473,-74.652722 -0.08473,-74.652718 64.693518,37.252981 64.69352,37.25298 -64.60879,37.399739 z" />
+			</svg>
+			<g id="PlyAllIcoOn">
+				<rect x="25%" y="27%" width="17%" height="45%" style="fill:#808080;" />
+				<rect x="55%" y="27%" width="17%" height="45%" style="fill:#808080;" />
+			</g>
+		</svg>
+	</div>
+	</div>
+	
+	<!--hidden-->
+	<div class="border" style="width: 90px; margin-top: 5px; opacity: 0;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL 7no7">
+				<svg height="50" width="15">
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR 7no7">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		<div class="blok border 7no7"></div>
+	</div>
+	
+	<!--hidden-->
+	<div class="border" style="width: 90px; margin-top: 5px; opacity: 0;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL 7no7">
+				<svg height="50" width="15">
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR 7no7">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		<div class="blok border 7no7"></div>
+	</div>
+	
+	<!--hidden-->
+	<div class="border" style="width: 90px; margin-top: 5px; opacity: 0;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL 7no7">
+				<svg height="50" width="15">
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR 7no7">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		<div class="blok border 7no7"></div>
+	</div>
+	
+	<!--hidden-->
+	<div class="border" style="width: 90px; margin-top: 5px; opacity: 0;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL 7no7">
+				<svg height="50" width="15">
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR 7no7">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		<div class="blok border 7no7"></div>
+	</div>
+	
+	<!--block 3 of 3-->
+	<div class="border" style="width: 90px; margin-top: 5px;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL" onclick="mySiema3o3.prev()">
+				<svg height="50" width="15" >
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR" onclick="mySiema3o3.next()">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		
+		<div style="width: 50px; height: 50px; position: relative;">
+			<div id="SBlk3o3" class="siema3o3" style="display: inline-block; width: 100%; position: absolute; top: 0; left: 0; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;" >
+						
+			</div>
+		</div>
+	</div>
+	
+	<!--block 2 of 3-->
+	<div class="border" style="width: 90px; margin-top: 5px;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL" onclick="mySiema2o3.prev()">
+				<svg height="50" width="15">
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR" onclick="mySiema2o3.next()">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		
+		<div style="width: 50px; height: 50px; position: relative;">
+			<div id="SBlk2o3" class="siema2o3" style="display: inline-block; width: 100%; position: absolute; top: 0; left: 0; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;">
+					
+					
+					
+			</div>
+		</div>
+		
+	</div>
+	
+	<!--block 1 of 3-->
+	<div class="border" style="width: 90px; margin-top: 5px;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL" onclick="mySiema1o3.prev()">
+				<svg height="50" width="15">
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR" onclick="mySiema1o3.next()">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		
+		<div style="width: 50px; height: 50px; position: relative;">
+			<div id="SBlk1o3" class="siema1o3" style="display: inline-block; width: 100%; position: absolute; top: 0; left: 0; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;">
+					
+					
+					
+			</div>
+		</div>
+		
+	</div>
+	
+	<!--Tempo Adjuster for 3SeqBlk-->
+	<div class="border" style="width: 50px; margin-top: 5px;">
+		
+		<div class="border" style="width: 100%; height: 15px;">
+			<svg onmousedown="SeqXIncre(3, 1, 400)" onmouseup="cleartimer()" height="15" width="50" style="vertical-align: top;">
+			  <polygon points="0,15 25,0 50,15" style="fill:#808080;" />
+			  Sorry, your browser does not support inline SVG.
+			</svg>
+		</div>
+	</div>
+		<p id="3SeqBlkTmpoDsp" style="display: inline-block;">100</p> <p style="display: inline-block;">bpm</p>
+	<div class="border" style="width: 50px; margin-top: 0px;">
+		<div class="border" style="width: 100%; height: 15px;">
+			<svg onmousedown="SeqXIncre(3, -1, 400)" onmouseup="cleartimer()" height="15" width="50" style="vertical-align: top;">
+			  <polygon points="0,0 25,15 50,0" style="fill:#808080;" />
+			  Sorry, your browser does not support inline SVG.
+			</svg>
+		</div>
+	</div>
+</div>
+
+<div class="athird border" align=center>
+	
+	<!--hidden-->
+	<div class="border" style="width: 90px; margin-top: 5px; opacity: 0;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL 7no7">
+				<svg height="50" width="15">
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR 7no7">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		<div class="blok border 7no7"></div>
+	</div>
+	
+	<!--hidden-->
+	<div class="border" style="width: 90px; margin-top: 5px; opacity: 0;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL 7no7">
+				<svg height="50" width="15">
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR 7no7">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		<div class="blok border 7no7"></div>
+	</div>
+	
+	<!--block 5 of 5-->
+	
+	<div class="border" style="width: 90px; margin-top: 5px;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL" onclick="mySiema5o5.prev()">
+				<svg height="50" width="15" >
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR" onclick="mySiema5o5.next()">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		
+		<div style="width: 50px; height: 50px; position: relative; border: 1px solid red;">
+			<div id="SBlk5o5" class="siema5o5" style="display: inline-block; width: 100%; position: absolute; top: 0; left: 0;" >
+						
+			</div>
+		</div>
+	</div>
+	
+	<!--block 4 of 5-->
+	<div class="border" style="width: 90px; margin-top: 5px;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL" onclick="mySiema4o5.prev()">
+				<svg height="50" width="15" >
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR" onclick="mySiema4o5.next()">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		
+		<div style="width: 50px; height: 50px; position: relative; border: 1px solid red;">
+			<div id="SBlk4o5" class="siema4o5" style="display: inline-block; width: 100%; position: absolute; top: 0; left: 0;" >
+						
+			</div>
+		</div>
+	</div>
+	
+	<!--block 3 of 5-->
+	<div class="border" style="width: 90px; margin-top: 5px;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL" onclick="mySiema3o5.prev()">
+				<svg height="50" width="15" >
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR" onclick="mySiema3o5.next()">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		
+		<div style="width: 50px; height: 50px; position: relative; border: 1px solid red;">
+			<div id="SBlk3o5" class="siema3o5" style="display: inline-block; width: 100%; position: absolute; top: 0; left: 0;" >
+						
+			</div>
+		</div>
+	</div>
+	
+	<!--block 2 of 5-->
+	<div class="border" style="width: 90px; margin-top: 5px;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL" onclick="mySiema2o5.prev()">
+				<svg height="50" width="15" >
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR" onclick="mySiema2o5.next()">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		
+		<div style="width: 50px; height: 50px; position: relative; border: 1px solid red;">
+			<div id="SBlk2o5" class="siema2o5" style="display: inline-block; width: 100%; position: absolute; top: 0; left: 0;" >
+						
+			</div>
+		</div>
+	</div>
+	
+	<!--block 1 of 5-->
+	<div class="border" style="width: 90px; margin-top: 5px;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL" onclick="mySiema1o5.prev()">
+				<svg height="50" width="15" >
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR" onclick="mySiema1o5.next()">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		
+		<div style="width: 50px; height: 50px; position: relative; border: 1px solid red;">
+			<div id="SBlk1o5" class="siema1o5" style="display: inline-block; width: 100%; position: absolute; top: 0; left: 0;" >
+						
+			</div>
+		</div>
+	</div>
+	
+	<!--Tempo Adjuster for 5SeqBlk-->
+	<div class="border" style="width: 50px; margin-top: 5px;">
+		
+		<div class="border" style="width: 100%; height: 15px;">
+			<svg onmousedown="SeqXIncre(5, 1, 400)" onmouseup="cleartimer()" height="15" width="50" style="vertical-align: top;">
+			  <polygon points="0,15 25,0 50,15" style="fill:#808080;" />
+			  Sorry, your browser does not support inline SVG.
+			</svg>
+		</div>
+		
+		<p id="5SeqBlkTmpoDsp">100</p>
+		
+		<div class="border" style="width: 100%; height: 15px;">
+			<svg onmousedown="SeqXIncre(5, -1, 400)" onmouseup="cleartimer()" height="15" width="50" style="vertical-align: top;">
+			  <polygon points="0,0 25,15 50,0" style="fill:#808080;" />
+			  Sorry, your browser does not support inline SVG.
+			</svg>
+		</div>
+	</div>
+</div>
+
+<div class="athird border" align=center>
+	
+	<!--block 7 of 7-->
+	<div class="border" style="width: 90px; margin-top: 5px;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL" onclick="mySiema7o7.prev()">
+				<svg height="50" width="15" >
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR" onclick="mySiema7o7.next()">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		
+		<div style="width: 50px; height: 50px; position: relative; border: 1px solid red;">
+			<div id="SBlk7o7" class="siema7o7" style="display: inline-block; width: 100%; position: absolute; top: 0; left: 0;" >
+						
+			</div>
+		</div>
+	</div>
+	
+	<!--block 6 of 7-->
+	<div class="border" style="width: 90px; margin-top: 5px;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL" onclick="mySiema6o7.prev()">
+				<svg height="50" width="15" >
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR" onclick="mySiema6o7.next()">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+	
+		<div style="width: 50px; height: 50px; position: relative; border: 1px solid red;">
+			<div id="SBlk6o7" class="siema6o7" style="display: inline-block; width: 100%; position: absolute; top: 0; left: 0;" >
+						
+			</div>
+		</div>
+</div>	
+	
+	<!--block 5 of 7-->
+	<div class="border" style="width: 90px; margin-top: 5px;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL" onclick="mySiema5o7.prev()">
+				<svg height="50" width="15"> 
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR" onclick="mySiema5o7.next()">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		
+		<div style="width: 50px; height: 50px; position: relative; border: 1px solid red;">
+			<div id="SBlk5o7" class="siema5o7" style="display: inline-block; width: 100%; position: absolute; top: 0; left: 0;" >
+						
+			</div>
+		</div>
+	</div>
+	
+	<!--block 4 of 7-->
+	<div class="border" style="width: 90px; margin-top: 5px;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL" onclick="mySiema4o7.prev()">
+				<svg height="50" width="15"> 
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR" onclick="mySiema4o7.next()">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		
+		<div style="width: 50px; height: 50px; position: relative; border: 1px solid red;">
+			<div id="SBlk4o7" class="siema4o7" style="display: inline-block; width: 100%; position: absolute; top: 0; left: 0;" >
+						
+			</div>
+		</div>
+	</div>
+	
+	<!--block 3 of 7-->
+	<div class="border" style="width: 90px; margin-top: 5px;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL" onclick="mySiema3o7.prev()">
+				<svg height="50" width="15" >
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR" onclick="mySiema3o7.next()">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		
+		<div style="width: 50px; height: 50px; position: relative; border: 1px solid red;">
+			<div id="SBlk3o7" class="siema3o7" style="display: inline-block; width: 100%; position: absolute; top: 0; left: 0;" >
+						
+			</div>
+		</div>
+	</div>
+	
+	<!--block 2 of 7-->
+	<div class="border" style="width: 90px; margin-top: 5px;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL" onclick="mySiema2o7.prev()">
+				<svg height="50" width="15" >
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR" onclick="mySiema2o7.next()">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		
+		<div style="width: 50px; height: 50px; position: relative; border: 1px solid red;">
+			<div id="SBlk2o7" class="siema2o7" style="display: inline-block; width: 100%; position: absolute; top: 0; left: 0;" >
+						
+			</div>
+		</div>
+	</div>
+	
+	<!--block 1 of 7-->
+	<div class="border" style="width: 90px; margin-top: 5px;">
+		<div class="SmplSlctrOvly">
+			<div class="SmplSlctrL" onclick="mySiema1o7.prev()">
+				<svg height="50" width="15" >
+				  <polygon points="15,0 15,50 0,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div class="SmplSlctrR" onclick="mySiema1o7.next()">
+				<svg height="50" width="15">
+				  <polygon points="0,0 0,50 15,25" style="fill:#808080;" />
+				  Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+		</div>
+		
+		<div style="width: 50px; height: 50px; position: relative; border: 1px solid red;">
+			<div id="SBlk1o7" class="siema1o7" style="display: inline-block; width: 100%; position: absolute; top: 0; left: 0;" >
+						
+			</div>
+		</div>
+	</div>
+	
+	<!--Tempo Adjuster for 7SeqBlk-->
+	<div class="border" style="width: 50px; margin-top: 5px;">
+		
+		<div class="border" style="width: 100%; height: 15px;">
+			<svg onmousedown="SeqXIncre(7, 1, 400)" onmouseup="cleartimer()" height="15" width="50" style="vertical-align: top;">
+			  <polygon points="0,15 25,0 50,15" style="fill:#808080;" />
+			  Sorry, your browser does not support inline SVG.
+			</svg>
+		</div>
+		
+		<p id="7SeqBlkTmpoDsp">100</p>
+		
+		<div class="border" style="width: 100%; height: 15px;">
+			<svg onmousedown="SeqXIncre(7, -1, 400)" onmouseup="cleartimer()" height="15" width="50" style="vertical-align: top;">
+			  <polygon points="0,0 25,15 50,0" style="fill:#808080;" />
+			  Sorry, your browser does not support inline SVG.
+			</svg>
+		</div>
+	</div>
+	
+</div>
+
+<!--End column B-->
+</div>
+
+<!-- Social Buttons -->
+
+<section class="columns" id="ShareBtmCont" style="padding-bottom:0px; padding-top:0px;">
+
+<div class="sharelikeB">
+<p id="menu-shareB">share</p>
+<br>
+
+<!-- Facebook Share Btn -->
+<div class="SocialBtnContainerClass" align=left>
+   <!-- Button SVG Elements -->
+   <div class="SocialBtnContainer-TextImgClass" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('${ShareAdr}'),'facebook-share-dialog','width=626,height=436'); return false;">
+	  <svg class="StretchToContainer" viewbox="0 0 115 115">
+		 <g transform="translate(1,1)">
+			<path class="FbBtn-logo" id="BtnTextID-Facebook">
+			</path>
+		 </g>
+	  </svg>
+   </div>
+   <div class="SocialBtn-CircleContainerClass">
+	  <svg class="StretchToContainer">
+		 <circle class="SocialBtn-CircleClass" cx="49%" cy="49%" id="BtnCircleID-Facebook" r="40%">
+			Sorry, your browser does not support inline SVG.
+		 </circle>
+	  </svg>
+   </div>
+</div>
+
+<!-- Twitter Share Btn -->
+<div class="SocialBtnContainerClass" align=left>
+   <!-- Button SVG Elements -->
+   <div class="SocialBtnContainer-TextImgClass"  onclick="window.open('https://twitter.com/home?status='+encodeURIComponent('${ShareAdr}'),'twitter-share-dialog','width=626,height=436'); return false;">
+	  <svg class="StretchToContainer" viewbox="0 0 115 115">
+		 <g transform="translate(1,1)">
+			<path class="TwBtn-logo" id="BtnTextID-Twitter">
+			</path>
+		 </g>
+	  </svg>
+   </div>
+   <div class="SocialBtn-CircleContainerClass">
+	  <svg class="StretchToContainer">
+		 <circle class="SocialBtn-CircleClass" cx="49%" cy="49%" id="BtnCircleID-Twitter" r="40%">
+			Sorry, your browser does not support inline SVG.
+		 </circle>
+	  </svg>
+   </div>
+</div>
+
+<!-- Attributio etc -->
+
+</div>
+</section>
+
+<div class="Footer">
+<p>All coding and design by G.Perilli.</p>
+</div>
+
+
+
+
+<!-- End central column -->
+</div>
+
+</div>
+
+</body>
+
+</html>
+
+<script>
+// Share address for this page's share button popup window
+var ShareAdr = 'https://gperilli.github.io/jslooper/';
+
+
+
+//burger setting
+  AccXStat = [];
+  AccXStat['x'] = 0;
+function brgrfunc(AccId) {
+	
+	if (AccXStat[AccId] == 0) {
+     	document.getElementById('AccExsWIx').className = "BrgrExpdr expand";
+		document.getElementById('BrgrBtn-RectH1').style.display = 'none';
+        document.getElementById('BrgrBtn-RectH3').style.display = 'none';
+		AccXStat[AccId] = 1;
+     } else {
+    	document.getElementById('AccExsWIx').className = "BrgrExpdr";
+		document.getElementById('BrgrBtn-RectH1').style.display = 'block';
+        document.getElementById('BrgrBtn-RectH3').style.display = 'block';
+        AccXStat[AccId] = 0;
+     }
+}
+
+var SeqLst = {
+		3: {},
+		5: {},
+		7: {},
+	};
+var PlyStat = 0;
+function PlyAllAud() {
+	if (PlyStat == 0) {
+		document.getElementById("PlyAllIcoOff").style.display = "none";
+		document.getElementById("PlyAllIcoOn").style.display = "block";
+		PlyStat = 1;
+	} else {
+		document.getElementById("PlyAllIcoOff").style.display = "block";
+		document.getElementById("PlyAllIcoOn").style.display = "none";
+		PlyStat = 0;
+	}
+	
+	
+	SeqXgen = [3, 5, 7];
+	
+	for (j = 0; j < 3; j++) {
+		for (i = 1; i < (SeqXgen[j] + 1); i++) {
+			SBlkXoX = "SBlk".concat(i, "o", SeqXgen[j]); 
+			SeqLst[SeqXgen[j]][i] = SBlkXoX;
+			//alert(SeqLst[SeqXgen[j]][i]);
+			//document.getElementById(SBlkXoX).style.opacity = 0.5;
+		}
+	}
+	
+	//document.getElementById("SBlk3o3").style.opacity = 0.5;
+	//Seq3Lst = [document.getElementById("SBlk1o3"), document.getElementById("SBlk2o3"), document.getElementById("SBlk3o3")];
+	
+	SeqsLght(0.5);
+	
+	//op = 1;
+	seqpos = 1;
+	TmpoDsp3 = "3SeqBlkTmpoDsp";
+	TmpoDsp5 = "5SeqBlkTmpoDsp";
+	TmpoDsp7 = "7SeqBlkTmpoDsp";
+	flickr3(seqpos);
+	flickr5(seqpos);
+	flickr7(seqpos);
+}
+
+function SeqsLght(hl) {
+	//SeqXgen = [3, 5, 7];
+	
+	for (j = 0; j < 3; j++) {
+		for (i = 1; i < (SeqXgen[j] + 1); i++) {
+			SBlkXoX = "SBlk".concat(i, "o", SeqXgen[j]);
+			document.getElementById(SBlkXoX).style.opacity = hl;
+		}
+	}
+}
+
+
+function flickr3(seq3pos) {
+	
+	//alert(TmpoDsp3);
+	var SXBPM = document.getElementById(TmpoDsp3).innerHTML;
+	var SXBPMi = parseInt(SXBPM);
+	var SXBeatIntvl = 60000 / SXBPMi;
+	
+	//reset loop
+	if (seq3pos == 4) {
+		seq3pos = 1;
+	}
+	
+	//in case pos is 0, dehighlight max pos
+	if (seq3pos == 1) {
+		document.getElementById("SBlk3o3").style.opacity = 0.5;
+	} else {
+		SBlkXo3 = "SBlk".concat((seq3pos - 1), "o3");
+		document.getElementById(SBlkXo3).style.opacity = 0.5;
+	} 
+	
+	//Highlight current
+	SBlkXo3 = "SBlk".concat((seq3pos), "o3");
+	document.getElementById(SBlkXo3).style.opacity = 1;
+	
+	seq3pos = seq3pos + 1;
+	
+	if (PlyStat == 1) {
+		setTimeout(function() { flickr3(seq3pos) }, SXBeatIntvl);
+	} else {
+		seq3pos = 0;
+		SeqsLght(1);
+	}
+}
+
+
+function flickr5(seq5pos) {
+	
+	//alert(TmpoDsp3);
+	var SXBPM = document.getElementById(TmpoDsp5).innerHTML;
+	var SXBPMi = parseInt(SXBPM);
+	var SXBeatIntvl = 60000 / SXBPMi;
+	
+	//reset loop
+	if (seq5pos == 6) {
+		seq5pos = 1;
+	}
+	
+	//in case pos is 0, dehighlight max pos
+	if (seq5pos == 1) {
+		document.getElementById("SBlk5o5").style.opacity = 0.5;
+	} else {
+		SBlkXo5 = "SBlk".concat((seq5pos - 1), "o5");
+		document.getElementById(SBlkXo5).style.opacity = 0.5;
+	} 
+	
+	//Highlight current
+	SBlkXo5 = "SBlk".concat((seq5pos), "o5");
+	document.getElementById(SBlkXo5).style.opacity = 1;
+	
+	seq5pos = seq5pos + 1;
+	
+	if (PlyStat == 1) {
+		setTimeout(function() { flickr5(seq5pos) }, SXBeatIntvl);
+	} else {
+		seq5pos = 0;
+		SeqsLght(1);
+	}
+}
+
+function flickr7(seq7pos) {
+	
+	//alert(TmpoDsp3);
+	var SXBPM = document.getElementById(TmpoDsp7).innerHTML;
+	var SXBPMi = parseInt(SXBPM);
+	var SXBeatIntvl = 60000 / SXBPMi;
+	
+	//reset loop
+	if (seq7pos == 8) {
+		seq7pos = 1;
+	}
+	
+	//in case pos is 0, dehighlight max pos
+	if (seq7pos == 1) {
+		document.getElementById("SBlk7o7").style.opacity = 0.5;
+	} else {
+		SBlkXo7 = "SBlk".concat((seq7pos - 1), "o7");
+		document.getElementById(SBlkXo7).style.opacity = 0.5;
+	} 
+	
+	//Highlight current
+	var SBlkXo7 = "SBlk".concat((seq7pos), "o7");
+	document.getElementById(SBlkXo7).style.opacity = 1;
+	
+	seq7pos = seq7pos + 1;
+	
+	if (PlyStat == 1) {
+		setTimeout(function() { flickr7(seq7pos) }, SXBeatIntvl);
+	} else {
+		seq7pos = 0;
+		SeqsLght(1);
+	}
+}
+
+
+</script>
+
+
+
+
+
