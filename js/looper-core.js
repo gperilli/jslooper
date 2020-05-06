@@ -1,3 +1,11 @@
+function TmpoMdl() {
+	document.getElementById("TmpoModal").style.display = "block";
+}
+
+function ClseTmpoMdl() {
+  document.getElementById("TmpoModal").style.display = "none";
+}
+
 function jslooper() {
 	document.getElementById("PlyAllIcoOn").style.display = "none";
 	SocialMBtns();
@@ -6,7 +14,7 @@ function jslooper() {
 
 function jslsetterseq() {
 	
-	SmpleIcoClrs = ["#786fa6", "#f8a5c2", "#63cdda", "#ea8685", "#596275"];
+	SmpleIcoClrs = ["#d35400", "#e74c3c", "#8e44ad", "#34495e", "#1abc9c"];
 	
 	for (i = 1; i < 6; i++) {
 		document.getElementById("nteslctr".concat(i)).style.fill = SmpleIcoClrs[i-1];
@@ -199,21 +207,32 @@ function SeqXIncre(seqN, drctn, intvl) {
 	TmpoDsp = "".concat(seqN, "SeqBlkTmpoDsp");
 	//console.log(TmpoDsp);
 	SXTmpo = document.getElementById(TmpoDsp).innerHTML;
-	SeqXIncrLp(SXTmpo, drctn, intvl);
+	SeqXIncrLp(seqN, SXTmpo, drctn, intvl);
 }
 
-function SeqXIncrLp(SXTmpo, drctn, intvl) {
+function SeqXIncrLp(seqN, SXTmpo, drctn, intvl) {
 	SXTmpo = parseInt(SXTmpo);
 	SXTmpo = SXTmpo + drctn;
 	if (intvl <= 50) { intvl = 50 } else { intvl = intvl - 50; }
 	document.getElementById(TmpoDsp).innerHTML = SXTmpo;
-	timer = setTimeout(function() { SeqXIncrLp(SXTmpo, drctn, intvl);}, intvl);
+	document.getElementById("".concat(seqN, "seqsldrT")).value = SXTmpo;
+	document.getElementById("".concat(seqN, "seqsldrB")).value = SXTmpo;
+	timer = setTimeout(function() { SeqXIncrLp(seqN, SXTmpo, drctn, intvl);}, intvl);
 }
 
 function cleartimer() {
 	clearTimeout(timer);
 }
 
+function SldrTmpoDsp(SeqN, TorB) {
+  SldrId = "".concat(SeqN, "seqsldr", TorB);
+  if (TorB == "T") {SbrdntSldrSfx = "B";} else {SbrdntSldrSfx = "T";}
+  SbrdntSldr = "".concat(SeqN, "seqsldr", SbrdntSldrSfx);
+  TmpoDspId = "".concat(SeqN, "SeqBlkTmpoDsp");
+  sldrvlue = document.getElementById(SldrId).value;
+  document.getElementById(TmpoDspId).innerHTML = sldrvlue;
+  document.getElementById(SbrdntSldr).value = sldrvlue;
+}
 
 
 

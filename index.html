@@ -198,22 +198,34 @@ position: relative;
 display: inline-block;
 }
 
-.PlyAllBtn {
-	opacity: 0.7;
+.UIBx {
 	left: 50%;
 	margin-left: -50px;
 	z-index: 99;
+	width: 100px; 
+	height: 100px; 
+	position: absolute;
 }
 
-.PlyAllBtn:hover {
-	opacity: 1;
-}
 
 .PlyAllBtnCrcle {
 stroke: #808080;
 stroke-width: 6%;
-z-index: 80;	
+z-index: 80;
+cursor: pointer;	
 }
+
+
+
+.IcoHlght {
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+.IcoHlght:hover {
+	opacity: 1;
+}
+
 
 
 .blokcnt {
@@ -317,6 +329,90 @@ opacity: 1;
 
 .SmplSlctrOvly:hover .SmplSlctrR {
 opacity: 1;
+}
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 99; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+
+
+/* Add Animation */
+.modal-content, #caption {
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)}
+	to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+	from {transform:scale(0)}
+	to {transform:scale(1)}
+}
+
+/* The Close Button */
+.mdlclosebtn {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.mdlclosebtn:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #4CAF50;
+  cursor: pointer;
 }
 
 
@@ -545,6 +641,14 @@ display: block;
 	
 	<div class="sharelikeA">
 		
+		<p style="width: 100%; margin-bottom: 10px;">Tempo</p>
+		<input type="range" min="30" max="360" value="200" class="slider" id="3seqsldrT" onInput="SldrTmpoDsp(3, 'T')">
+		<input type="range" min="30" max="360" value="200" class="slider" id="5seqsldrT" onInput="SldrTmpoDsp(5, 'T')">
+		<input type="range" min="30" max="360" value="200" class="slider" id="7seqsldrT" onInput="SldrTmpoDsp(7, 'T')">
+	</div>
+	
+	<div class="sharelikeA">
+		
 		<p style="width: 100%; margin-bottom: 10px;">Share</p>
 		
 		<!-- Facebook Share Btn -->
@@ -589,6 +693,8 @@ display: block;
 		
 	</div>
 	
+	
+	
 </div>
 
 <!--Start columnB-->
@@ -598,21 +704,46 @@ display: block;
 	<div class="athird border" align="center" id="3seqcol">
 		
 		<div style="width: 100%; position: relative;">
-			<div class="PlyAllBtn border" onClick="PlyAllAud()" style="width: 100px; height: 100px; position: absolute;">
-				<svg width="100%" height="100%">
-					<circle class="PlyAllBtnCrcle" cx="49%" cy="49%" r="40%" style="fill:#fff;">
-						Sorry, your browser does not support inline SVG.
-					</circle>
-					<svg id="PlyAllIcoOff" x="23%" y="15%" width="100%" height="100%" viewBox="0 0 300 300" style="">
-						<path style="fill:#808080;" d="m 35.514374,174.65227 -0.08473,-74.652722 -0.08473,-74.652718 64.693518,37.252981 64.69352,37.25298 -64.60879,37.399739 z" />
+			<div class="UIBx border" onClick="PlyAllAud()" style="">
+				<svg width="100%" height="100%" class="PlyCrcle">
+					
+					<svg class="IcoHlght">
+						<circle class="PlyAllBtnCrcle" cx="49%" cy="49%" r="40%" style="fill:#fff;">
+							Sorry, your browser does not support inline SVG.
+						</circle>
+						
+						<svg id="PlyAllIcoOff" x="23%" y="15%" width="100%" height="100%" viewBox="0 0 300 300" style="">
+							<path style="fill:#808080;" d="m 35.514374,174.65227 -0.08473,-74.652722 -0.08473,-74.652718 64.693518,37.252981 64.69352,37.25298 -64.60879,37.399739 z" />
+						</svg>
+						
+						<g id="PlyAllIcoOn">
+							<rect x="25%" y="27%" width="17%" height="45%" style="fill:#808080;" />
+							<rect x="55%" y="27%" width="17%" height="45%" style="fill:#808080;" />
+						</g>
 					</svg>
-					<g id="PlyAllIcoOn">
-						<rect x="25%" y="27%" width="17%" height="45%" style="fill:#808080;" />
-						<rect x="55%" y="27%" width="17%" height="45%" style="fill:#808080;" />
-					</g>
 				</svg>
+				
 			</div>
+			
+			<div class="UIBx" style="top: 100px;">
+				<div style="position: absolute; left: 0px; top: 0px; margin-top: 5px; width: 50px; height: 50px;" onclick="TmpoMdl()">
+					<svg class="IcoHlght" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" style="border: 1px solid #ddd;">
+						<g style="fill: #808080;">
+						<rect transform="matrix(0.475650,0.000000,0.000000,0.475650,38.059428,28.233600)" height="32" width="32" y="64" x="222.728" />
+						<rect transform="matrix(0.475650,0.000000,0.000000,0.475650,38.059428,28.233600)" height="32" width="32" y="128" x="222.728" />
+						<rect transform="matrix(0.475650,0.000000,0.000000,0.475650,38.059428,28.233600)" height="32" width="32" y="192" x="222.728" />
+						<rect transform="matrix(0.475650,0.000000,0.000000,0.475650,38.059428,28.233600)" height="32" width="32" y="256" x="222.728" />
+						 
+						<path d="M253.42981 56.30074C253.42981 56.30074 240.56064 48.17284 240.56064 48.17284C240.56064 48.17284 233.41448 59.48188 233.41448 59.48188C231.58036 59.01003 229.693 58.67519 227.71429 58.67519C215.1267 58.67519 204.8831 68.91877 204.8831 81.50637C204.8831 87.07718 206.96834 92.12287 210.3017 96.0955C210.3017 96.0955 203.89376 106.24015 203.89376 106.24015C203.89376 106.24015 188.29243 28.2336 188.29243 28.2336C188.29243 28.2336 114.92823 28.2336 114.92823 28.2336C114.92823 28.2336 66.221696 271.76625 66.221696 271.76625C66.221696 271.76625 236.99135 271.76625 236.99135 271.76625C236.99135 271.76625 208.21645 127.89172 208.21645 127.89172C208.21645 127.89172 223.36876 103.90377 223.36876 103.90377C224.77667 104.17012 226.22266 104.33756 227.71429 104.33756C240.30188 104.33756 250.54547 94.09396 250.54547 81.50637C250.54547 76.44545 248.83313 71.80312 246.0325 68.01314C246.0325 68.01314 253.42981 56.30074 253.42981 56.30074M206.25297 195.6623C206.25297 195.6623 165.41558 195.6623 165.41558 195.6623C165.41558 195.6623 196.42796 146.55242 196.42796 146.55242C196.42796 146.55242 206.25297 195.6623 206.25297 195.6623M127.40928 43.45439C127.40928 43.45439 175.8114 43.45439 175.8114 43.45439C175.8114 43.45439 192.10524 124.90846 192.10524 124.90846C192.10524 124.90846 147.41701 195.6623 147.41701 195.6623C147.41701 195.6623 96.960083 195.6623 96.960083 195.6623C96.960083 195.6623 127.40928 43.45439 127.40928 43.45439M209.29712 210.88308C209.29712 210.88308 218.4296 256.54545 218.4296 256.54545C218.4296 256.54545 84.783451 256.54545 84.783451 256.54545C84.783451 256.54545 93.915925 210.88308 93.915925 210.88308C93.915925 210.88308 209.29712 210.88308 209.29712 210.88308M227.71429 89.11676C223.52095 89.11676 220.1039 85.70731 220.1039 81.50637C220.1039 77.30543 223.52095 73.89596 227.71429 73.89596C231.90762 73.89596 235.32468 77.30543 235.32468 81.50637C235.32468 85.70731 231.90762 89.11676 227.71429 89.11676C227.71429 89.11676 227.71429 89.11676 227.71429 89.11676" />
+						</g>
+					</svg>
+				</div>
+			</div>
+		
+		
 		</div>
+		
+		
 		
 		<!--Seq Bloks Loaded Here-->
 	</div>
@@ -629,12 +760,66 @@ display: block;
 		<!--Seq Bloks Loaded Here-->
 	</div>
 
+
+		
+
 <!--End column B-->
 </div>
 
-<!-- Social Buttons -->
+<!-- narrow screen content -->
 
 <section class="columns" id="ShareBtmCont" style="padding-bottom:0px; padding-top:0px;">
+
+<div class="sharelikeB">
+	<p id="menu-shareB">tempo</p>
+	<br>
+	
+    <div class="" style="width: 100%; float: left; display: flex;">
+        <div class="border" style="width: 30px; height: 17.5px; display: inline-block; float: left; position: relative; margin-right: 5px;">
+                <svg style="width: 100%; height: 100%; float: left;" viewbox="0 0 120 70">
+                    <rect id="" width="30" height="30" x="0" y="50" fill="#808080"/>
+                    <rect id="" width="30" height="50" x="40" y="20" fill="#ccc"/>
+                    <rect id="" width="30" height="70" x="80" y="0" fill="#ccc"/>
+                </svg>
+        </div>
+        
+        <div class="border" style="flex-grow: 1; position: relative; float: left; padding-right: 3px;">
+            <input type="range" min="30" max="360" value="200" class="slider" id="3seqsldrB" onInput="SldrTmpoDsp(3,'B')">
+        </div>
+        
+	</div>
+    
+    <div class="" style="width: 100%; float: left; display: flex;">
+        <div class="border" style="width: 30px; height: 17.5px; display: inline-block; float: left; position: relative; margin-right: 5px;">
+                <svg style="width: 100%; height: 100%; float: left;" viewbox="0 0 120 70">
+                    <rect id="" width="30" height="30" x="0" y="50" fill="#ccc"/>
+                    <rect id="" width="30" height="50" x="40" y="20" fill="#808080"/>
+                    <rect id="" width="30" height="70" x="80" y="0" fill="#ccc"/>
+                </svg>
+        </div>
+        
+        <div class="border" style="flex-grow: 1; position: relative; float: left; padding-right: 3px;">
+            <input type="range" min="30" max="360" value="200" class="slider" id="5seqsldrB" onInput="SldrTmpoDsp(5,'B')">
+        </div>
+        
+	</div>
+        
+	<div class="" style="width: 100%; float: left; display: flex;">
+        <div class="border" style="width: 30px; height: 17.5px; display: inline-block; float: left; position: relative; margin-right: 5px;">
+                <svg style="width: 100%; height: 100%; float: left;" viewbox="0 0 120 70">
+                    <rect id="" width="30" height="30" x="0" y="50" fill="#ccc"/>
+                    <rect id="" width="30" height="50" x="40" y="20" fill="#ccc"/>
+                    <rect id="" width="30" height="70" x="80" y="0" fill="#808080"/>
+                </svg>
+        </div>
+        
+        <div class="border" style="flex-grow: 1; position: relative; float: left; padding-right: 3px;">
+            <input type="range" min="30" max="360" value="200" class="slider" id="7seqsldrB" onInput="SldrTmpoDsp(7,'B')">
+        </div>
+        
+	</div>
+	
+</div>
 
 <div class="sharelikeB">
 	<p id="menu-shareB">share</p>
@@ -688,6 +873,17 @@ display: block;
 <div class="Footer">
 <p>All coding and design by G.Perilli.</p>
 </div>
+
+<!-- Image Attr. Modal -->
+
+	<div id="TmpoModal" class="modal" align="left">
+
+		<span class="mdlclosebtn" onclick="ClseTmpoMdl()">&times;</span>
+
+	<div align="center" style="width: 100%; background-color: red;">
+	  <p>hello</p>
+	</div>
+	<!-- End Modal -->
 
 
 <!-- End central column -->

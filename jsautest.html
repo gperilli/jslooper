@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music Theory using Tone.js - Play Note</title>
+
+
+    <link href="MusicTheoryToneJS.css" rel="stylesheet" type="text/css">    
+
+    <script type="text/javascript" src="https://www.guitarland.com/javascripts/Tone.js"></script>
+	<script type="text/javascript" src="https://www.guitarland.com/javascripts/StartAudioContext.js"></script>
+
+    <script src="https://www.guitarland.com/javascripts/Rhythm.js"></script>
+    <script src="https://www.guitarland.com/javascripts/instruments.js"></script>
+
+	<script type="text/javascript">
+
+    function playAudio() {
+        var player = new Tone.Player({	"url" : "./path/to/sample.mp3", "autostart" : false, }).toMaster();
+        // any setup?
+        
+        // play the file
+        player.start()
+    }
+
+	function playIt(){
+	   var osc = new Tone.OmniOscillator().toMaster();
+	   osc.frequency.value = document.myForm.noteList.value;
+	   osc.volume.value = document.myForm.volume.value;
+	   Tone.Transport.bpm.value = document.myForm.tempo.value;   
+	   var duration = document.myForm.duration.value;
+	   osc.start().stop("+"+duration);
+	}
+
+	function stopIt(){
+       Tone.Transport.stop();
+       Tone.Transport.cancel(0);
+    }
+
+    function updateTempo()  {
+	    var tempo = document.myForm.tempo.value;
+        Tone.Transport.bpm.value = tempo   
+    }
+
+
+</script>
+
+<!-- 
+// Frequencies from wholetones.com
+// 396Hz, 417Hz, 444Hz, 528Hz, 639Hz, 741Hz, 852Hz
+//
+-->
+
+</head>
+
+<body>
+<div id="Content">
+<h1>Play Note</h1>
+
+
+
+</div> <!-- end of Content div -->
+
+<form name="myForm">
+<p>
+ tempo:<select name="tempo" onchange="updateTempo()">
+    <option value=60>60</option>
+    <option value=70>70</option>
+    <option value=80>80</option>
+    <option value=90>90</option>
+    <option value=100>100</option>
+    <option value=110>110</option>
+    <option value=120>120</option>
+    <option value=130>130</option>
+    <option value=140>140</option>
+    <option value=160>160</option>
+    <option value=180>180</option>
+    <option value=200>200</option>
+</select>
+
+| duration:<select name="duration" id="duration">
+    <option value="1n">whole note</option>
+    <option value="2n">half note</option>
+    <option value="4n">quarter note</option>
+    <option value="8n">eighth note</option>
+    <option value="16n">sixteenth note</option>
+</select>
+
+| volume:<select name="volume" id="volume">
+    <option value="-Infinity">-Infinity</option>
+    <option value="-30">-30</option>
+    <option value="-25">-25</option>
+    <option value="-20">-20</option>
+    <option value="-15" selected>-15</option>
+    <option value="-10">-10</option>
+    <option value="-5">-5</option>
+    <option value="0">0</option>
+</select>
+
+<br />
+<input type="button" class="playButton" VALUE="Play Note" id="button1">
+<br />
+<!-- input type="button" VALUE="Stop" onclick="stopIt()" -->
+Input a note:<input type="text" size="5" name="noteList" value="A4">
+</p>
+
+</form>
+
+
+
+
+
+
+<script type="text/javascript">
+    var mybutton1 = document.getElementById("button1");
+    mybutton1.onclick = playIt;
+
+</script>
+
+<div id="footer"></div>
+<script src="lastModified.js"></script>
+</body>
+</html>
