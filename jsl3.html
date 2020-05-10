@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Phase</title>
+
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+ 
+<style>
+    html, body {
+    height: 100%;
+    margin: 0px;
+        background-color: beige;
+        overflow: hidden;
+}
+
+.border {
+    border: 0px solid blue;
+}
+    
+.centralcolumn {
+    background-color: white;
+    width: 1024px;
+    height: 100%;
+    border: 1px solid blue; 
+    position: relative; 
+    margin: auto;
+    
+}
+    
+.gperillilink {
+    opacity: 0;
+    cursor: pointer;
+}
+    
+.gperillilink:hover {
+    opacity: 1;
+}
+    
+/* Responsiveness */
+@media (max-width: 1024px) {
+	.centralcolumn {
+		width: 100%;
+	}
+}
+
+</style>
+</head>
+    
+<body id="scrnbdy" onload="SetLyOut()" onresize="SetLyOut()">
+
+<div id="centralcolumn" class="centralcolumn">
+
+<div id="SqrsCnt" style="position: absolute; background-color: #eee; border: 1px solid #000;"></div>
+<div id="CntrlSqre" style="position: absolute; background-color: aquamarine; border: 1px solid #000;"></div>
+<div id="DsplySqre" style="position: absolute; background-color: aqua; border: 1px solid #000;"></div>
+  
+<div id="gperilli" style="position: absolute; background-color: #ddd; border: 1px solid #000;">
+    <img id="gperilliimg" style="height: 100%; float: right; position: absolute; bottom: 4px;" src=""/>
+    <img id="gperilliLnimg" class="gperillilink" style="height: 100%; float: right; position: absolute; bottom: 4px;" src=""/>
+</div>
+<div id="ttle" style="position: absolute; background-color: #ddd; border: 1px solid #000;"><img id="ttleimg" style="" src=""/></div>
+
+</div>
+    
+
+    
+</body>
+
+</html>
+
+<script>
+function SetLyOut() {
+    ScrnWdth = document.getElementById("centralcolumn").clientWidth;
+    ScrnHght = document.getElementById("centralcolumn").clientHeight;
+    TtleHght = 48;
+    GPerliPr = 340 / 100 ;
+    //gperilli.png
+    
+    if (ScrnWdth > ScrnHght) {
+        Orntn = "Lndscpe";
+        if ((ScrnHght * 2) > ScrnWdth) {
+            Sqre = ScrnWdth / 2;
+            RmningV = ScrnHght - Sqre;
+            RmningTtleV = RmningV - 24;
+            
+            if (RmningV <= (TtleHght + 24)) {
+                RmningTtleV = TtleHght;
+                Sqre = ScrnHght - (24 + TtleHght);
+            }
+            
+            //space at top
+            document.getElementById("CntrlSqre").style.left = "".concat(((ScrnWdth - (Sqre * 2)) / 3), "px");
+            document.getElementById("CntrlSqre").style.top = "".concat((((ScrnHght - (TtleHght + 24 + Sqre)) / 2) + TtleHght), "px");
+            document.getElementById("DsplySqre").style.left = "".concat((Sqre + (((ScrnWdth - (Sqre * 2)) / 3) * 2)), "px");
+            document.getElementById("DsplySqre").style.top = "".concat((((ScrnHght - (TtleHght + 24 + Sqre)) / 2) + TtleHght), "px");
+            
+            document.getElementById("gperilli").style.top = "".concat((ScrnHght - 24), "px");
+            document.getElementById("gperilli").style.left = "0px";
+            document.getElementById("gperilli").style.width = "100%";
+            document.getElementById("gperilli").style.height = "24px";
+            
+            document.getElementById("ttle").style.top = "0px";
+            document.getElementById("ttle").style.left = "0px";
+            document.getElementById("ttle").style.width = "100%";
+            document.getElementById("ttle").style.height = "".concat(TtleHght, "px");
+            
+            
+            document.getElementById("SqrsCnt").style.left = "0px";
+            document.getElementById("SqrsCnt").style.width = "100%";
+            document.getElementById("SqrsCnt").style.top = "".concat(TtleHght, "px");
+            document.getElementById("SqrsCnt").style.height = "".concat((ScrnHght - (TtleHght + 24)), "px");
+            
+            //document.getElementById("ttleimg").className = "ttleimgH"; //graphics/phasettle.png
+            
+            document.getElementById("ttleimg").src = "graphics/phasettleH.png";
+            document.getElementById("ttleimg").style.height = "".concat(TtleHght, "px");
+            document.getElementById("ttleimg").style.width = "auto";
+            
+            document.getElementById("gperilliimg").src = "graphics/gperilliH.png";
+            document.getElementById("gperilliimg").style.height = "20px";
+            document.getElementById("gperilliimg").style.width = "auto";
+            document.getElementById("gperilliimg").style.left = "".concat(((ScrnWdth - 4) - (20 * GPerliPr)), "px");
+            
+            document.getElementById("gperilliLnimg").src = "graphics/gperillilnH.png";
+            document.getElementById("gperilliLnimg").style.height = "20px";
+            document.getElementById("gperilliLnimg").style.width = "auto";
+            document.getElementById("gperilliLnimg").style.left = "".concat(((ScrnWdth - 4) - (20 * GPerliPr)), "px");
+            //left: 2px;
+            //
+        } else {
+            Sqre = ScrnHght;
+            RmningH = ScrnWdth - (Sqre * 2);
+            RmningTtleH = RmningH - 24;
+            
+            if (RmningH <= (TtleHght + 24)) {
+                RmningTtleH = TtleHght;
+                Sqre = (ScrnWdth - (24 + TtleHght)) / 2;
+            }
+            
+            //space at left side
+            document.getElementById("CntrlSqre").style.top = "".concat(((ScrnHght - Sqre) / 2), "px");
+            document.getElementById("CntrlSqre").style.left = "".concat((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3) + TtleHght), "px");
+            document.getElementById("DsplySqre").style.top = "".concat(((ScrnHght - Sqre) / 2), "px");
+            document.getElementById("DsplySqre").style.left = "".concat((((( (ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3)*2) + TtleHght) + Sqre), "px");
+            
+            document.getElementById("gperilli").style.top = "0px";
+            document.getElementById("gperilli").style.left = "".concat((ScrnWdth - 24), "px");
+            document.getElementById("gperilli").style.width = "24px";
+            document.getElementById("gperilli").style.height = "100%";
+            
+            document.getElementById("ttle").style.top = "0px";
+            document.getElementById("ttle").style.left = "0px";
+            document.getElementById("ttle").style.width = "".concat(TtleHght, "px");
+            document.getElementById("ttle").style.height = "100%";
+            
+            document.getElementById("SqrsCnt").style.top = "0px";
+            document.getElementById("SqrsCnt").style.left = "".concat(TtleHght, "px");
+            document.getElementById("SqrsCnt").style.width = "".concat((ScrnWdth-(TtleHght + 24)), "px");
+            document.getElementById("SqrsCnt").style.height = "100%";
+            
+            //document.getElementById("ttleimg").className = "ttleimgV";
+            
+            document.getElementById("ttleimg").src = "graphics/phasettleV.png";
+            document.getElementById("ttleimg").style.width = "".concat(TtleHght, "px");
+            document.getElementById("ttleimg").style.height = "auto";
+            
+            document.getElementById("gperilliimg").src = "graphics/gperilliV.png";
+            document.getElementById("gperilliimg").style.width = "20px";
+            document.getElementById("gperilliimg").style.height = "auto";
+            document.getElementById("gperilliimg").style.left = "0px";
+            
+            document.getElementById("gperilliLnimg").src = "graphics/gperillilnV.png";
+            document.getElementById("gperilliLnimg").style.width = "20px";
+            document.getElementById("gperilliLnimg").style.height = "auto";
+            document.getElementById("gperilliLnimg").style.left = "0px";
+        }
+    } else {
+        Orntn = "Portrt";
+        if ((ScrnWdth * 2) > ScrnHght) {
+            Sqre = ScrnHght / 2;
+            RmningH = ScrnWdth - Sqre;
+            RmningTtleH = RmningH - 24;
+            
+            if (RmningH <= (TtleHght + 24)) {
+                RmningTtleH = TtleHght;
+                Sqre = ScrnWdth - (24 + TtleHght);
+            }
+            
+            //space at left side
+            document.getElementById("CntrlSqre").style.top = "".concat(((ScrnHght - (Sqre * 2)) / 3), "px");
+            document.getElementById("CntrlSqre").style.left = "".concat((((ScrnWdth - (TtleHght + 24 + Sqre)) / 2) + TtleHght), "px");
+            document.getElementById("DsplySqre").style.top = "".concat(((((ScrnHght - (Sqre * 2)) / 3) * 2) + Sqre), "px");
+            document.getElementById("DsplySqre").style.left = "".concat((((ScrnWdth - (TtleHght + 24 + Sqre)) / 2) + TtleHght), "px");
+            
+            document.getElementById("gperilli").style.top = "0px";
+            document.getElementById("gperilli").style.left = "".concat((ScrnWdth - 24), "px");
+            document.getElementById("gperilli").style.width = "24px";
+            document.getElementById("gperilli").style.height = "100%";
+            
+            document.getElementById("ttle").style.top = "0px";
+            document.getElementById("ttle").style.left = "0px";
+            document.getElementById("ttle").style.width = "".concat(TtleHght, "px");
+            document.getElementById("ttle").style.height = "100%";
+            
+            document.getElementById("SqrsCnt").style.top = "0px";
+            document.getElementById("SqrsCnt").style.left = "".concat(TtleHght, "px");
+            document.getElementById("SqrsCnt").style.width = "".concat((ScrnWdth - (24 + TtleHght)), "px");
+            document.getElementById("SqrsCnt").style.height = "100%";
+            
+            //document.getElementById("ttleimg").className = "ttleimgV";
+            
+            document.getElementById("ttleimg").src = "graphics/phasettleV.png";
+            document.getElementById("ttleimg").style.width = "".concat(TtleHght, "px");
+            document.getElementById("ttleimg").style.height = "auto";
+            
+            document.getElementById("gperilliimg").src = "graphics/gperilliV.png";
+            document.getElementById("gperilliimg").style.width = "20px";
+            document.getElementById("gperilliimg").style.height = "auto";
+            document.getElementById("gperilliimg").style.left = "0px";
+            
+            document.getElementById("gperilliLnimg").src = "graphics/gperillilnV.png";
+            document.getElementById("gperilliLnimg").style.width = "20px";
+            document.getElementById("gperilliLnimg").style.height = "auto";
+            document.getElementById("gperilliLnimg").style.left = "0px";
+        } else {
+            Sqre = ScrnWdth;
+            RmningV = ScrnHght - (Sqre * 2);
+            RmningTtleV = RmningV - 24;
+            
+            if (RmningV <= (TtleHght + 24)) {
+                RmningTtleV = TtleHght;
+                Sqre = (ScrnHght - (24 + TtleHght)) / 2;
+            }
+            
+            //space at top
+            document.getElementById("CntrlSqre").style.left = "".concat(((ScrnWdth - Sqre) / 2), "px");
+            document.getElementById("CntrlSqre").style.top = "".concat((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) + TtleHght), "px");
+            document.getElementById("DsplySqre").style.left = "".concat(((ScrnWdth - Sqre) / 2), "px");
+            document.getElementById("DsplySqre").style.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) * 2) + TtleHght + Sqre), "px");
+            
+            document.getElementById("gperilli").style.top = "".concat((ScrnHght - 24), "px");
+            document.getElementById("gperilli").style.left = "0px";
+            document.getElementById("gperilli").style.width = "100%";
+            document.getElementById("gperilli").style.height = "24px";
+            
+            document.getElementById("ttle").style.top = "0px";
+            document.getElementById("ttle").style.left = "0px";
+            document.getElementById("ttle").style.width = "100%";
+            document.getElementById("ttle").style.height = "".concat(TtleHght, "px");
+            
+            document.getElementById("SqrsCnt").style.top = "".concat(TtleHght, "px");
+            document.getElementById("SqrsCnt").style.left = "0px";
+            document.getElementById("SqrsCnt").style.width = "100%";
+            document.getElementById("SqrsCnt").style.height = "".concat((ScrnHght - (TtleHght + 24)), "px");
+            
+            //document.getElementById("ttleimg").className = "ttleimgH";
+            
+            document.getElementById("ttleimg").src = "graphics/phasettleH.png";
+            document.getElementById("ttleimg").style.height = "".concat(TtleHght, "px");
+            document.getElementById("ttleimg").style.width = "auto";
+            
+            document.getElementById("gperilliimg").src = "graphics/gperilliH.png";
+            document.getElementById("gperilliimg").style.height = "20px";
+            document.getElementById("gperilliimg").style.width = "auto";
+            document.getElementById("gperilliimg").style.left = "".concat(((ScrnWdth - 4) - (20 * GPerliPr)), "px");
+            
+            document.getElementById("gperilliLnimg").src = "graphics/gperillilnH.png";
+            document.getElementById("gperilliLnimg").style.height = "20px";
+            document.getElementById("gperilliLnimg").style.width = "auto";
+            document.getElementById("gperilliLnimg").style.left = "".concat(((ScrnWdth - 4) - (20 * GPerliPr)), "px");
+        }
+    }
+    
+    
+    console.log("Screen width is: ".concat(ScrnWdth));
+    console.log("Screen height is: ".concat(ScrnHght));
+    console.log(Orntn);
+    console.log("Square width is: ".concat(Sqre));
+    //console.log("Remaining vertical screen space is: ".concat(RmningV));
+    
+    document.getElementById("CntrlSqre").style.width = "".concat(Sqre, "px");
+    document.getElementById("CntrlSqre").style.height = "".concat(Sqre, "px");
+    document.getElementById("DsplySqre").style.width = "".concat(Sqre, "px");
+    document.getElementById("DsplySqre").style.height = "".concat(Sqre, "px");
+}
+
+</script>
