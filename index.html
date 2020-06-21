@@ -2,900 +2,1288 @@
 <html>
 
 <head>
-<title>JSLooper</title>
+<title>Phase</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-
-<!-- OG Facebook -->
-<meta property="og:url" content="https://gperilli.github.io/jslooper/" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="JSLooper" />
-<meta property="og:description" content="JSLooper" />
-<meta property="og:image" content="https://gperilli.github.io/jslooper/graphics/shareimg.png" />
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@flickr" />
-<meta name="twitter:title" content="JSLooper" />
-<meta name="twitter:description" content="JSLooper" />
-<meta name="twitter:image" content="https://gperilli.github.io/jslooper/graphics/shareimg.png" />
-
-<link rel="icon" href="graphics/jslfav.png">
-
-<!-- CSS files -->
-<link rel="stylesheet" type="text/css" href="looper.css">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+ 
 <style>
+    html, body {
+    height: 100%;
+    margin: 0px;
+        background-color: beige;
+        overflow: hidden;
+}
 
-.LImgCvr {
-  opacity: 1;
+.border {
+    border: 0px solid blue;
+}
+    
+.centralcolumn {
+    background-color: white;
+    width: 1024px;
+    height: 100%;
+    border: 1px solid blue; 
+    position: relative; 
+    margin: auto;
+    
+}
+    
+.gperillilink {
+    opacity: 0;
+    cursor: pointer;
+}
+    
+.gperillilink:hover {
+    opacity: 1;
+}
+    
+#PhseDspBx:hover {
+    background-color: #ddd;    
+}
+    
+.PhseSlect:hover {
+    background-color: #ddd; 
+}
+
+    
+.FdeImgCvr {
+  opacity: 0;
   fill: #fff;
   width: 100%;
   height: 100%;
 }
 
-.LImgCvr.transi {
-  -webkit-transition: 1s;
+
+
+
+.seqitmslctbx {
+    opacity: 0;
+}
+    
+.seqitmincrcle {
+    opacity: 0;
+}
+
+.seqitmundrcrcle {
+    opacity: 0;
+}
+    
+.seqitmundrcrcle.transi {
+    -webkit-transition: 1s;
   -moz-transition: 1s;
   -ms-transition: 1s;
   -o-transition: 1s;
   transition: 2s;
-  opacity: 0;
+    opacity: 1;
 }
-
-.border {
-border: 1px solid #ccc;
+    
+.SeqItmPth {
+    opacity: 0;
 }
-
-.centralcolumn {
-background-color: white;
-width: 1024px;
-padding-top: 10px;
-
-
-}
-
-.headercontainer {
-float: left;
-height: 50px;
-margin-bottom: 10px;
-cursor: pointer;
-}
-
-.topnav {
-	display: block;
-}
-.headercnt {
-	width: 100%; 
-	padding-left: 30px; 
-	float: left;
-	display: block;
-	color: blue;
-	margin-bottom: 15px;
-	margin-top: 15px;
-}
-.BrgrExpdr {
-max-height:1.2em;
-border-bottom: 0px;
-background:#fff;
-color:white;
-z-index: 5;
-position: relative;
-padding-bottom: 23px;
-padding-top: 0px;
-width: 100%;
--moz-transition: 1s;
--ms-transition: 1s;
--o-transition: 1s;
--webkit-transition: 1s;
-transition: 1s;
-display: none;
-}
-
-.expand {
-max-height:999px;
-}
-
-.BrgrBtnCnt {
-position:relative;
-display: inline-block;
-width: 28px;
-height: 28px;
-z-index: 10;
-}
-.columnA {
-float: left;
-width: 30%;
-padding-right: 20px;
-padding-left: 20px;
-background-color: white;
-display: block;
-
-
-}
-.columnB {
-float: left;
-width: 70%;
-padding: 0px;
-background-color: white;
-position: relative; 
-z-index: 50;
-
-}
-
-.sharelikeA {
-width: 100%;
-margin-top: 10px;
-position: relative;
-border-bottom: 1px solid #808080;
-padding-bottom: 15px;
-border-top:1px solid #808080;
-padding-top: 5px;
-text-align: center;
-float: left;
-}
-
-.sharelikeB {
-width: 100%;
-margin-top: 10px;
-border-bottom:1px solid #808080;
-border-top:1px solid #808080;
-padding-bottom: 15px;
-display: none;
-background-color: white;
-text-align: center;
-z-index: 90;
-}
-
-.SocialBtnContainerClass {
-position:relative;
-display: inline-block;
-width: 50px;
-height: 50px;
-z-index: 10;
-}
-
-.SocialBtn-CircleClass {
-stroke: black;
-stroke-width: 6%;
-z-index: 1;
-}
-.SocialBtnContainer-TextImgClass {
-cursor: pointer;
-position: absolute;
-top: 10%;
-left: 10%;
-width: 80%;
-height: 80%;
-z-index: 6;
-fill: black;
-}
-.SocialBtnContainer-TextImgClass:hover {
-fill: white;
-}
-.SocialBtn-CircleContainerClass {
-position: absolute;
-width: 100%;
-height: 100%;
-fill: white;
-}
-.SocialBtnContainer-TextImgClass:hover ~ .SocialBtn-CircleContainerClass {
-fill: black;
-}
-
-.athird {
-float: left;
-height: 100%;
-width: 33.333%
-}
-
-.afifth {
-width: 20%;
-
-position: relative;
-display: inline-block;
-}
-
-.UIBx {
-	left: 50%;
-	margin-left: -50px;
-	z-index: 99;
-	width: 100px; 
-	height: 100px; 
-	position: absolute;
-}
-
-
-.PlyAllBtnCrcle {
-stroke: #808080;
-stroke-width: 6%;
-z-index: 80;
-cursor: pointer;	
+    
+.SeqItmPth.transi {
+    -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 2s;
+    opacity: 1;
 }
 
 
 
-.IcoHlght {
-	opacity: 0.7;
-	cursor: pointer;
-}
+    
 
-.IcoHlght:hover {
-	opacity: 1;
-}
-
-
-
-.blokcnt {
-width: 90px; 
-margin-top: 5px; 
-}
-
-.blok {
-width: 50px;
-height: 50px;
-position: relative;
-cursor: pointer;
-
-}
-
-.blok:hover {
-background-color: blue;
-}
-
-.columns {
-display: flex;
-flex-flow: row wrap;
-justify-content: center;
-margin: 0px;
-padding: 5px;
-z-index: 5;
-}
-
-.Footer {
-width: 100%;
-border-top:0px solid #666;
-text-align: left;
-padding-left: 15px;
-float: left;
-display: inline-block;
-margin-top: 20px;
-}
-
-.AudBtn-PlayTri {
-	fill:#000;
-	stroke:#000;
-	stroke-width:17;
-	stroke-linejoin:round;
-}
-
-#PlyAllIcoOn {
-display: none;
-}
-
-.samplebx {
-display: inline-block;
-float: left;
-background-color: #fff;
-padding-bottom: 0px;
-}
-
-
-
-.SmpleDsp {
-display: block; 
-vertical-align: bottom;
-}
-
-
-.SmplSlctrL {
-margin-right: 5px;
-padding-top: 0px;
-width: 15px; 
-height: 50px; 
-float: left;
-opacity: 0.3;
-}
-
-.SmplSlctrR {
-margin-left: 5px;
-padding-top: 0px;
-width: 15px; 
-height: 50px; 
-float: right;
-opacity: 0.3;
-
-}
-
-
-
-
-.SmplSlctrOvly {
-z-index: 90;
-opacity: 1;
-border: 0px solid #000;
-background-color: transparent;
-float: left;
-width: 100%;
-display: inline-block;
-position: relative;
-}
-
-.SmplSlctrOvly:hover .SmplSlctrL {
-opacity: 1;
-}
-
-.SmplSlctrOvly:hover .SmplSlctrR {
-opacity: 1;
-}
-
-/* The Modal (background) */
-.modal {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 99; /* Sit on top */
-	padding-top: 100px; /* Location of the box */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
-}
-
-
-
-/* Add Animation */
-.modal-content, #caption {
-	-webkit-animation-name: zoom;
-	-webkit-animation-duration: 0.6s;
-	animation-name: zoom;
-	animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-	from {-webkit-transform:scale(0)}
-	to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-	from {transform:scale(0)}
-	to {transform:scale(1)}
-}
-
-/* The Close Button */
-.mdlclosebtn {
-	position: absolute;
-	top: 15px;
-	right: 35px;
-	color: #f1f1f1;
-	font-size: 40px;
-	font-weight: bold;
-	transition: 0.3s;
-}
-
-.mdlclosebtn:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 15px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider:hover {
-  opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  background: #4CAF50;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 15px;
-  height: 15px;
-  background: #4CAF50;
-  cursor: pointer;
-}
-
-
+    
 /* Responsiveness */
 @media (max-width: 1024px) {
-.centralcolumn {
-width: 100%;
-}
-}
-
-@media screen and (orientation: portrait) and (max-width: 980px) and (max-height: 980px) {
-
-.columnA {
-  display: none;
-}
-.columnB {
-  width: 100%;
-}
-.sharelikeB {
-display: block;
-}
-.Footer {
-	padding-left: 0px;
-	}
-}
-
-@media only screen and (orientation: landscape) and (max-width: 980px) and (max-height: 500px) { 
-	.columnA {
-		display: none;
-	}
-	.columnB {
+	.centralcolumn {
 		width: 100%;
 	}
-	.sharelikeB {
-		display: block;
-	}
-	.headercnt {
-		display: none;
-	}
-	.Footer {
-	padding-left: 0px;
-	}
 }
 
-@media (max-width: 600px) {
-	.headercontainer {
-		height: 30px;
-	}
-	.topnav {
-		display: none;
-	}
-	.BrgrExpdr {
-		display: block;
-	}
-	.sharelikeB {
-		display: block;
-	}
-	.headercnt {
-		display: none;
-	}
-	.Footer {
-	padding-left: 0px;
-	}
-}
 </style>
-
-<script src="js/looper-core.js"></script>
 <script src="js/siema.js"></script>
-
-</head>     
-
-
-<body onload="jslooper()">
-
-
-<div align=center style="width: 100%;">
-
-<div id="CentralColumn" class="centralcolumn" align=left style="border: 1px solid blue; position: relative; display: inline-block;">
-<audio id="AudObjX"></audio>
-
-<div style="background-color: #fff;">
-	 <div class="headercontainer" style="background-color: #fff; z-index: 99; position: relative; border: 1px solid #000;">
-			<a href="index"><img border="0" src="graphics/jsttle.png" height="100%"/></a>
-	 </div>
-
-		<a class="topnav" style="float: right; margin-right: 20px;" id="menu-about" href="index">About</a>
-		 
-	 
-	 <div class="headercnt" style="border: 1px solid #000;">
-			<p id="Header">A loop machine for HTML and Javascript.</p>
-	 </div>
-	 
-	 
-
-	<!-- Start Acc. -->
-	<div class="BrgrExpdr" id="AccExsWIx" style="border: 1px solid #000; background-color: transparent;">
-		<!-- Exp. Btn -->
-		<div class="AccBtnCont" style="border: 0px solid #000; z-index: 10;" align=right>
-			<div class="BrgrBtnCnt" style="border: 0px solid #000; cursor: pointer;" align=left>
-				<!-- Button SVG Elements -->
-				<div class="" id="ACCWIx" style="z-index: 0;" onclick="brgrfunc('x')">
-					<svg class="StretchToContainer" viewbox="0 0 130 130">
-						<rect id="BrgrBtn-RectH1" width="80" height="20" x="23" y="22.5" fill="blue"/>
-						<rect id="BrgrBtn-RectH2" width="80" height="20" x="23" y="52.5" fill="blue"/>
-						<rect id="BrgrBtn-RectH3" width="80" height="20" x="23" y="82.5" fill="blue"/>
-						
-					</svg>
-				</div>
-				
-			</div>
-		</div>
-		
-		<div align="right" style="z-index: 1; padding-right: 5px;">
-		
-		<div style="border-top: 1px solid #ddd; border-bottom: 0px solid #ccc; padding-top: 5px; padding-bottom: 5px; margin-left: 5px;">
-		<a id="Brgrmenu-about" href="about.html">About</a><br>
-		</div>
-		
-		
-		<div style="border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding-top: 5px; padding-bottom: 5px; margin-left: 5px;">
-				
-			<div style="display: inline-block; margin-right: 20px;">
-			<p style="display: inline-block; font-weight: bold;">Preset1:</p>
-			</div>
-			
-				
-		</div>	
-		
-		<div style="border-top: 0px solid #ccc; border-bottom: 1px solid #ddd; padding-top: 5px; padding-bottom: 5px; margin-left: 5px;">
-				
-			<div style="display: inline-block; margin-right: 20px;">
-			<p style="display: inline-block; margin-right: 0px; font-weight: bold;">Preset2:</p>
-			</div>
-			
-				
-		</div>		
-	
-		</div>
-			
-	</div>
-	<!-- End Acc. -->
-	 
-</div>
-
-<!--Start columnA-->
-<div class="columnA border" style="color: #818181;" >
-
-	<div class="sharelikeA">
-		
-		<p style="width: 100%; margin-bottom: 10px;">Samples</p>
-		
-		<div class="border" style="position: relative; float: left; width: 100%; margin-bottom: 10px;">
-
-			<div style="" class="afifth border" align=center>
-				<div class="border" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: inline-block; float: left; z-index: 89;">
-					<svg viewBox="0 0 67.733323 67.733331" class="">	
-						<rect id="ImgCvr1" class="LImgCvr transi" />
-					</svg>
-				</div>
-				<svg xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="" viewBox="0 0 67.733323 67.733331" width="100%">
-					<path class="SmplTp3" style="opacity:1;fill:#aa0000;" d=""> </path>
-				</svg>
-			</div>
-			
-			<div class="afifth border" align=center>
-				<div class="border" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: inline-block; float: left; z-index: 89;">
-					<svg viewBox="0 0 67.733323 67.733331" class="">	
-						<rect id="ImgCvr2" class="LImgCvr transi" />
-					</svg>
-				</div>
-				
-				<svg xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="" viewBox="0 0 67.733323 67.733331" width="100%">
-					<path class="SmplTp4" style="opacity:1;fill:#aa0000;" d=""> </path>
-				</svg>
-			</div>
-			
-			<div class="afifth border" align=center>
-				<div class="border" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: inline-block; float: left; z-index: 89;">
-					<svg viewBox="0 0 67.733323 67.733331" class="">	
-						<rect id="ImgCvr3" class="LImgCvr transi" />
-					</svg>
-				</div>
-				
-				<svg xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="" viewBox="0 0 67.733323 67.733331" width="100%">
-					<path class="SmplTp5" style="opacity:1;" d=""> </path>
-				</svg>
-			</div>
-			
-		</div>
-		
-		<div align="center">
-			
-				<div onclick="SmplNteChngr(0)" class="ClrBtnCnt border" style="width: 20%; float: left;">
-						<svg class="" style="width: 100%; height: 100%;" viewbox="0 0 500 100">
-							<rect id="nteslctr1" width="100%" height="100" x="0" y="0"/>
-						</svg>
-				</div>
-			
-				<div onclick="SmplNteChngr(1)" class="ClrBtnCnt border" style="width: 20%; float: left;">
-						<svg class="" style="width: 100%; height: 100%;" viewbox="0 0 500 100">
-							<rect id="nteslctr2" width="100%" height="100" x="0" y="0"/>
-						</svg>
-				</div>
-				
-				<div onclick="SmplNteChngr(2)" class="ClrBtnCnt border" style="width: 20%; float: left;">
-						<svg class="" style="width: 100%; height: 100%;" viewbox="0 0 500 100">
-							<rect id="nteslctr3" width="100%" height="100" x="0" y="0"/>
-						</svg>
-				</div>
-			
-				<div onclick="SmplNteChngr(3)" class="ClrBtnCnt border" style="width: 20%; float: left;">
-						<svg class="" style="width: 100%; height: 100%;" viewbox="0 0 500 100">
-							<rect id="nteslctr4" width="100%" height="100" x="0" y="0"/>
-						</svg>
-				</div>
-				
-				<div onclick="SmplNteChngr(4)" class="ClrBtnCnt border" style="width: 20%; float: left;">
-						<svg class="" style="width: 100%; height: 100%;" viewbox="0 0 500 100">
-							<rect id="nteslctr5" width="100%" height="100" x="0" y="0"/>
-						</svg>
-				</div>
-			
-		</div>
-		
-	</div>
-	
-	<div class="sharelikeA">
-		
-		<p style="width: 100%; margin-bottom: 10px;">Tempo</p>
-		<input type="range" min="30" max="360" value="200" class="slider" id="3seqsldrT" onInput="SldrTmpoDsp(3, 'T')">
-		<input type="range" min="30" max="360" value="200" class="slider" id="5seqsldrT" onInput="SldrTmpoDsp(5, 'T')">
-		<input type="range" min="30" max="360" value="200" class="slider" id="7seqsldrT" onInput="SldrTmpoDsp(7, 'T')">
-	</div>
-	
-	<div class="sharelikeA">
-		
-		<p style="width: 100%; margin-bottom: 10px;">Share</p>
-		
-		<!-- Facebook Share Btn -->
-		<div class="SocialBtnContainerClass" align=left>
-			<!-- Button SVG Elements -->
-			<div class="SocialBtnContainer-TextImgClass" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('${ShareAdr}'),'facebook-share-dialog','width=626,height=436'); return false;">
-			  <svg class="StretchToContainer" viewbox="0 0 115 115">
-				 <g transform="translate(1,1)">
-					<path class="FbBtn-logo" id="BtnTextID-Facebook">
-					</path>
-				 </g>
-			  </svg>
-			</div>
-			<div class="SocialBtn-CircleContainerClass">
-			  <svg class="StretchToContainer">
-				 <circle class="SocialBtn-CircleClass" cx="49%" cy="49%" id="BtnCircleID-Facebook" r="40%">
-					Sorry, your browser does not support inline SVG.
-				 </circle>
-			  </svg>
-			</div>
-		</div>
-
-		<!-- Twitter Share Btn -->
-		<div class="SocialBtnContainerClass" align=left>
-		   <!-- Button SVG Elements -->
-		   <div class="SocialBtnContainer-TextImgClass"  onclick="window.open('https://twitter.com/home?status='+encodeURIComponent('${ShareAdr}'),'twitter-share-dialog','width=626,height=436'); return false;">
-			  <svg class="StretchToContainer" viewbox="0 0 115 115">
-				 <g transform="translate(1,1)">
-					<path class="TwBtn-logo" id="BtnTextID-Twitter">
-					</path>
-				 </g>
-			  </svg>
-		   </div>
-		   <div class="SocialBtn-CircleContainerClass">
-			  <svg class="StretchToContainer">
-				 <circle class="SocialBtn-CircleClass" cx="49%" cy="49%" id="BtnCircleID-Twitter" r="40%">
-					Sorry, your browser does not support inline SVG.
-				 </circle>
-			  </svg>
-		   </div>
-		</div>
-		
-	</div>
-	
-	
-	
-</div>
-
-<!--Start columnB-->
-<div class="columnB border" id="ColumnB" style="background-color: #fff;">
-	
-	<!--3Seq-->
-	<div class="athird border" align="center" id="3seqcol">
-		
-		<div style="width: 100%; position: relative;">
-			<div class="UIBx border" onClick="PlyAllAud()" style="">
-				<svg width="100%" height="100%" class="PlyCrcle">
-					
-					<svg class="IcoHlght">
-						<circle class="PlyAllBtnCrcle" cx="49%" cy="49%" r="40%" style="fill:#fff;">
-							Sorry, your browser does not support inline SVG.
-						</circle>
-						
-						<svg id="PlyAllIcoOff" x="23%" y="15%" width="100%" height="100%" viewBox="0 0 300 300" style="">
-							<path style="fill:#808080;" d="m 35.514374,174.65227 -0.08473,-74.652722 -0.08473,-74.652718 64.693518,37.252981 64.69352,37.25298 -64.60879,37.399739 z" />
-						</svg>
-						
-						<g id="PlyAllIcoOn">
-							<rect x="25%" y="27%" width="17%" height="45%" style="fill:#808080;" />
-							<rect x="55%" y="27%" width="17%" height="45%" style="fill:#808080;" />
-						</g>
-					</svg>
-				</svg>
-				
-			</div>
-			
-			<div class="UIBx" style="top: 100px;">
-				<div style="position: absolute; left: 0px; top: 0px; margin-top: 5px; width: 50px; height: 50px;" onclick="TmpoMdl()">
-					<svg class="IcoHlght" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" style="border: 1px solid #ddd;">
-						<g style="fill: #808080;">
-						<rect transform="matrix(0.475650,0.000000,0.000000,0.475650,38.059428,28.233600)" height="32" width="32" y="64" x="222.728" />
-						<rect transform="matrix(0.475650,0.000000,0.000000,0.475650,38.059428,28.233600)" height="32" width="32" y="128" x="222.728" />
-						<rect transform="matrix(0.475650,0.000000,0.000000,0.475650,38.059428,28.233600)" height="32" width="32" y="192" x="222.728" />
-						<rect transform="matrix(0.475650,0.000000,0.000000,0.475650,38.059428,28.233600)" height="32" width="32" y="256" x="222.728" />
-						 
-						<path d="M253.42981 56.30074C253.42981 56.30074 240.56064 48.17284 240.56064 48.17284C240.56064 48.17284 233.41448 59.48188 233.41448 59.48188C231.58036 59.01003 229.693 58.67519 227.71429 58.67519C215.1267 58.67519 204.8831 68.91877 204.8831 81.50637C204.8831 87.07718 206.96834 92.12287 210.3017 96.0955C210.3017 96.0955 203.89376 106.24015 203.89376 106.24015C203.89376 106.24015 188.29243 28.2336 188.29243 28.2336C188.29243 28.2336 114.92823 28.2336 114.92823 28.2336C114.92823 28.2336 66.221696 271.76625 66.221696 271.76625C66.221696 271.76625 236.99135 271.76625 236.99135 271.76625C236.99135 271.76625 208.21645 127.89172 208.21645 127.89172C208.21645 127.89172 223.36876 103.90377 223.36876 103.90377C224.77667 104.17012 226.22266 104.33756 227.71429 104.33756C240.30188 104.33756 250.54547 94.09396 250.54547 81.50637C250.54547 76.44545 248.83313 71.80312 246.0325 68.01314C246.0325 68.01314 253.42981 56.30074 253.42981 56.30074M206.25297 195.6623C206.25297 195.6623 165.41558 195.6623 165.41558 195.6623C165.41558 195.6623 196.42796 146.55242 196.42796 146.55242C196.42796 146.55242 206.25297 195.6623 206.25297 195.6623M127.40928 43.45439C127.40928 43.45439 175.8114 43.45439 175.8114 43.45439C175.8114 43.45439 192.10524 124.90846 192.10524 124.90846C192.10524 124.90846 147.41701 195.6623 147.41701 195.6623C147.41701 195.6623 96.960083 195.6623 96.960083 195.6623C96.960083 195.6623 127.40928 43.45439 127.40928 43.45439M209.29712 210.88308C209.29712 210.88308 218.4296 256.54545 218.4296 256.54545C218.4296 256.54545 84.783451 256.54545 84.783451 256.54545C84.783451 256.54545 93.915925 210.88308 93.915925 210.88308C93.915925 210.88308 209.29712 210.88308 209.29712 210.88308M227.71429 89.11676C223.52095 89.11676 220.1039 85.70731 220.1039 81.50637C220.1039 77.30543 223.52095 73.89596 227.71429 73.89596C231.90762 73.89596 235.32468 77.30543 235.32468 81.50637C235.32468 85.70731 231.90762 89.11676 227.71429 89.11676C227.71429 89.11676 227.71429 89.11676 227.71429 89.11676" />
-						</g>
-					</svg>
-				</div>
-			</div>
-		
-		
-		</div>
-		
-		
-		
-		<!--Seq Bloks Loaded Here-->
-	</div>
-
-
-	<!--5Seq-->
-	<div class="athird border" align="center" id="5seqcol">
-		<!--Seq Bloks Loaded Here-->
-	</div>
-
-
-	<!--7Seq-->
-	<div class="athird border" align="center" id="7seqcol">
-		<!--Seq Bloks Loaded Here-->
-	</div>
-
-
-		
-
-<!--End column B-->
-</div>
-
-<!-- narrow screen content -->
-
-<section class="columns" id="ShareBtmCont" style="padding-bottom:0px; padding-top:0px;">
-
-<div class="sharelikeB">
-	<p id="menu-shareB">tempo</p>
-	<br>
-	
-    <div class="" style="width: 100%; float: left; display: flex;">
-        <div class="border" style="width: 30px; height: 17.5px; display: inline-block; float: left; position: relative; margin-right: 5px;">
-                <svg style="width: 100%; height: 100%; float: left;" viewbox="0 0 120 70">
-                    <rect id="" width="30" height="30" x="0" y="50" fill="#808080"/>
-                    <rect id="" width="30" height="50" x="40" y="20" fill="#ccc"/>
-                    <rect id="" width="30" height="70" x="80" y="0" fill="#ccc"/>
-                </svg>
-        </div>
-        
-        <div class="border" style="flex-grow: 1; position: relative; float: left; padding-right: 3px;">
-            <input type="range" min="30" max="360" value="200" class="slider" id="3seqsldrB" onInput="SldrTmpoDsp(3,'B')">
-        </div>
-        
-	</div>
+</head>
     
-    <div class="" style="width: 100%; float: left; display: flex;">
-        <div class="border" style="width: 30px; height: 17.5px; display: inline-block; float: left; position: relative; margin-right: 5px;">
-                <svg style="width: 100%; height: 100%; float: left;" viewbox="0 0 120 70">
-                    <rect id="" width="30" height="30" x="0" y="50" fill="#ccc"/>
-                    <rect id="" width="30" height="50" x="40" y="20" fill="#808080"/>
-                    <rect id="" width="30" height="70" x="80" y="0" fill="#ccc"/>
+<body id="scrnbdy" onload="SetLyOut(), loadfunc()" onresize="SetLyOut()">
+
+<div id="centralcolumn" class="centralcolumn">
+
+<div id="SqrsCnt" style="position: absolute; background-color: #eee; border: 1px solid #000;"></div>
+<div id="CntrlSqre" style="position: absolute; background-color: #fff; border: 1px solid #000;">
+    <svg height=100% width=100% style="overflow: visible;">
+        <circle id="circle" cx="50%" cy="50%" r="50%" stroke="#ccc" stroke-width="5" style="" fill="transparent" />
+        
+        <rect id="" width="0" height="0" style="fill: transparent; opacity: 0.6; stroke-width:3; stroke: #000" />
+            
+            <svg id="SeqPntRct0" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+                
+                <circle class="seqitmundrcrcle transi" id="seqitmundrcrcle0" cx="50%" cy="50%" r="31%" style="position: relative; fill: #fff;" />
+                <path class="SeqItmPth transi" id="seqitm0" style="" d=""> </path>
+                <circle class="seqitmincrcle" id="seqitmincrcle0" cx="50%" cy="50%" r="50%" style="position: relative;" />
+                
+                <g class="seqitmslctbx" id="seqitmslctbx0" style="">
+                    <path d="M17.5,2 L2,2 L2,17.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M2,52.5 L2,68 L17.5,68" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M52.5,68 L68,68 L68,52.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M68,17.5 L68,2 L52.5,2" fill="none" stroke="black" stroke-width="3" />
+                </g>
+            </svg>
+        <circle id="SeqPnt0" class="FdeImgCvr" onmouseover="seqitmfdr(0, 'over')" onmouseout="seqitmfdr(0, 'out')" onClick="itmslct(0)" cx="0" cy="0" r="5px" />
+        
+        
+            <svg id="SeqPntRct1" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+                <circle cx="50%" cy="50%" r="30%" style="position: relative; fill: #fff;" />
+				<path id="seqitm1" style="" d=""> </path>
+                <circle class="seqitmincrcle" id="seqitmincrcle1" cx="50%" cy="50%" r="50%" style="position: relative;" />
+                
+                <g class="seqitmslctbx" id="seqitmslctbx1" style="">
+                    <path d="M17.5,2 L2,2 L2,17.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M2,52.5 L2,68 L17.5,68" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M52.5,68 L68,68 L68,52.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M68,17.5 L68,2 L52.5,2" fill="none" stroke="black" stroke-width="3" />
+                </g>
+            </svg>
+        <circle class="FdeImgCvr transi" onmouseover="seqitmfdr(1, 'over')" onmouseout="seqitmfdr(1, 'out')" onClick="itmslct(1)" id="SeqPnt1" cx="0" cy="0" r="5px" stroke="red" stroke-width="1" />
+        
+        
+            <svg id="SeqPntRct2" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+                <circle cx="50%" cy="50%" r="30%" style="position: relative; fill: #fff;" />
+				<path id="seqitm2" style="" d=""> </path>
+                <circle class="seqitmincrcle" id="seqitmincrcle2" cx="50%" cy="50%" r="50%" style="position: relative;" />
+                
+                <g class="seqitmslctbx" id="seqitmslctbx2" style="">
+                    <path d="M17.5,2 L2,2 L2,17.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M2,52.5 L2,68 L17.5,68" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M52.5,68 L68,68 L68,52.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M68,17.5 L68,2 L52.5,2" fill="none" stroke="black" stroke-width="3" />
+                </g>
+            </svg>
+        <circle class="FdeImgCvr transi" onmouseover="seqitmfdr(2, 'over')" onmouseout="seqitmfdr(2, 'out')" onClick="itmslct(2)" id="SeqPnt2" cx="0" cy="0" r="5px" stroke="red" stroke-width="1" />
+        
+        
+            <svg id="SeqPntRct3" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+                <circle cx="50%" cy="50%" r="30%" style="position: relative; fill: #fff;" />
+				<path id="seqitm3" style="" d=""> </path>
+                <circle class="seqitmincrcle" id="seqitmincrcle3" cx="50%" cy="50%" r="50%" style="position: relative;" />
+                
+                <g class="seqitmslctbx" id="seqitmslctbx3" style="">
+                    <path d="M17.5,2 L2,2 L2,17.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M2,52.5 L2,68 L17.5,68" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M52.5,68 L68,68 L68,52.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M68,17.5 L68,2 L52.5,2" fill="none" stroke="black" stroke-width="3" />
+                </g>
+            </svg>
+        <circle class="FdeImgCvr transi" onmouseover="seqitmfdr(3, 'over')" onmouseout="seqitmfdr(3, 'out')" onClick="itmslct(3)" id="SeqPnt3" cx="0" cy="0" r="5px" stroke="red" stroke-width="1" />
+        
+        
+            <svg id="SeqPntRct4" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+                <circle cx="50%" cy="50%" r="30%" style="position: relative; fill: #fff;" />
+				<path id="seqitm4" style="" d=""> </path>
+                <circle class="seqitmincrcle" id="seqitmincrcle4" cx="50%" cy="50%" r="50%" style="position: relative;" />
+                
+                <g class="seqitmslctbx" id="seqitmslctbx4" style="">
+                    <path d="M17.5,2 L2,2 L2,17.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M2,52.5 L2,68 L17.5,68" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M52.5,68 L68,68 L68,52.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M68,17.5 L68,2 L52.5,2" fill="none" stroke="black" stroke-width="3" />
+                </g>
+            </svg>
+        <circle class="FdeImgCvr transi" onmouseover="seqitmfdr(4, 'over')" onmouseout="seqitmfdr(4, 'out')" onClick="itmslct(4)" id="SeqPnt4" cx="0" cy="0" r="5px" stroke="red" stroke-width="1" />
+        
+        
+            <svg id="SeqPntRct5" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+                <circle cx="50%" cy="50%" r="30%" style="position: relative; fill: #fff;" />
+				<path id="seqitm5" style="" d=""> </path>
+                <circle class="seqitmincrcle" id="seqitmincrcle5" cx="50%" cy="50%" r="50%" style="position: relative;" />
+                
+                <g class="seqitmslctbx" id="seqitmslctbx5" style="">
+                    <path d="M17.5,2 L2,2 L2,17.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M2,52.5 L2,68 L17.5,68" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M52.5,68 L68,68 L68,52.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M68,17.5 L68,2 L52.5,2" fill="none" stroke="black" stroke-width="3" />
+                </g>
+            </svg>
+        <circle class="FdeImgCvr transi" onmouseover="seqitmfdr(5, 'over')" onmouseout="seqitmfdr(5, 'out')" onClick="itmslct(5)" id="SeqPnt5" cx="0" cy="0" r="5px" stroke="red" stroke-width="1" />
+        
+        
+            <svg id="SeqPntRct6" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+                <circle cx="50%" cy="50%" r="30%" style="position: relative; fill: #fff;" />
+				<path id="seqitm6" style="" d=""> </path>
+                <circle class="seqitmincrcle" id="seqitmincrcle6" cx="50%" cy="50%" r="50%" style="position: relative;" />
+                
+                <g class="seqitmslctbx" id="seqitmslctbx6" style="">
+                    <path d="M17.5,2 L2,2 L2,17.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M2,52.5 L2,68 L17.5,68" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M52.5,68 L68,68 L68,52.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M68,17.5 L68,2 L52.5,2" fill="none" stroke="black" stroke-width="3" />
+                </g>
+            </svg>
+        <circle class="FdeImgCvr transi" onmouseover="seqitmfdr(6, 'over')" onmouseout="seqitmfdr(6, 'out')" onClick="itmslct(6)" id="SeqPnt6" cx="0" cy="0" r="5px" stroke="red" stroke-width="1" />
+        
+        
+            <svg id="SeqPntRct7" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+                <circle cx="50%" cy="50%" r="30%" style="position: relative; fill: #fff;" />
+				<path id="seqitm7" style="" d=""> </path>
+                <circle class="seqitmincrcle" id="seqitmincrcle7" cx="50%" cy="50%" r="50%" style="position: relative;" />
+                
+                <g class="seqitmslctbx" id="seqitmslctbx7" style="">
+                    <path d="M17.5,2 L2,2 L2,17.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M2,52.5 L2,68 L17.5,68" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M52.5,68 L68,68 L68,52.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M68,17.5 L68,2 L52.5,2" fill="none" stroke="black" stroke-width="3" />
+                </g>
+            </svg>
+        <circle class="FdeImgCvr transi" onmouseover="seqitmfdr(7, 'over')" onmouseout="seqitmfdr(7, 'out')" id="SeqPnt7" onClick="itmslct(7)" cx="0" cy="0" r="5px" stroke="red" stroke-width="1" />
+        
+        
+            <svg id="SeqPntRct8" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+                <circle cx="50%" cy="50%" r="30%" style="position: relative; fill: #fff;" />
+				<path id="seqitm8" style="" d=""> </path>
+                <circle class="seqitmincrcle" id="seqitmincrcle8" cx="50%" cy="50%" r="50%" style="position: relative;" />
+                
+                <g class="seqitmslctbx" id="seqitmslctbx8" style="">
+                    <path d="M17.5,2 L2,2 L2,17.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M2,52.5 L2,68 L17.5,68" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M52.5,68 L68,68 L68,52.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M68,17.5 L68,2 L52.5,2" fill="none" stroke="black" stroke-width="3" />
+                </g>
+            </svg>
+        <circle class="FdeImgCvr transi" onmouseover="seqitmfdr(8, 'over')" onmouseout="seqitmfdr(8, 'out')" onClick="itmslct(8)" id="SeqPnt8" cx="0" cy="0" r="5px" stroke="red" stroke-width="1" />
+        
+        
+            <svg id="SeqPntRct9" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+                <circle cx="50%" cy="50%" r="30%" style="position: relative; fill: #fff;" />
+				<path id="seqitm9" style="" d=""> </path>
+                <circle class="seqitmincrcle" id="seqitmincrcle9" cx="50%" cy="50%" r="50%" style="position: relative;" />
+                
+                <g class="seqitmslctbx" id="seqitmslctbx9" style="">
+                    <path d="M17.5,2 L2,2 L2,17.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M2,52.5 L2,68 L17.5,68" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M52.5,68 L68,68 L68,52.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M68,17.5 L68,2 L52.5,2" fill="none" stroke="black" stroke-width="3" />
+                </g>
+            </svg>
+        <circle class="FdeImgCvr transi" onmouseover="seqitmfdr(9, 'over')" onmouseout="seqitmfdr(9, 'out')" onClick="itmslct(9)" id="SeqPnt9" cx="0" cy="0" r="5px" stroke="red" stroke-width="1" />
+        
+        
+            <svg id="SeqPntRct10" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+                <circle cx="50%" cy="50%" r="30%" style="position: relative; fill: #fff;" />
+				<path id="seqitm10" style="" d=""> </path>
+                <circle class="seqitmincrcle" id="seqitmincrcle10" cx="50%" cy="50%" r="50%" style="position: relative;" />
+                
+                <g class="seqitmslctbx" id="seqitmslctbx10" style="">
+                    <path d="M17.5,2 L2,2 L2,17.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M2,52.5 L2,68 L17.5,68" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M52.5,68 L68,68 L68,52.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M68,17.5 L68,2 L52.5,2" fill="none" stroke="black" stroke-width="3" />
+                </g>
+            </svg>
+        <circle class="FdeImgCvr transi" onmouseover="seqitmfdr(10, 'over')" onmouseout="seqitmfdr(10, 'out')" onClick="itmslct(10)" id="SeqPnt10" cx="0" cy="0" r="5px" stroke="red" stroke-width="1" />
+        
+        
+            <svg id="SeqPntRct11" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+                <circle cx="50%" cy="50%" r="30%" style="position: relative; fill: #fff;" />
+				<path id="seqitm11" style="" d=""> </path>
+                <circle class="seqitmincrcle" id="seqitmincrcle11" cx="50%" cy="50%" r="50%" style="position: relative;" />
+                
+                <g class="seqitmslctbx" id="seqitmslctbx11" style="">
+                    <path d="M17.5,2 L2,2 L2,17.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M2,52.5 L2,68 L17.5,68" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M52.5,68 L68,68 L68,52.5" fill="none" stroke="black" stroke-width="3" />
+                    <path d="M68,17.5 L68,2 L52.5,2" fill="none" stroke="black" stroke-width="3" />
+                </g>
+            </svg>
+        <circle class="FdeImgCvr transi" onmouseover="seqitmfdr(11, 'over')" onmouseout="seqitmfdr(11, 'out')" onClick="itmslct(11)" id="SeqPnt11" cx="0" cy="0" r="5px" stroke="red" stroke-width="1" />
+        
+    </svg>
+    
+    <div id="TneBxBck" style="position: absolute;">
+        <svg id="TneBxBckVec" height="0%" width="0%" viewBox="0 0 40 120" onclick="Siema.prev()">
+        <polygon points="40,0 40,120 0,60" style="fill:#808080;" />
+        Sorry, your browser does not support inline SVG.
+        </svg>
+    </div>
+    <div id="TneBx"  style="border-top: 1px solid #808080; border-bottom: 1px solid #808080; position: absolute;">
+        <div class="siema" style="position: absolute: width: 100%; height: 100%; background-color: #fff;">
+          
+            <svg id="" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: relative;" viewBox="0 0 70 70" width="100%">
+				<path id="NtePltteSlctItm1" style="" d=""> </path>
+            </svg>
+            
+            <svg id="" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: relative;" viewBox="0 0 70 70" width="100%">
+				<path id="NtePltteSlctItm2" style="" d=""> </path>
+            </svg>
+            
+            <svg id="" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: relative;" viewBox="0 0 70 70" width="100%">
+				<path id="NtePltteSlctItm3" style="" d=""> </path>
+            </svg>
+            
+            <svg id="" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: relative;" viewBox="0 0 70 70" width="100%">
+				<path id="NtePltteSlctItm4" style="" d=""> </path>
+            </svg>
+            
+            <svg id="" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: relative;" viewBox="0 0 70 70" width="100%">
+				<path id="NtePltteSlctItm5" style="" d=""> </path>
+            </svg>
+            
+            <svg id="" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: relative;" viewBox="0 0 70 70" width="100%">
+				<path id="NtePltteSlctItm6" style="" d=""> </path>
+            </svg>
+            
+            <svg id="" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: relative;" viewBox="0 0 70 70" width="100%">
+				<path id="NtePltteSlctItm7" style="" d=""> </path>
+            </svg>
+            
+            <svg id="" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: relative;" viewBox="0 0 70 70" width="100%">
+				<path id="NtePltteSlctItm8" style="" d=""> </path>
+            </svg>
+            
+            <svg id="" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: relative;" viewBox="0 0 70 70" width="100%">
+				<path id="NtePltteSlctItm9" style="" d=""> </path>
+            </svg>
+            
+            <svg id="" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: relative;" viewBox="0 0 70 70" width="100%">
+				<path id="NtePltteSlctItm10" style="" d=""> </path>
+            </svg>
+        </div>
+    </div>
+    <div id="TneBxFrd" style="position: absolute;">
+        <svg id="TneBxFrdVec" height="0%" width="0%" viewBox="0 0 40 120" onclick="Siema.next()">
+        <polygon points="0,0 0,120 40,60" style="fill:#808080;" />
+        Sorry, your browser does not support inline SVG.
+        </svg>
+    </div>
+    
+</div>
+<div id="DsplySqre" style="position: absolute; background-color: aqua; border: 1px solid #000;">
+    <div class="DspQrtrs" id="StatSeqBx" style="border: 1px solid #000; position: absolute;">
+        <svg height=100%; width=100%; style="overflow: visible;">
+            <circle id="SttSqCrcl" cx="50%" cy="50%" r="50%" stroke="black" stroke-width="1" style="" fill="transparent" />
+            
+        <circle id="StcSqPnt0" cx="0" cy="0" r="5px" stroke="red" stroke-width="1" fill="transparent" />
+            <svg id="StcSeqPntRct0" stroke="blue" stroke-width="1" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="stcseqitm0" style="" d=""> </path>
+            </svg>
+            
+        <circle id="StcSqPnt1" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="StcSeqPntRct1" stroke-width="1" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="stcseqitm1" style="" d=""> </path>
+            </svg>
+            
+        <circle id="StcSqPnt2" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="StcSeqPntRct2" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="stcseqitm2" style="" d=""> </path>
+            </svg>
+            
+        <circle id="StcSqPnt3" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="StcSeqPntRct3" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="stcseqitm3" style="" d=""> </path>
+            </svg>
+            
+        <circle id="StcSqPnt4" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="StcSeqPntRct4" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="stcseqitm4" style="" d=""> </path>
+            </svg>
+            
+        <circle id="StcSqPnt5" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="StcSeqPntRct5" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="stcseqitm5" style="" d=""> </path>
+            </svg>
+            
+        <circle id="StcSqPnt6" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="StcSeqPntRct6" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="stcseqitm6" style="" d=""> </path>
+            </svg>
+            
+        <circle id="StcSqPnt7" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="StcSeqPntRct7" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="stcseqitm7" style="" d=""> </path>
+            </svg>
+            
+        <circle id="StcSqPnt8" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="StcSeqPntRct8" stroke-width="1" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="stcseqitm8" style="" d=""> </path>
+            </svg>
+            
+        <circle id="StcSqPnt9" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="StcSeqPntRct9" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="stcseqitm9" style="" d=""> </path>
+            </svg>
+            
+        <circle id="StcSqPnt10" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="StcSeqPntRct10" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="stcseqitm10" style="" d=""> </path>
+            </svg>
+            
+        <circle id="StcSqPnt11" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="StcSeqPntRct11" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="stcseqitm11" style="" d=""> </path>
+            </svg>
+            
+        </svg>
+    </div>
+    <div class="DspQrtrs" id="PhseSeqBx" style="border: 1px solid #000; position: absolute;">
+        <svg height=100%; width=100%; style="overflow: visible;">
+            <circle id="PhsSqCrcl" cx="50%" cy="50%" r="50%" stroke="black" stroke-width="1" style="" fill="transparent" />
+            
+        <circle id="PhsSqPnt0" cx="0" cy="0" r="5px" stroke="red" stroke-width="1" fill="transparent" />
+            <svg id="PhsSeqPntRct0" stroke="blue" stroke-width="1" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="phsseqitm0" style="" d=""> </path>
+            </svg>
+            
+        <circle id="PhsSqPnt1" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+             <svg id="PhsSeqPntRct1" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="phsseqitm1" style="" d=""> </path>
+            </svg>
+            
+        <circle id="PhsSqPnt2" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="PhsSeqPntRct2" stroke-width="1" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="phsseqitm2" style="" d=""> </path>
+            </svg>
+            
+        <circle id="PhsSqPnt3" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="PhsSeqPntRct3" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="phsseqitm3" style="" d=""> </path>
+            </svg>
+            
+        <circle id="PhsSqPnt4" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="PhsSeqPntRct4" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="phsseqitm4" style="" d=""> </path>
+            </svg>
+            
+        <circle id="PhsSqPnt5" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="PhsSeqPntRct5" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="phsseqitm5" style="" d=""> </path>
+            </svg>
+            
+        <circle id="PhsSqPnt6" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="PhsSeqPntRct6" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="phsseqitm6" style="" d=""> </path>
+            </svg>
+            
+        <circle id="PhsSqPnt7" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="PhsSeqPntRct7" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="phsseqitm7" style="" d=""> </path>
+            </svg>
+            
+        <circle id="PhsSqPnt8" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="PhsSeqPntRct8" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="phsseqitm8" style="" d=""> </path>
+            </svg>
+            
+        <circle id="PhsSqPnt9" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="PhsSeqPntRct9" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="phsseqitm9" style="" d=""> </path>
+            </svg>
+            
+        <circle id="PhsSqPnt10" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="PhsSeqPntRct10" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="phsseqitm10" style="" d=""> </path>
+            </svg>
+            
+        <circle id="PhsSqPnt11" cx="0" cy="0" r="5px" stroke="black" stroke-width="1" fill="transparent" />
+            <svg id="PhsSeqPntRct11" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
+				<path id="phsseqitm11" style="" d=""> </path>
+            </svg>
+            
+        </svg>
+    </div>
+    
+    <div class="DspQrtrs" id="TmpoDspBx" style="border: 1px solid #000; position: absolute;">
+        <div id="PhseDspBx" style="border: 1px solid #000; position: absolute;">
+            <svg height=100%; width=100%; style="overflow: hidden;">
+                <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
+                <circle id="PhsePosCrclA" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
+                <circle id="PhsePosCrclB" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
+            </svg>
+        </div>
+        
+        <div id="PhsePreCntBx" style="border: 1px solid #000; position: absolute;">
+            <div class="PhseSlect" onClick="rotate(0)" id="PhsePre0Bx" style="border: 1px solid red; position: absolute;">
+                <svg height=100%; width=100%; style="overflow: hidden;">
+                    <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
+                    <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
+                    <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
                 </svg>
-        </div>
-        
-        <div class="border" style="flex-grow: 1; position: relative; float: left; padding-right: 3px;">
-            <input type="range" min="30" max="360" value="200" class="slider" id="5seqsldrB" onInput="SldrTmpoDsp(5,'B')">
-        </div>
-        
-	</div>
-        
-	<div class="" style="width: 100%; float: left; display: flex;">
-        <div class="border" style="width: 30px; height: 17.5px; display: inline-block; float: left; position: relative; margin-right: 5px;">
-                <svg style="width: 100%; height: 100%; float: left;" viewbox="0 0 120 70">
-                    <rect id="" width="30" height="30" x="0" y="50" fill="#ccc"/>
-                    <rect id="" width="30" height="50" x="40" y="20" fill="#ccc"/>
-                    <rect id="" width="30" height="70" x="80" y="0" fill="#808080"/>
+            </div>
+            <div class="PhseSlect" onClick="rotate(90)" id="PhsePre1Bx" style="border: 1px solid #000; position: absolute;">
+                <svg height=100%; width=100%; style="overflow: hidden;">
+                    <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
+                    <circle id="" cx="75%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
+                    <circle id="" cx="-25%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
                 </svg>
+            </div>
+            <div class="PhseSlect" onClick="rotate(180)" id="PhsePre2Bx" style="border: 1px solid #000; position: absolute;">
+                <svg height=100%; width=100%; style="overflow: hidden;">
+                    <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
+                    <circle id="" cx="100%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
+                    <circle id="" cx="0%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
+                </svg>
+            </div>
+            <div class="PhseSlect" onClick="rotate(270)" id="PhsePre3Bx" style="border: 1px solid #000; position: absolute;">
+                <svg height=100%; width=100%; style="overflow: hidden;">
+                    <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
+                    <circle id="" cx="125%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
+                    <circle id="" cx="25%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
+                </svg>
+            </div>
         </div>
-        
-        <div class="border" style="flex-grow: 1; position: relative; float: left; padding-right: 3px;">
-            <input type="range" min="30" max="360" value="200" class="slider" id="7seqsldrB" onInput="SldrTmpoDsp(7,'B')">
-        </div>
-        
-	</div>
-	
-</div>
-
-<div class="sharelikeB">
-	<p id="menu-shareB">share</p>
-	<br>
-
-	<!-- Facebook Share Btn -->
-	<div class="SocialBtnContainerClass" align=left>
-	   <!-- Button SVG Elements -->
-	   <div class="SocialBtnContainer-TextImgClass" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('${ShareAdr}'),'facebook-share-dialog','width=626,height=436'); return false;">
-		  <svg class="StretchToContainer" viewbox="0 0 115 115">
-			 <g transform="translate(1,1)">
-				<path class="FbBtn-logo" id="BtnTextID-Facebook">
-				</path>
-			 </g>
-		  </svg>
-	   </div>
-	   <div class="SocialBtn-CircleContainerClass">
-		  <svg class="StretchToContainer">
-			 <circle class="SocialBtn-CircleClass" cx="49%" cy="49%" id="BtnCircleID-Facebook" r="40%">
-				Sorry, your browser does not support inline SVG.
-			 </circle>
-		  </svg>
-	   </div>
-	</div>
-
-	<!-- Twitter Share Btn -->
-	<div class="SocialBtnContainerClass" align=left>
-	   <!-- Button SVG Elements -->
-	   <div class="SocialBtnContainer-TextImgClass"  onclick="window.open('https://twitter.com/home?status='+encodeURIComponent('${ShareAdr}'),'twitter-share-dialog','width=626,height=436'); return false;">
-		  <svg class="StretchToContainer" viewbox="0 0 115 115">
-			 <g transform="translate(1,1)">
-				<path class="TwBtn-logo" id="BtnTextID-Twitter">
-				</path>
-			 </g>
-		  </svg>
-	   </div>
-	   <div class="SocialBtn-CircleContainerClass">
-		  <svg class="StretchToContainer">
-			 <circle class="SocialBtn-CircleClass" cx="49%" cy="49%" id="BtnCircleID-Twitter" r="40%">
-				Sorry, your browser does not support inline SVG.
-			 </circle>
-		  </svg>
-	   </div>
-	</div>
-
-<!-- Attributio etc -->
+    </div>
+    
+    <div class="DspQrtrs" id="PlaySeqBx" style="border: 1px solid #000; position: absolute;">
+        <div id="SeqPlyTmpoBx" style="border: 1px solid #000; position: absolute;" onclick="fadetst()"></div>
+        <div id="SeqPlyBx" style="border: 1px solid #000; position: absolute;"></div>
+    </div>
 
 </div>
-</section>
-
-<div class="Footer">
-<p>All coding and design by G.Perilli.</p>
+  
+<div id="gperilli" style="position: absolute; background-color: #ddd; border: 1px solid #000;">
+    <img id="gperilliimg" style="height: 100%; float: right; position: absolute; bottom: 4px;" src=""/>
+    <img id="gperilliLnimg" class="gperillilink" style="height: 100%; float: right; position: absolute; bottom: 4px;" src=""/>
 </div>
-
-<!-- Image Attr. Modal -->
-
-	<div id="TmpoModal" class="modal" align="left">
-
-		<span class="mdlclosebtn" onclick="ClseTmpoMdl()">&times;</span>
-
-	<div align="center" style="width: 100%; background-color: red;">
-	  <p>hello</p>
-	</div>
-	<!-- End Modal -->
-
-
-<!-- End central column -->
-</div>
+<div id="ttle" style="position: absolute; background-color: #ddd; border: 1px solid #000;"><img id="ttleimg" style="" src=""/></div>
 
 </div>
+    
 
+    
 </body>
 
 </html>
 
+<script>
+function SetLyOut() {
+    ScrnWdth = document.getElementById("centralcolumn").clientWidth;
+    ScrnHght = document.getElementById("centralcolumn").clientHeight;
+    TtleHght = 48;
+    GPerliPr = 340 / 100 ;
+    //gperilli.png
+    
+    //Measure screen size, calculate box and header, footer orientation and size
+    if (ScrnWdth > ScrnHght) {
+        Orntn = "Lndscpe";
+        if ((ScrnHght * 2) > ScrnWdth) {
+            Sqre = ScrnWdth / 2;
+            RmningV = ScrnHght - Sqre;
+            RmningTtleV = RmningV - 24;
+            
+            if (RmningV <= (TtleHght + 24)) {
+                RmningTtleV = TtleHght;
+                Sqre = ScrnHght - (24 + TtleHght);
+            }
+            
+            //space at top
+            document.getElementById("CntrlSqre").style.left = "".concat(((ScrnWdth - (Sqre * 2)) / 3), "px");
+            document.getElementById("CntrlSqre").style.top = "".concat((((ScrnHght - (TtleHght + 24 + Sqre)) / 2) + TtleHght), "px");
+            document.getElementById("DsplySqre").style.left = "".concat((Sqre + (((ScrnWdth - (Sqre * 2)) / 3) * 2)), "px");
+            document.getElementById("DsplySqre").style.top = "".concat((((ScrnHght - (TtleHght + 24 + Sqre)) / 2) + TtleHght), "px");
+            
+            document.getElementById("gperilli").style.top = "".concat((ScrnHght - 24), "px");
+            document.getElementById("gperilli").style.left = "0px";
+            document.getElementById("gperilli").style.width = "100%";
+            document.getElementById("gperilli").style.height = "24px";
+            
+            document.getElementById("ttle").style.top = "0px";
+            document.getElementById("ttle").style.left = "0px";
+            document.getElementById("ttle").style.width = "100%";
+            document.getElementById("ttle").style.height = "".concat(TtleHght, "px");
+            
+            
+            document.getElementById("SqrsCnt").style.left = "0px";
+            document.getElementById("SqrsCnt").style.width = "100%";
+            document.getElementById("SqrsCnt").style.top = "".concat(TtleHght, "px");
+            document.getElementById("SqrsCnt").style.height = "".concat((ScrnHght - (TtleHght + 24)), "px");
+            
+            //document.getElementById("ttleimg").className = "ttleimgH"; //graphics/phasettle.png
+            
+            document.getElementById("ttleimg").src = "graphics/phasettleH.png";
+            document.getElementById("ttleimg").style.height = "".concat(TtleHght, "px");
+            document.getElementById("ttleimg").style.width = "auto";
+            
+            document.getElementById("gperilliimg").src = "graphics/gperilliH.png";
+            document.getElementById("gperilliimg").style.height = "20px";
+            document.getElementById("gperilliimg").style.width = "auto";
+            document.getElementById("gperilliimg").style.left = "".concat(((ScrnWdth - 4) - (20 * GPerliPr)), "px");
+            
+            document.getElementById("gperilliLnimg").src = "graphics/gperillilnH.png";
+            document.getElementById("gperilliLnimg").style.height = "20px";
+            document.getElementById("gperilliLnimg").style.width = "auto";
+            document.getElementById("gperilliLnimg").style.left = "".concat(((ScrnWdth - 4) - (20 * GPerliPr)), "px");
+            //left: 2px;
+            //
+        } else {
+            Sqre = ScrnHght;
+            RmningH = ScrnWdth - (Sqre * 2);
+            RmningTtleH = RmningH - 24;
+            
+            if (RmningH <= (TtleHght + 24)) {
+                RmningTtleH = TtleHght;
+                Sqre = (ScrnWdth - (24 + TtleHght)) / 2;
+            }
+            
+            //space at left side
+            document.getElementById("CntrlSqre").style.top = "".concat(((ScrnHght - Sqre) / 2), "px");
+            document.getElementById("CntrlSqre").style.left = "".concat((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3) + TtleHght), "px");
+            document.getElementById("DsplySqre").style.top = "".concat(((ScrnHght - Sqre) / 2), "px");
+            document.getElementById("DsplySqre").style.left = "".concat((((( (ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3)*2) + TtleHght) + Sqre), "px");
+            
+            document.getElementById("gperilli").style.top = "0px";
+            document.getElementById("gperilli").style.left = "".concat((ScrnWdth - 24), "px");
+            document.getElementById("gperilli").style.width = "24px";
+            document.getElementById("gperilli").style.height = "100%";
+            
+            document.getElementById("ttle").style.top = "0px";
+            document.getElementById("ttle").style.left = "0px";
+            document.getElementById("ttle").style.width = "".concat(TtleHght, "px");
+            document.getElementById("ttle").style.height = "100%";
+            
+            document.getElementById("SqrsCnt").style.top = "0px";
+            document.getElementById("SqrsCnt").style.left = "".concat(TtleHght, "px");
+            document.getElementById("SqrsCnt").style.width = "".concat((ScrnWdth-(TtleHght + 24)), "px");
+            document.getElementById("SqrsCnt").style.height = "100%";
+            
+            //document.getElementById("ttleimg").className = "ttleimgV";
+            
+            document.getElementById("ttleimg").src = "graphics/phasettleV.png";
+            document.getElementById("ttleimg").style.width = "".concat(TtleHght, "px");
+            document.getElementById("ttleimg").style.height = "auto";
+            
+            document.getElementById("gperilliimg").src = "graphics/gperilliV.png";
+            document.getElementById("gperilliimg").style.width = "20px";
+            document.getElementById("gperilliimg").style.height = "auto";
+            document.getElementById("gperilliimg").style.left = "0px";
+            
+            document.getElementById("gperilliLnimg").src = "graphics/gperillilnV.png";
+            document.getElementById("gperilliLnimg").style.width = "20px";
+            document.getElementById("gperilliLnimg").style.height = "auto";
+            document.getElementById("gperilliLnimg").style.left = "0px";
+        }
+    } else {
+        Orntn = "Portrt";
+        if ((ScrnWdth * 2) > ScrnHght) {
+            Sqre = ScrnHght / 2;
+            RmningH = ScrnWdth - Sqre;
+            RmningTtleH = RmningH - 24;
+            
+            if (RmningH <= (TtleHght + 24)) {
+                RmningTtleH = TtleHght;
+                Sqre = ScrnWdth - (24 + TtleHght);
+            }
+            
+            //space at left side
+            document.getElementById("CntrlSqre").style.top = "".concat(((ScrnHght - (Sqre * 2)) / 3), "px");
+            document.getElementById("CntrlSqre").style.left = "".concat((((ScrnWdth - (TtleHght + 24 + Sqre)) / 2) + TtleHght), "px");
+            document.getElementById("DsplySqre").style.top = "".concat(((((ScrnHght - (Sqre * 2)) / 3) * 2) + Sqre), "px");
+            document.getElementById("DsplySqre").style.left = "".concat((((ScrnWdth - (TtleHght + 24 + Sqre)) / 2) + TtleHght), "px");
+            
+            document.getElementById("gperilli").style.top = "0px";
+            document.getElementById("gperilli").style.left = "".concat((ScrnWdth - 24), "px");
+            document.getElementById("gperilli").style.width = "24px";
+            document.getElementById("gperilli").style.height = "100%";
+            
+            document.getElementById("ttle").style.top = "0px";
+            document.getElementById("ttle").style.left = "0px";
+            document.getElementById("ttle").style.width = "".concat(TtleHght, "px");
+            document.getElementById("ttle").style.height = "100%";
+            
+            document.getElementById("SqrsCnt").style.top = "0px";
+            document.getElementById("SqrsCnt").style.left = "".concat(TtleHght, "px");
+            document.getElementById("SqrsCnt").style.width = "".concat((ScrnWdth - (24 + TtleHght)), "px");
+            document.getElementById("SqrsCnt").style.height = "100%";
+            
+            //document.getElementById("ttleimg").className = "ttleimgV";
+            
+            document.getElementById("ttleimg").src = "graphics/phasettleV.png";
+            document.getElementById("ttleimg").style.width = "".concat(TtleHght, "px");
+            document.getElementById("ttleimg").style.height = "auto";
+            
+            document.getElementById("gperilliimg").src = "graphics/gperilliV.png";
+            document.getElementById("gperilliimg").style.width = "20px";
+            document.getElementById("gperilliimg").style.height = "auto";
+            document.getElementById("gperilliimg").style.left = "0px";
+            
+            document.getElementById("gperilliLnimg").src = "graphics/gperillilnV.png";
+            document.getElementById("gperilliLnimg").style.width = "20px";
+            document.getElementById("gperilliLnimg").style.height = "auto";
+            document.getElementById("gperilliLnimg").style.left = "0px";
+        } else {
+            Sqre = ScrnWdth;
+            RmningV = ScrnHght - (Sqre * 2);
+            RmningTtleV = RmningV - 24;
+            
+            if (RmningV <= (TtleHght + 24)) {
+                RmningTtleV = TtleHght;
+                Sqre = (ScrnHght - (24 + TtleHght)) / 2;
+            }
+            
+            //space at top
+            document.getElementById("CntrlSqre").style.left = "".concat(((ScrnWdth - Sqre) / 2), "px");
+            document.getElementById("CntrlSqre").style.top = "".concat((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) + TtleHght), "px");
+            document.getElementById("DsplySqre").style.left = "".concat(((ScrnWdth - Sqre) / 2), "px");
+            document.getElementById("DsplySqre").style.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) * 2) + TtleHght + Sqre), "px");
+            
+            document.getElementById("gperilli").style.top = "".concat((ScrnHght - 24), "px");
+            document.getElementById("gperilli").style.left = "0px";
+            document.getElementById("gperilli").style.width = "100%";
+            document.getElementById("gperilli").style.height = "24px";
+            
+            document.getElementById("ttle").style.top = "0px";
+            document.getElementById("ttle").style.left = "0px";
+            document.getElementById("ttle").style.width = "100%";
+            document.getElementById("ttle").style.height = "".concat(TtleHght, "px");
+            
+            document.getElementById("SqrsCnt").style.top = "".concat(TtleHght, "px");
+            document.getElementById("SqrsCnt").style.left = "0px";
+            document.getElementById("SqrsCnt").style.width = "100%";
+            document.getElementById("SqrsCnt").style.height = "".concat((ScrnHght - (TtleHght + 24)), "px");
+            
+            //document.getElementById("ttleimg").className = "ttleimgH";
+            
+            document.getElementById("ttleimg").src = "graphics/phasettleH.png";
+            document.getElementById("ttleimg").style.height = "".concat(TtleHght, "px");
+            document.getElementById("ttleimg").style.width = "auto";
+            
+            document.getElementById("gperilliimg").src = "graphics/gperilliH.png";
+            document.getElementById("gperilliimg").style.height = "20px";
+            document.getElementById("gperilliimg").style.width = "auto";
+            document.getElementById("gperilliimg").style.left = "".concat(((ScrnWdth - 4) - (20 * GPerliPr)), "px");
+            
+            document.getElementById("gperilliLnimg").src = "graphics/gperillilnH.png";
+            document.getElementById("gperilliLnimg").style.height = "20px";
+            document.getElementById("gperilliLnimg").style.width = "auto";
+            document.getElementById("gperilliLnimg").style.left = "".concat(((ScrnWdth - 4) - (20 * GPerliPr)), "px");
+        }
+    }
+    
+    
+    console.log("Screen width is: ".concat(ScrnWdth));
+    console.log("Screen height is: ".concat(ScrnHght));
+    console.log(Orntn);
+    console.log("Square width is: ".concat(Sqre));
+    //console.log("Remaining vertical screen space is: ".concat(RmningV));
+    
+    //Set outer square sizes
+    document.getElementById("CntrlSqre").style.width = "".concat(Sqre, "px");
+    document.getElementById("CntrlSqre").style.height = "".concat(Sqre, "px");
+    document.getElementById("DsplySqre").style.width = "".concat(Sqre, "px");
+    document.getElementById("DsplySqre").style.height = "".concat(Sqre, "px");
+    
+    //Circles Sequencer
+    SeqLpPdng = 20;
+    SeqCrcleSz = 12;
+    CrcleR = ((Sqre - SeqLpPdng) / 2) - ((Sqre - SeqLpPdng) / SeqCrcleSz);
+    document.getElementById("circle").setAttribute("r", "".concat(CrcleR, "px"));
+    
+    for (i = 0; i < 12; i++) {
+        
+        j = [9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8];
+        
+        SeqPntRctX = "SeqPntRct".concat(i);
+        document.getElementById(SeqPntRctX).setAttribute("width", "".concat("".concat(((Sqre / SeqCrcleSz) * 2), "px")));
+        document.getElementById(SeqPntRctX).setAttribute("height", "".concat("".concat(((Sqre / SeqCrcleSz) * 2), "px")));
+        
+        RadAngle = j[i] * 30;
+        xpos = (Sqre / 2) + (((Sqre - SeqLpPdng) / 2) - ((Sqre - SeqLpPdng) / SeqCrcleSz)) * Math.cos(degrees_to_radians(RadAngle));
+        ypos = (Sqre / 2) + (((Sqre - SeqLpPdng) / 2) - ((Sqre - SeqLpPdng) / SeqCrcleSz)) * Math.sin(degrees_to_radians(RadAngle));
+        document.getElementById(SeqPntRctX).setAttribute("x", "".concat((xpos - (Sqre / SeqCrcleSz)), "px"));
+        document.getElementById(SeqPntRctX).setAttribute("y", "".concat((ypos - (Sqre / SeqCrcleSz)), "px"));
+    }
+    
+    for (i = 0; i < 12; i++) {
+        j = [9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8];
+        RadAngle = j[i] * 30;
+        xpos = (Sqre / 2) + (((Sqre - SeqLpPdng) / 2) - ((Sqre - SeqLpPdng) / SeqCrcleSz)) * Math.cos(degrees_to_radians(RadAngle));
+        ypos = (Sqre / 2) + (((Sqre - SeqLpPdng) / 2) - ((Sqre - SeqLpPdng) / SeqCrcleSz)) * Math.sin(degrees_to_radians(RadAngle));
+        //console.log(xpos);
+        //console.log(ypos);
+        SeqPntX = "SeqPnt".concat(i);
+        document.getElementById(SeqPntX).setAttribute("cx", "".concat(xpos, "px"));
+        document.getElementById(SeqPntX).setAttribute("cy", "".concat(ypos, "px"));
+        document.getElementById(SeqPntX).setAttribute("r", "".concat((Sqre / SeqCrcleSz), "px"));  
+    }
+    
+    // UI Tone Select Box
+    TneBxWdthHght = (Sqre / SeqCrcleSz) * 2;
+    TneBxLPos = (Sqre / 2) - (TneBxWdthHght / 2);
+    TneBxTPos = (Sqre / 2) - (TneBxWdthHght / 2);
+    //
+    document.getElementById("TneBx").style.width = "".concat(TneBxWdthHght, "px");
+    document.getElementById("TneBx").style.height = "".concat(TneBxWdthHght, "px");
+    document.getElementById("TneBx").style.left = "".concat(TneBxLPos, "px");
+    document.getElementById("TneBx").style.top = "".concat(TneBxTPos, "px");
+    
+    //UI box margin
+    FrdBckBtnMrg = 5;
+    
+    // UI Tone Select Back Button
+    document.getElementById("TneBxBck").style.width = "".concat((TneBxWdthHght / 3), "px");
+    document.getElementById("TneBxBck").style.height = "".concat(TneBxWdthHght, "px");
+    document.getElementById("TneBxBck").style.left = "".concat((TneBxLPos - (TneBxWdthHght / 3) - FrdBckBtnMrg), "px");
+    document.getElementById("TneBxBck").style.top = "".concat(TneBxTPos, "px");
+    
+    document.getElementById("TneBxBckVec").setAttribute("width", "100%");
+    document.getElementById("TneBxBckVec").setAttribute("height", "100%");
+    
+    // UI Tone Select Forward Button
+    document.getElementById("TneBxFrd").style.width = "".concat((TneBxWdthHght / 3), "px");
+    document.getElementById("TneBxFrd").style.height = "".concat(TneBxWdthHght, "px");
+    document.getElementById("TneBxFrd").style.left = "".concat(((TneBxLPos + TneBxWdthHght) + FrdBckBtnMrg), "px");
+    document.getElementById("TneBxFrd").style.top = "".concat(TneBxTPos, "px");
+    
+    document.getElementById("TneBxFrdVec").setAttribute("width", "100%");
+    document.getElementById("TneBxFrdVec").setAttribute("height", "100%");
+    
+    //DspQrtrs
+    for (i = 0; i < 4; i++) {
+        document.getElementsByClassName("DspQrtrs")[i].style.width = "".concat((Sqre / 2), "px");
+        document.getElementsByClassName("DspQrtrs")[i].style.height = "".concat((Sqre / 2), "px");
+    }
+        
+    // Sub boxes
+
+    document.getElementById("PhseSeqBx").style.left = "".concat((Sqre / 2), "px");
+    document.getElementById("PhseSeqBx").style.top = "".concat(0, "px");
+
+    document.getElementById("StatSeqBx").style.left = "".concat(0, "px");
+    document.getElementById("StatSeqBx").style.top = "".concat(0, "px");
+    
+    document.getElementById("TmpoDspBx").style.left = "".concat(0, "px");
+    document.getElementById("TmpoDspBx").style.top = "".concat((Sqre / 2), "px");
+    
+    document.getElementById("PlaySeqBx").style.left = "".concat((Sqre / 2), "px");
+    document.getElementById("PlaySeqBx").style.top = "".concat((Sqre / 2), "px");
+    
+    //TmpoDspBx  PlayDspBx
+    //Static Seq Circle
+    SttcSeqPdng = 10;
+    SeqCrcleSz = 12;
+    SttCrcleR = (((Sqre / 2) - SttcSeqPdng) / 2) - (((Sqre / 2) - SttcSeqPdng) / SeqCrcleSz);
+    document.getElementById("SttSqCrcl").setAttribute("r", "".concat(SttCrcleR, "px"));
+   //StcSqPnt0
+    
+    for (i = 0; i < 12; i++) {
+        
+        j = [9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8];
+        RadAngle = j[i] * 30;
+        xpos = (Sqre / 4) + ((((Sqre / 2) - SttcSeqPdng) / 2) - (((Sqre / 2) - SttcSeqPdng) / SeqCrcleSz)) * Math.cos(degrees_to_radians(RadAngle));
+        ypos = (Sqre / 4) + ((((Sqre / 2) - SttcSeqPdng) / 2) - (((Sqre / 2) - SttcSeqPdng) / SeqCrcleSz)) * Math.sin(degrees_to_radians(RadAngle));
+        //console.log(xpos);
+        //console.log(ypos);
+        StcSqPntX = "StcSqPnt".concat(i);
+        document.getElementById(StcSqPntX).setAttribute("cx", "".concat(xpos, "px"));
+        document.getElementById(StcSqPntX).setAttribute("cy", "".concat(ypos, "px"));
+        document.getElementById(StcSqPntX).setAttribute("r", "".concat(((Sqre / 2) / SeqCrcleSz), "px"));  
+    }
+    
+    for (i = 0; i < 12; i++) {
+        
+        j = [9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8];
+        
+        StcSeqPntRctX = "StcSeqPntRct".concat(i);
+        document.getElementById(StcSeqPntRctX).setAttribute("width", "".concat("".concat((((Sqre / 2) / SeqCrcleSz) * 2), "px")));
+        document.getElementById(StcSeqPntRctX).setAttribute("height", "".concat("".concat((((Sqre / 2) / SeqCrcleSz) * 2), "px")));
+        
+        RadAngle = j[i] * 30;
+        xpos = (Sqre / 4) + ((((Sqre / 2) - SttcSeqPdng) / 2) - (((Sqre / 2) - SttcSeqPdng) / SeqCrcleSz)) * Math.cos(degrees_to_radians(RadAngle));
+        ypos = (Sqre / 4) + ((((Sqre / 2) - SttcSeqPdng) / 2) - (((Sqre / 2) - SttcSeqPdng) / SeqCrcleSz)) * Math.sin(degrees_to_radians(RadAngle));
+        document.getElementById(StcSeqPntRctX).setAttribute("x", "".concat((xpos - ((Sqre / 2) / SeqCrcleSz)), "px"));
+        document.getElementById(StcSeqPntRctX).setAttribute("y", "".concat((ypos - ((Sqre / 2) / SeqCrcleSz)), "px"));
+    }
+    
+    xposarr = [];
+    yposarr = [];
+    
+    //Phase Seq Circle
+    PhseSeqPdng = 10;
+    SeqCrcleSz = 12;
+    PhsCrcleR = (((Sqre / 2) - PhseSeqPdng) / 2) - (((Sqre / 2) - PhseSeqPdng) / SeqCrcleSz);
+    document.getElementById("PhsSqCrcl").setAttribute("r", "".concat(PhsCrcleR, "px"));
+   //StcSqPnt0
+    
+    for (i = 0; i < 12; i++) {
+        
+        j = [9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8];
+        
+        RadAngle = j[i] * 30;
+        xpos = (Sqre / 4) + ((((Sqre / 2) - PhseSeqPdng) / 2) - (((Sqre / 2) - PhseSeqPdng) / SeqCrcleSz)) * Math.cos(degrees_to_radians(RadAngle));
+        ypos = (Sqre / 4) + ((((Sqre / 2) - PhseSeqPdng) / 2) - (((Sqre / 2) - PhseSeqPdng) / SeqCrcleSz)) * Math.sin(degrees_to_radians(RadAngle));
+        
+        xposarr[i] = xpos;
+        yposarr[i] = ypos;
+        
+        PhsSqPntX = "PhsSqPnt".concat(i);
+        document.getElementById(PhsSqPntX).setAttribute("cx", "".concat(xpos, "px"));
+        document.getElementById(PhsSqPntX).setAttribute("cy", "".concat(ypos, "px"));
+        document.getElementById(PhsSqPntX).setAttribute("r", "".concat(((Sqre / 2) / SeqCrcleSz), "px"));  
+    }
+    
+    for (i = 0; i < 12; i++) {
+        
+        j = [9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8];
+        
+        PhsSeqPntRctX = "PhsSeqPntRct".concat(i);
+        document.getElementById(PhsSeqPntRctX).setAttribute("width", "".concat("".concat((((Sqre / 2) / SeqCrcleSz) * 2), "px")));
+        document.getElementById(PhsSeqPntRctX).setAttribute("height", "".concat("".concat((((Sqre / 2) / SeqCrcleSz) * 2), "px")));
+        
+        RadAngle = j[i] * 30;
+        xpos = (Sqre / 4) + ((((Sqre / 2) - SttcSeqPdng) / 2) - (((Sqre / 2) - SttcSeqPdng) / SeqCrcleSz)) * Math.cos(degrees_to_radians(RadAngle));
+        ypos = (Sqre / 4) + ((((Sqre / 2) - SttcSeqPdng) / 2) - (((Sqre / 2) - SttcSeqPdng) / SeqCrcleSz)) * Math.sin(degrees_to_radians(RadAngle));
+        document.getElementById(PhsSeqPntRctX).setAttribute("x", "".concat((xpos - ((Sqre / 2) / SeqCrcleSz)), "px"));
+        document.getElementById(PhsSeqPntRctX).setAttribute("y", "".concat((ypos - ((Sqre / 2) / SeqCrcleSz)), "px"));
+    }
+    
+    //Phase Display Box Contents
+    PhseDspBxWdthHght = (Sqre / 4);
+    PhseDspBxLPos = (Sqre / 4) - (PhseDspBxWdthHght / 2);
+    PhseDspBxTPos = (PhseDspBxWdthHght / 4);
+    //
+    document.getElementById("PhseDspBx").style.width = "".concat(PhseDspBxWdthHght, "px");
+    document.getElementById("PhseDspBx").style.height = "".concat(PhseDspBxWdthHght, "px");
+    document.getElementById("PhseDspBx").style.left = "".concat(PhseDspBxLPos, "px");
+    document.getElementById("PhseDspBx").style.top = "".concat(PhseDspBxTPos, "px");
+    
+    //SeqPlyBx
+    SeqPlyBxLPos = (((Sqre / 4) - (PhseDspBxWdthHght / 2)) / 2) * 3;
+    SeqPlyBxTPos = PhseDspBxTPos;
+    SeqDspBxWdthHght = PhseDspBxWdthHght;
+    
+    document.getElementById("SeqPlyBx").style.width = "".concat(SeqDspBxWdthHght, "px");
+    document.getElementById("SeqPlyBx").style.height = "".concat(SeqDspBxWdthHght, "px");
+    document.getElementById("SeqPlyBx").style.left = "".concat(SeqPlyBxLPos, "px");
+    document.getElementById("SeqPlyBx").style.top = "".concat(SeqPlyBxTPos, "px");
+    
+    //SeqPlyTmpoBx
+    SeqPlyTmpoBxHght = PhseDspBxWdthHght;
+    SeqPlyTmpoBxWdth = (((Sqre / 4) - (PhseDspBxWdthHght / 2)) / 2);
+    SeqPlyTmpoBxLPos = (((Sqre / 4) - (PhseDspBxWdthHght / 2)) / 2);
+    SeqPlyTmpoBxTPos = PhseDspBxTPos;
+    document.getElementById("SeqPlyTmpoBx").style.width = "".concat(SeqPlyTmpoBxWdth, "px");
+    document.getElementById("SeqPlyTmpoBx").style.height = "".concat(SeqPlyTmpoBxHght, "px");
+    document.getElementById("SeqPlyTmpoBx").style.left = "".concat(SeqPlyTmpoBxLPos, "px");
+    document.getElementById("SeqPlyTmpoBx").style.top = "".concat(SeqPlyTmpoBxTPos, "px");
+    
+    //Phase Display Preset Box
+    document.getElementById("PhsePreCntBx").style.width = "".concat((Sqre / 2), "px");
+    document.getElementById("PhsePreCntBx").style.height = "".concat(((Sqre / 16) * 3), "px");
+    document.getElementById("PhsePreCntBx").style.left = "".concat(0, "px");
+    document.getElementById("PhsePreCntBx").style.top = "".concat((PhseDspBxTPos + PhseDspBxWdthHght), "px");
+    
+    PhsePreBxWdthHght = ((Sqre / 2) / 4);
+    for (i = 0; i < 4; i++) {
+        PhsePreXBx = "PhsePre".concat(i, "Bx");
+        document.getElementById(PhsePreXBx).style.width = "".concat(PhsePreBxWdthHght, "px");
+        document.getElementById(PhsePreXBx).style.height = "".concat(PhsePreBxWdthHght, "px");
+        document.getElementById(PhsePreXBx).style.left = "".concat((PhsePreBxWdthHght * i), "px");
+        document.getElementById(PhsePreXBx).style.top = "".concat((((Sqre / 16) * 3) / 2) - (((Sqre / 2) / 4) / 2), "px");
+    }
+    
+    //document.getElementById("PhsePre1Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
+    //document.getElementById("PhsePre1Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
+    //document.getElementById("PhsePre1Bx").style.left = "".concat(0, "px");
+    //document.getElementById("PhsePre1Bx").style.top = "".concat((((Sqre / 16) * 3) / 2) - (((Sqre / 2) / 4) / 2), "px");
+}
+    
+function degrees_to_radians(degrees) {
+  var pi = Math.PI;
+  return degrees * (pi/180);
+//console.log(degrees * (pi/180));
+}
+
+var SmplIco = ["m 31.978013,67.679715 c -3.348553,-1.476525 -3.041494,-5.552204 -3.037101,-8.629444 -1.460858,2.770875 -3.276903,6.480579 -6.954519,6.193407 -3.471673,-0.515363 -5.605947,-4.531634 -3.665939,-7.593717 0.56327,-1.191738 2.039954,-4.235394 -0.311004,-2.020184 -2.328142,2.500334 -6.917517,3.37143 -8.889568,-0.03386 -2.4342189,-3.31458 1.170723,-6.566863 3.414017,-8.727337 C 10.477124,46.590148 6.1368293,48.711533 4.0794358,45.813445 1.6248561,42.973415 3.3572172,38.523784 6.8756203,37.635112 7.3408046,37.193501 11.023746,36.705145 9.80941,36.412627 6.9210339,35.863559 3.0064818,35.365901 2.2543727,31.919358 1.3082055,28.219542 5.1314536,24.934317 8.690603,25.976945 c 1.704205,0.248902 3.957271,0.2137 1.200972,-1.097104 -3.2359916,-1.4424 -5.1814122,-5.864974 -2.2495168,-8.607971 2.6959358,-3.077869 6.3890148,-0.608293 9.1450928,0.869411 -0.195653,-1.84056 -3.861927,-5.34965 -1.823213,-8.084702 1.716849,-3.298959 6.685724,-3.54642 8.62061,-0.338797 0.817186,0.947126 2.610045,4.209346 2.043732,0.905393 -0.778116,-3.248554 0.50108,-7.720442 4.530816,-7.6007916 3.736313,-0.344014 5.246733,3.7711276 5.643696,6.7970206 0.120151,2.206153 0.551216,0.200895 0.912639,-0.861034 0.686909,-2.727786 2.652545,-6.2255234 5.988265,-5.4647793 3.907366,0.3440148 5.020317,4.8478573 3.817389,8.0101993 -0.921168,3.963018 1.791409,-1.288512 3.409094,-1.839471 3.050619,-2.481787 8.022937,0.217461 7.660806,4.069784 0.377338,2.120622 -3.73263,5.42612 -2.391295,5.800554 2.835609,-1.844703 7.684357,-2.961971 9.372001,0.949069 1.912567,3.22057 -1.065464,6.444856 -3.946698,7.625992 -1.311245,0.651161 -2.129521,1.170796 -0.128333,0.938175 2.811433,-0.116041 6.558295,0.03095 7.50334,3.305087 1.634606,3.831926 -2.469236,6.938345 -6.006959,6.823514 -4.482124,0.47363 3.163162,1.802004 3.83449,3.767692 2.531336,3.183279 -0.954673,8.669416 -4.960828,7.517201 -1.413064,-0.08304 -6.201951,-2.368292 -3.419343,0.231588 2.765995,2.023008 4.241015,6.299213 1.073757,8.708006 -2.814085,2.548529 -6.386691,0.287433 -8.540209,-1.930813 -1.971284,-1.372392 0.631373,2.832277 0.532203,4.125047 0.776161,4.33079 -5.567233,7.59009 -8.379256,3.945698 -1.282959,-1.516175 -1.955581,-3.409992 -2.817704,-5.172757 -0.307515,2.875912 -0.122294,6.47518 -2.932967,8.160226 -1.367583,0.550329 -3.012759,0.690897 -4.405171,0.151333 z m 5.308012,-14.021899 c 2.054142,-1.234845 4.345747,0.481449 5.938573,0.868105 0.150157,-3.436449 4.054443,-5.827178 7.236292,-4.640164 -0.338911,-2.426812 -0.338637,-5.333954 2.159825,-6.660753 1.776292,-0.853398 3.567294,-0.6451 1.563721,-2.613127 -1.678118,-2.697859 0.785812,-5.499731 1.784378,-7.420925 -3.256217,-1.494262 -3.481635,-5.688702 -2.203601,-8.295856 -3.519398,-0.04068 -5.825453,-3.485848 -5.510817,-6.77475 -2.942555,1.130628 -6.824297,-0.239729 -7.661824,-3.559061 -0.868896,-1.058283 -3.103899,2.52561 -5.031423,1.49201 -2.597882,0.268706 -4.196452,-4.256387 -5.272398,-0.244282 -1.620919,2.21887 -4.790932,2.470205 -7.053452,1.149718 0.458466,3.331168 -2.418497,6.8138 -5.894011,6.325891 -0.676352,0.847834 1.568919,4.200624 -0.213577,5.796861 -0.855925,2.023873 -4.660989,2.390116 -1.626673,4.375241 1.627873,2.322273 0.778716,5.414085 -1.166188,7.244704 3.445586,0.386249 5.792094,4.423754 4.331347,7.596564 2.435179,0.0047 6.069117,0.895263 6.618014,4.081142 -0.08899,3.655398 3.95767,-1.354484 6.078326,0.988463 1.72295,-0.0795 2.37886,4.214403 3.559435,2.046218 0.622912,-0.769799 1.462469,-1.35727 2.364053,-1.755999 z", 
+
+"m 32.838371,62.220118 c -1.715684,-0.359469 -3.213483,-1.976326 -3.548135,-3.830173 -0.05401,-0.299175 -0.122382,-0.586839 -0.151946,-0.639252 -0.02956,-0.05241 -0.424684,0.274027 -0.878045,0.725424 -0.45336,0.451397 -1.147173,0.97679 -1.541806,1.16754 -0.934077,0.451497 -2.364605,0.547595 -3.324448,0.223326 -2.223779,-0.751273 -3.753202,-3.223156 -3.363415,-5.436015 0.0844,-0.479146 0.134593,-0.890036 0.111541,-0.913089 -0.02305,-0.02305 -0.393235,0.09701 -0.822627,0.266812 -1.145629,0.453028 -2.952748,0.44665 -3.977873,-0.01403 -0.883787,-0.397175 -1.847167,-1.399687 -2.388003,-2.485004 -0.69192,-1.388509 -0.434955,-3.135481 0.691916,-4.704004 0.284027,-0.395345 0.516412,-0.74812 0.516412,-0.783944 0,-0.03583 -0.52028,-0.06399 -1.156178,-0.0626 -1.577671,0.0035 -2.459578,-0.307593 -3.2869114,-1.159337 -1.0778831,-1.109684 -1.3688021,-1.842576 -1.3686184,-3.44786 1.398e-4,-1.222122 0.043612,-1.449123 0.4198544,-2.192373 0.4284331,-0.846351 1.5025834,-1.981401 2.1574664,-2.279786 0.200382,-0.0913 0.363659,-0.204067 0.362837,-0.250593 -8.18e-4,-0.04653 -0.392783,-0.26668 -0.871025,-0.489233 C 9.3314109,35.40964 8.5026287,34.591323 8.0165962,33.543495 7.7087249,32.879762 7.6411135,32.525113 7.6432165,31.584975 7.6464092,30.157757 8.0877613,29.138425 9.1209907,28.171961 9.9564453,27.390491 10.659985,27.015783 11.743886,26.775 l 0.810756,-0.180105 -0.626317,-0.91483 c -1.045945,-1.52776 -1.310728,-2.98438 -0.821356,-4.518441 0.361798,-1.134151 1.960006,-2.736803 3.045144,-3.053611 1.177494,-0.343771 1.612192,-0.310235 3.693935,0.284979 0.310702,0.08884 0.310489,0.08597 -0.0611,-0.821582 -0.536446,-1.3102 -0.52384,-2.513475 0.03712,-3.542654 1.099711,-2.01763 3.147054,-3.074907 5.286998,-2.730279 0.973519,0.156781 2.021728,0.649839 2.522244,1.186418 0.191344,0.205129 0.390054,0.372962 0.44158,0.372962 0.05153,0 0.172272,-0.426511 0.268323,-0.947803 0.241337,-1.309786 0.669473,-2.1531669 1.534368,-3.0225392 0.54713,-0.5499621 0.935284,-0.8002018 1.50249,-0.9686441 0.993194,-0.294947 2.486357,-0.2894966 3.377802,0.01233 0.930882,0.3151785 2.171304,1.5661575 2.651004,2.6735633 0.193734,0.447241 0.384531,0.814115 0.423995,0.815275 0.03946,0.0012 0.258011,-0.354357 0.485662,-0.790036 0.544997,-1.0430175 1.738659,-2.1261807 2.692053,-2.4428475 1.730481,-0.5747738 4.086908,0.1470782 5.175377,1.5853909 0.641155,0.8472276 0.994479,1.8170936 1.107681,3.0405576 l 0.08216,0.888016 0.857003,-0.564521 c 1.169941,-0.770657 1.633895,-0.89788 2.999648,-0.822552 1.383151,0.07629 2.277287,0.470559 3.239038,1.42826 0.9411,0.937137 1.296149,1.814118 1.297711,3.20538 0.0011,0.978153 -0.06213,1.28208 -0.427317,2.054018 -0.404815,0.855702 -0.411947,0.900708 -0.128487,0.810741 1.207306,-0.383184 3.158719,-0.285066 4.111468,0.206727 1.121437,0.578869 2.160163,2.080323 2.484075,3.590671 0.289015,1.347628 -0.55784,3.393988 -1.842912,4.453253 l -0.509283,0.419794 0.417156,0.0853 c 1.675369,0.342588 2.923275,0.983613 3.504871,1.80039 1.051581,1.476809 1.311489,3.481012 0.629023,4.850543 -0.521924,1.047365 -1.467068,1.935068 -2.719122,2.553866 -0.588153,0.290681 -1.06937,0.549666 -1.06937,0.575523 0,0.02586 0.246567,0.1728 0.547924,0.326542 0.655566,0.334444 1.469518,1.20445 1.919563,2.051757 0.492982,0.928146 0.47217,2.758042 -0.04373,3.845167 -0.499479,1.052511 -1.362664,1.996402 -2.300999,2.516135 -0.703807,0.38983 -0.883557,0.425243 -2.134771,0.420571 l -1.366256,-0.0051 0.498361,0.937871 c 0.432605,0.814125 0.506229,1.101709 0.558002,2.17961 0.0525,1.093061 0.01713,1.333611 -0.295369,2.00904 -0.419688,0.90709 -1.501302,2.012406 -2.405309,2.458018 -0.522072,0.257351 -0.893172,0.318326 -1.937298,0.318326 -1.172757,0 -1.376111,-0.04289 -2.211339,-0.466384 -0.505897,-0.256511 -0.925643,-0.466384 -0.932768,-0.466384 -0.0071,0 -0.01296,0.629619 -0.01296,1.399152 0,1.282692 -0.03543,1.463122 -0.425673,2.167669 -0.521378,0.941306 -1.467299,1.804235 -2.516135,2.295382 -0.651111,0.304902 -1.002776,0.37017 -2.009039,0.37287 -1.770152,0.0047 -2.639291,-0.490182 -3.848007,-2.191248 l -0.440561,-0.620017 -0.164912,0.620017 c -0.442128,1.662265 -1.571874,3.051653 -2.829926,3.480315 -0.838854,0.285826 -2.235224,0.388351 -3.027735,0.222304 z m 1.986403,-12.230907 c 0.30047,-0.256511 0.92421,-0.659285 1.386088,-0.895052 1.056651,-0.539371 2.267976,-0.574127 3.556192,-0.102037 0.46798,0.171499 0.863644,0.296491 0.879253,0.277758 0.01561,-0.01873 0.169918,-0.314657 0.34291,-0.657609 0.73369,-1.45452 2.607756,-2.699446 4.293795,-2.852329 l 0.841541,-0.07631 0.07585,-1.106685 c 0.133667,-1.950161 0.97284,-3.21682 2.635449,-3.977987 l 0.748593,-0.342718 -0.341052,-0.600433 c -0.736224,-1.296143 -0.54293,-2.979123 0.563663,-4.90772 l 0.490563,-0.854966 -0.624534,-0.694631 c -0.969187,-1.077969 -1.270699,-2.007236 -1.278897,-3.941598 l -0.0068,-1.610566 -0.756393,-0.37693 C 46.225114,26.568825 45.10317,25.122654 44.678672,23.463926 44.484989,22.707114 44.471207,22.692349 43.994635,22.731082 42.193384,22.877478 39.713975,21.60481 38.916883,20.1247 l -0.265202,-0.49245 -0.72877,0.476472 c -1.108973,0.725048 -1.75004,0.866732 -2.950743,0.652155 -0.723732,-0.129338 -1.244973,-0.336539 -1.881406,-0.747885 -0.484179,-0.312941 -0.91028,-0.539029 -0.946891,-0.502418 -0.03661,0.03661 -0.180878,0.282141 -0.320595,0.545624 -0.330705,0.623652 -1.477547,1.493137 -2.355695,1.785985 -0.615541,0.205271 -2.414607,0.314103 -2.943079,0.178035 -0.120374,-0.03099 -0.26109,0.167789 -0.370991,0.524079 -0.607644,1.969944 -2.046544,3.424457 -3.79967,3.840899 -0.63903,0.151797 -0.733467,0.21756 -0.66635,0.464026 0.34118,1.252865 0.386406,2.084601 0.156377,2.875873 -0.198848,0.684015 -0.408578,0.98629 -1.309222,1.886934 l -1.072442,1.072443 0.419295,0.477551 c 1.152954,1.313143 1.179074,3.847196 0.06004,5.824495 -0.0258,0.04559 0.100052,0.150888 0.279681,0.233986 0.753917,0.348768 1.693137,1.371722 2.198765,2.394791 0.417803,0.845366 0.525874,1.24409 0.571162,2.107293 l 0.05586,1.064646 0.544191,0.09506 c 1.068731,0.186692 2.184181,0.712856 2.926923,1.380645 0.714704,0.64258 1.415605,1.81001 1.418691,2.362992 0.0018,0.32406 0.188338,0.31629 1.146099,-0.04773 1.236403,-0.469928 2.108597,-0.426719 3.242307,0.160624 0.649689,0.336586 1.094663,0.689669 1.393389,1.105636 0.241385,0.336122 0.466101,0.611131 0.499371,0.611131 0.03327,0 0.306327,-0.209873 0.606798,-0.466384 z"];
+    
+function loadfunc() {
+
+    RtateStat = "off";
+    PhsItmAnglPos = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330];  
+    
+    PhseDspShftPos = [50, -50];
+    PhseDspShftDst = [50, -50];
+    PhseDspShftShft = [0, 0];
+    document.getElementById("PhsePosCrclA").setAttribute("cx", "".concat(PhseDspShftPos[0], "%"));
+    document.getElementById("PhsePosCrclB").setAttribute("cx", "".concat(PhseDspShftPos[1], "%"));
+    
+    
+    NtePltte = ["e4", "e5", "fs4", "fs5", "b4", "b5", "cs4", "cs5", "d4", "d5"];
+    NtePltteOctv = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+    NteClrs = {e4: "#d35400", e5: "#d35400", fs4: "#e74c3c", fs5: "#e74c3c", b4: "#8e44ad", b5: "#8e44ad", cs4: "#34495e", cs5: "#34495e", d4: "#1abc9c", d5: "#1abc9c",};
+    
+    SeqNotes = {1: NtePltte[0], 2: NtePltte[2], 3: NtePltte[4], 4: NtePltte[7], 5: NtePltte[9], 6: NtePltte[2], 7: NtePltte[0], 8: NtePltte[7], 9: NtePltte[4], 10: NtePltte[2], 11: NtePltte[9], 12: NtePltte[7],};
+    //SeqSmpleArr = ["#d35400", "#e74c3c", "#8e44ad", "#34495e", "#1abc9c"];
+    SeqNotesOctv = {1: NtePltteOctv[0], 2: NtePltteOctv[2], 3: NtePltteOctv[4], 4: NtePltteOctv[7], 5: NtePltteOctv[9], 6: NtePltteOctv[2], 7: NtePltteOctv[0], 8: NtePltteOctv[7], 9: NtePltteOctv[4], 10: NtePltteOctv[2], 11: NtePltteOctv[9], 12: NtePltteOctv[7],};
+    
+    console.log(SeqNotes[1]);
+    console.log(NteClrs[SeqNotes[1]]);
+    
+    //note selector circle items
+    for (i = 0; i < 12; i++) {
+        seqitmX = "seqitm".concat(i);
+        document.getElementById(seqitmX).style.fill = NteClrs[SeqNotes[i + 1]];
+        seqitmincrcleX = "seqitmincrcle".concat(i);
+        document.getElementById(seqitmincrcleX).style.fill = NteClrs[SeqNotes[i + 1]];
+        
+        document.getElementById(seqitmincrcleX).setAttribute("r", "31%");
+        //seqitmincrcle
+        if (SeqNotesOctv[i + 1] == 2) {
+            document.getElementById(seqitmX).setAttribute('d', SmplIco[1]);
+        } else {
+            document.getElementById(seqitmX).setAttribute('d', SmplIco[0]);
+        }
+        
+    }
+    
+    //static seq circle items
+    for (i = 0; i < 12; i++) {
+        seqitmX = "stcseqitm".concat(i);
+        document.getElementById(seqitmX).style.fill = NteClrs[SeqNotes[i + 1]];
+        if (SeqNotes[i + 1] == "cs5" || SeqNotes[i + 1] == "d5") {
+            document.getElementById(seqitmX).setAttribute('d', SmplIco[1]);
+        } else {
+            document.getElementById(seqitmX).setAttribute('d', SmplIco[0]);
+        }
+        
+    }
+    
+    // phased Seq circle items
+    for (i = 0; i < 12; i++) {
+        seqitmX = "phsseqitm".concat(i);
+        document.getElementById(seqitmX).style.fill = NteClrs[SeqNotes[i + 1]];
+        if (SeqNotes[i + 1] == "cs5" || SeqNotes[i + 1] == "d5") {
+            document.getElementById(seqitmX).setAttribute('d', SmplIco[1]);
+        } else {
+            document.getElementById(seqitmX).setAttribute('d', SmplIco[0]);
+        }
+        
+        
+    }
+    
+    //NtePltteSlctItm1
+    for (i = 1; i < 11; i++) {
+        seqitmX = "NtePltteSlctItm".concat(i);
+        document.getElementById(seqitmX).style.fill = NteClrs[NtePltte[i - 1]];
+        document.getElementById(seqitmX).setAttribute('d', SmplIco[0]);
+        
+        seqitmX = "NtePltteSlctItm".concat(i + 1);
+        document.getElementById(seqitmX).style.fill = NteClrs[NtePltte[i]];
+        document.getElementById(seqitmX).setAttribute('d', SmplIco[1]);
+        
+        i = i + 1;
+    }
+
+   Siema = new Siema({
+			selector: '.siema',
+			duration: 200,
+			easing: 'ease-out',
+			perPage: 1,
+			startIndex: 0,
+			draggable: true,
+			multipleDrag: true,
+			threshold: 20,
+			loop: true,
+			rtl: false,
+            onInit: () => {},
+            onChange: () => {},
+		});
+    
+
+    
+}
+    
+
+    
+function RtateStop() {
+    clearInterval(ani);
+      console.log("interupted");
+}
+    
+   
+function rotate(pos) {
+  
+  
+  
+  //forward / back rotate 30 dergees button;
+  if (pos == 'frd') {//stiil working on this
+      RtateDst = 30;
+      RtateDir = 1;
+  } else {
+    if (RtateStat == "on") {
+        RtateDst = 0;
+        RtateDir = 0;
+        console.log("interupted");
+        RtateStat = "inter";
+        //rotate(pos);
+    } else {
+          
+          RtateDst = PhsItmAnglPos[0] - pos;
+
+          if (RtateDst < 0) {
+              RtateDir = 1;
+              RtateDst = RtateDst * -1;        
+          } else {
+              RtateDir = -1;
+              RtateDst = RtateDst * -1;
+          }
+    }
+  } 
+    
+ //PhsePosCrclA
+  //Phase display circles
+  PhseDspShftDst[0] = ((pos / 360) * 100) + 50;
+  PhseDspShftDst[1] = (100 - PhseDspShftDst[0]) * -1;
+  
+  PhseDspShftShft[0] = PhseDspShftDst[0] - PhseDspShftPos[0];
+  PhseDspShftShft[1] = PhseDspShftDst[1] - PhseDspShftPos[1];
+  
+  //PhseDspShftPos[0] = PhseDspShftPos[0] + ((RtateDst / 360) * 100);
+  //PhseDspShftPos[1] = (100 - PhseDspShftPos[0]) * -1;
+    
+  PhseDspIncre = (PhseDspShftShft[0] / RtateDst) * RtateDir;
+      
+  
+  
+  console.log("rotate");
+  console.log("Phase destination is: ".concat(pos));
+  console.log("Angle position of item 0 is: ".concat(PhsItmAnglPos[0]));
+  console.log("Calculated rotation angle is: ".concat(RtateDst));
+  console.log("Calculated rotation direction is: ".concat(RtateDir));
+  
+  console.log("Calculated Phase display A destination is: ".concat(PhseDspShftDst[0]));
+  console.log("Calculated Phase display B destination is: ".concat(PhseDspShftDst[1]));
+  console.log("Calculated Phase display A shift is: ".concat(PhseDspShftShft[0]));
+  console.log("Calculated Phase display B shift is: ".concat(PhseDspShftShft[1]));
+  console.log("Calculated Phase display increment: ".concat(PhseDspIncre));
+    
+  //RadAngleIncre = 0;
+  
+  var ani = setInterval(frame, 10);
+  
+  n = 0;
+    
+      function frame() {
+          RtateStat = "on";
+          console.log("Rotate status is: ".concat(RtateStat));
+            //RadAngleXi = 0 + RtateDir;
+            if (n == RtateDst) {
+                clearInterval(ani);
+                RtateStat = "off";
+                console.log("Rotate status is: ".concat(RtateStat));
+            } else {
+                //position seq circles    
+                for (i = 0; i < 12; i++) {
+                    
+                    j = [9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8];
+                    PhsItmAnglPos[[j[i]]] = PhsItmAnglPos[[j[i]]] + RtateDir;
+
+                    xpos = (Sqre / 4) + ((((Sqre / 2) - SttcSeqPdng) / 2) - (((Sqre / 2) - SttcSeqPdng) / SeqCrcleSz)) * Math.cos(degrees_to_radians(PhsItmAnglPos[[j[i]]]));
+
+                    ypos = (Sqre / 4) + ((((Sqre / 2) - SttcSeqPdng) / 2) - (((Sqre / 2) - SttcSeqPdng) / SeqCrcleSz)) * Math.sin(degrees_to_radians(PhsItmAnglPos[j[i]]));
+
+                    //console.log("Item: ".concat(i, " Angle Positon: ", PhsItmAnglPos[i]));
+
+                    if (PhsItmAnglPos[[j[i]]] == 360) {PhsItmAnglPos[[j[i]]] = 0;} 
+
+                    PhsSqPntX = "PhsSqPnt".concat(i);
+                    document.getElementById(PhsSqPntX).setAttribute("cx", "".concat(xpos, "px"));
+                    document.getElementById(PhsSqPntX).setAttribute("cy", "".concat(ypos, "px"));
+                    
+                    PhsSeqPntRctX = "PhsSeqPntRct".concat(i);
+                    document.getElementById(PhsSeqPntRctX).setAttribute("x", "".concat((xpos - ((Sqre / 2) / SeqCrcleSz)), "px"));
+                    document.getElementById(PhsSeqPntRctX).setAttribute("y", "".concat((ypos - ((Sqre / 2) / SeqCrcleSz)), "px"));
+                    
+                    //
+                   
+                    
+                }
+                
+                //position phase seq display circles
+                PhseDspShftPos[0] = (PhseDspShftPos[0] + PhseDspIncre);
+                PhseDspShftPos[1] = (PhseDspShftPos[1] + PhseDspIncre);
+                //console.log("Calculated Phase display A shift is: ".concat(PhseDspShftPos[0]));
+                //console.log("Calculated Phase display B shift is: ".concat(PhseDspShftPos[1]));
+                document.getElementById("PhsePosCrclA").setAttribute("cx", "".concat(PhseDspShftPos[0], "%"));
+                document.getElementById("PhsePosCrclB").setAttribute("cx", "".concat(PhseDspShftPos[1], "%"));
+            }
+       n = n + RtateDir; 
+      }
+    
+    if (RtateStat == "inter") {
+        RtateStat = "off";
+       // rotate(pos);
+        console.log("readytorotateagain");
+        setTimeout(function() { rotate(pos) },100);
+        
+    }
+   
+}
+    
+function SmplNteChngr(noteclr) {
+		
+		//Remove opacity 0
+		document.getElementById("ImgCvr1").classList.remove("transi");
+		document.getElementById("ImgCvr2").classList.remove("transi");
+		document.getElementById("ImgCvr3").classList.remove("transi");
+		
+		//make the change
+		SmplClrChnge(noteclr);
+		
+		//reveal
+		setTimeout(function() { revealer(noteclr) }, 0);
+		
+}
+
+function SmplClrChnge(noteclr) {
+	
+	//Sample selector
+	
+	for (var i = 3; i < 6; i++) {
+		SmpleTpXDspPth = document.getElementsByClassName("SmplTp".concat(i));
+		SmpleTpXDspPth[0].setAttribute('d', SmplIco[i-1]);
+		SmpleTpXDspPth[0].style.fill = SmpleIcoClrs[noteclr];
+	}
+}
 
 
+    
+function fadetst() {
+    document.getElementById("seqitm0").classList.remove("transi");
+    document.getElementById("seqitmundrcrcle0").classList.remove("transi");
+    
+    
+    setTimeout(function() { revealer() }, 0);
+}
+    
+function revealer() {
+	document.getElementById("seqitm0").classList.add("transi");
+    document.getElementById("seqitmundrcrcle0").classList.add("transi");
+}
 
 
+function seqitmfdr(n, mouse) {
+    if (mouse == 'over') {
+        seqitmincrcleX = "seqitmincrcle".concat(n);
+        document.getElementById(seqitmincrcleX).style.opacity = "1";
+        console.log(n);
+    }
+    
+    if (mouse == 'out') {
+        seqitmincrcleX = "seqitmincrcle".concat(n);
+        document.getElementById(seqitmincrcleX).style.opacity = "0";
+    }
+}
+    
+function itmslct(n) {
+        
+    console.log(n);
+    for (i = 0; i < 12; i++) {
+        seqitmslctbxX = "seqitmslctbx".concat(i);
+        document.getElementById(seqitmslctbxX).style.opacity = "0";
+    }
+    
+    document.getElementById("seqitmslctbx".concat(n)).style.opacity = "1";
+}
+
+
+</script>
