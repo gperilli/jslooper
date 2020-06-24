@@ -10,7 +10,7 @@
     html, body {
     height: 100%;
     margin: 0px;
-        background-color: beige;
+        background-color: #fff;
         overflow: hidden;
 }
 
@@ -22,12 +22,46 @@
     background-color: white;
     width: 1024px;
     height: 100%;
-    border: 1px solid blue; 
+    border: 0px solid blue; 
     position: relative; 
     margin: auto;
     
 }
     
+    #SqrsCnt {
+        position: absolute;
+        background-color: #fff; 
+    }
+    
+    #CntrlSqre {
+        position: absolute; 
+        background-color: #fff; 
+        border: 0px solid #000;
+    }
+    
+    .DspQrtrs {
+        position: absolute;
+        background-color: #fff; 
+    }
+    
+    #gperilli {
+        position: absolute; 
+        background-color: #fff; 
+        border-top: 0px solid #000;   
+    }
+    
+    #ttle {
+        position: absolute; 
+        background-color: #fff; 
+        border-bottom: 0px solid #000;   
+    }
+    
+    #DsplySqre {
+        position: absolute; 
+        background-color: #fff; 
+        border: 0px solid #000;"
+    }
+        
 .gperillilink {
     opacity: 0;
     cursor: pointer;
@@ -109,16 +143,18 @@
 <body id="scrnbdy" onload="SetLyOut(), loadfunc()" onresize="SetLyOut()">
 
 <div id="centralcolumn" class="centralcolumn">
-
-<div id="SqrsCnt" style="position: absolute; background-color: #eee; border: 1px solid #000;"></div>
-<div id="CntrlSqre" style="position: absolute; background-color: #fff; border: 1px solid #000;">
+    
+<div id="line" style="position: absolute; width: 0px; border: 0.6px solid #000; z-index: 90;"></div>
+<div id="SqrsCnt"></div>
+<div id="CntrlSqre">
+    
+    
     <svg height=100% width=100% style="overflow: visible;">
         <circle id="circle" cx="50%" cy="50%" r="50%" stroke="#ccc" stroke-width="5" style="" fill="transparent" />
         
-        <rect id="" width="0" height="0" style="fill: transparent; opacity: 0.6; stroke-width:3; stroke: #000" />
+        
             
             <svg id="SeqPntRct0" xmlns="http://www.w3.org/2000/svg" class="SmpleDsp" style="position: absolute;" viewBox="0 0 70 70" width="100%">
-                
                 <circle class="seqitmundrcrcle transi" id="seqitmundrcrcle0" cx="50%" cy="50%" r="31%" style="position: relative; fill: #fff;" />
                 <path class="SeqItmPth transi" id="seqitm0" style="" d=""> </path>
                 <circle class="seqitmincrcle" id="seqitmincrcle0" cx="50%" cy="50%" r="31%" style="position: relative;" />
@@ -357,8 +393,9 @@
     </div>
     
 </div>
-<div id="DsplySqre" style="position: absolute; background-color: #fff; border: 1px solid #000;">
-    <div class="DspQrtrs" id="StatSeqBx" style="border: 1px solid #000; position: absolute;">
+
+<div id="DsplySqre" style="">
+    <div class="DspQrtrs" id="StatSeqBx" style="">
         <svg height=100%; width=100%; style="overflow: visible;">
             <circle id="SttSqCrcl" cx="50%" cy="50%" r="50%" stroke="#ccc" stroke-width="5" style="" fill="transparent" />
             
@@ -448,7 +485,7 @@
             
         </svg>
     </div>
-    <div class="DspQrtrs" id="PhseSeqBx" style="border: 1px solid #000; position: absolute;">
+    <div class="DspQrtrs" id="PhseSeqBx" style="">
         <svg height=100%; width=100%; style="overflow: visible;">
             <circle id="PhsSqCrcl" cx="50%" cy="50%" r="50%" stroke="#ccc" stroke-width="5" style="" fill="transparent" />
             
@@ -527,8 +564,8 @@
         </svg>
     </div>
     
-    <div class="DspQrtrs" id="TmpoDspBx" style="border: 1px solid #000; position: absolute;">
-        <div id="PhseDspBx" style="border: 1px solid #000; position: absolute;">
+    <div class="DspQrtrs" id="TmpoDspBx" style="">
+        <div id="PhseDspBx" style="border: 0px solid #000; position: absolute; background-color: #eee;">
             <svg height=100%; width=100%; style="overflow: hidden;">
                 <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
                 <circle id="PhsePosCrclA" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
@@ -536,29 +573,29 @@
             </svg>
         </div>
         
-        <div id="PhsePreCntBx" style="border: 1px solid #000; position: absolute;">
-            <div class="PhseSlect" onClick="rotate(0)" id="PhsePre0Bx" style="border: 1px solid red; position: absolute;">
+        <div id="PhsePreCntBx" style="border: 0px solid #000; position: absolute;">
+            <div class="PhseSlect" onClick="rotate(0)" id="PhsePre0Bx" style="border: 0px solid red; position: absolute; background-color: #eee;">
                 <svg height=100%; width=100%; style="overflow: hidden;">
                     <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
                     <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
                     <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
                 </svg>
             </div>
-            <div class="PhseSlect" onClick="rotate(90)" id="PhsePre1Bx" style="border: 1px solid #000; position: absolute;">
+            <div class="PhseSlect" onClick="rotate(90)" id="PhsePre1Bx" style="border: 0px solid #000; position: absolute; background-color: #eee;">
                 <svg height=100%; width=100%; style="overflow: hidden;">
                     <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
                     <circle id="" cx="75%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
                     <circle id="" cx="-25%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
                 </svg>
             </div>
-            <div class="PhseSlect" onClick="rotate(180)" id="PhsePre2Bx" style="border: 1px solid #000; position: absolute;">
+            <div class="PhseSlect" onClick="rotate(180)" id="PhsePre2Bx" style="border: 0px solid #000; position: absolute; background-color: #eee;">
                 <svg height=100%; width=100%; style="overflow: hidden;">
                     <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
                     <circle id="" cx="100%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
                     <circle id="" cx="0%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
                 </svg>
             </div>
-            <div class="PhseSlect" onClick="rotate(270)" id="PhsePre3Bx" style="border: 1px solid #000; position: absolute;">
+            <div class="PhseSlect" onClick="rotate(270)" id="PhsePre3Bx" style="border: 0px solid #000; position: absolute; background-color: #eee;">
                 <svg height=100%; width=100%; style="overflow: hidden;">
                     <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
                     <circle id="" cx="125%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
@@ -568,18 +605,18 @@
         </div>
     </div>
     
-    <div class="DspQrtrs" id="PlaySeqBx" style="border: 1px solid #000; position: absolute;">
+    <div class="DspQrtrs" id="PlaySeqBx" style="">
         <div id="SeqPlyTmpoBx" style="border: 1px solid #000; position: absolute;" onclick="seqitmchngr()"></div>
         <div id="SeqPlyBx" style="border: 1px solid #000; position: absolute;"></div>
     </div>
 
 </div>
   
-<div id="gperilli" style="position: absolute; background-color: #ddd; border: 1px solid #000;">
+<div id="gperilli" style="">
     <img id="gperilliimg" style="height: 100%; float: right; position: absolute; bottom: 4px;" src=""/>
     <img id="gperilliLnimg" class="gperillilink" style="height: 100%; float: right; position: absolute; bottom: 4px;" src=""/>
 </div>
-<div id="ttle" style="position: absolute; background-color: #ddd; border: 1px solid #000;"><img id="ttleimg" style="" src=""/></div>
+<div id="ttle"><img id="ttleimg" style="" src=""/></div>
 
 </div>
     
@@ -616,21 +653,31 @@ function SetLyOut() {
             document.getElementById("DsplySqre").style.left = "".concat((Sqre + (((ScrnWdth - (Sqre * 2)) / 3) * 2)), "px");
             document.getElementById("DsplySqre").style.top = "".concat((((ScrnHght - (TtleHght + 24 + Sqre)) / 2) + TtleHght), "px");
             
-            document.getElementById("gperilli").style.top = "".concat((ScrnHght - 24), "px");
+            document.getElementById("line").style.left = "".concat((Sqre + (((ScrnWdth - (Sqre * 2)) / 3) * 2)), "px");
+            document.getElementById("line").style.height = "".concat((Sqre * 0.9), "px");
+            document.getElementById("line").style.width = "0px";
+            document.getElementById("line").style.top = "".concat((((ScrnHght - (TtleHght + 24 + Sqre)) / 2) + TtleHght) + (Sqre * 0.05), "px");
+            
+            
+            
+            document.getElementById("gperilli").style.top = "".concat(((((ScrnHght - (TtleHght + 24 + Sqre)) / 2) + TtleHght) + Sqre), "px");
             document.getElementById("gperilli").style.left = "0px";
             document.getElementById("gperilli").style.width = "100%";
             document.getElementById("gperilli").style.height = "24px";
+            document.getElementById("gperilli").style.borderTop = "1px solid #000";
+            document.getElementById("gperilli").style.borderLeft = "0px solid #000";
             
-            document.getElementById("ttle").style.top = "0px";
+            document.getElementById("ttle").style.top = "".concat(((((ScrnHght - (TtleHght + 24 + Sqre)) / 2) + TtleHght) - TtleHght), "px");
             document.getElementById("ttle").style.left = "0px";
             document.getElementById("ttle").style.width = "100%";
             document.getElementById("ttle").style.height = "".concat(TtleHght, "px");
-            
+            document.getElementById("ttle").style.borderBottom = "1px solid #000";
+            document.getElementById("ttle").style.borderRight = "0px solid #000";
             
             document.getElementById("SqrsCnt").style.left = "0px";
             document.getElementById("SqrsCnt").style.width = "100%";
-            document.getElementById("SqrsCnt").style.top = "".concat(TtleHght, "px");
-            document.getElementById("SqrsCnt").style.height = "".concat((ScrnHght - (TtleHght + 24)), "px");
+            document.getElementById("SqrsCnt").style.top = "0px";
+            document.getElementById("SqrsCnt").style.height = "".concat(ScrnHght, "px");
             
             //document.getElementById("ttleimg").className = "ttleimgH"; //graphics/phasettle.png
             
@@ -665,15 +712,25 @@ function SetLyOut() {
             document.getElementById("DsplySqre").style.top = "".concat(((ScrnHght - Sqre) / 2), "px");
             document.getElementById("DsplySqre").style.left = "".concat((((( (ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3)*2) + TtleHght) + Sqre), "px");
             
+            document.getElementById("line").style.left = "".concat((((( (ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3)*2) + TtleHght) + Sqre), "px");
+            document.getElementById("line").style.height = "".concat((Sqre * 0.9), "px");
+            document.getElementById("line").style.width = "0px";
+            document.getElementById("line").style.top = "".concat((Sqre * 0.05), "px");
+            
+            
             document.getElementById("gperilli").style.top = "0px";
-            document.getElementById("gperilli").style.left = "".concat((ScrnWdth - 24), "px");
+            document.getElementById("gperilli").style.left = "".concat((((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3)*2) + TtleHght) + (Sqre * 2)), "px");
             document.getElementById("gperilli").style.width = "24px";
             document.getElementById("gperilli").style.height = "100%";
+            document.getElementById("gperilli").style.borderLeft = "0px solid #000";
+            document.getElementById("gperilli").style.borderTop = "1px solid #000";
             
             document.getElementById("ttle").style.top = "0px";
-            document.getElementById("ttle").style.left = "0px";
+            document.getElementById("ttle").style.left = "".concat(((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3) + TtleHght) - TtleHght), "px");
             document.getElementById("ttle").style.width = "".concat(TtleHght, "px");
             document.getElementById("ttle").style.height = "100%";
+            document.getElementById("ttle").style.borderRight = "1px solid #000";
+            document.getElementById("ttle").style.borderBottom = "0px solid #000";
             
             document.getElementById("SqrsCnt").style.top = "0px";
             document.getElementById("SqrsCnt").style.left = "".concat(TtleHght, "px");
@@ -714,19 +771,28 @@ function SetLyOut() {
             document.getElementById("DsplySqre").style.top = "".concat(((((ScrnHght - (Sqre * 2)) / 3) * 2) + Sqre), "px");
             document.getElementById("DsplySqre").style.left = "".concat((((ScrnWdth - (TtleHght + 24 + Sqre)) / 2) + TtleHght), "px");
             
+            document.getElementById("line").style.left =  "".concat((((ScrnWdth - (TtleHght + 24 + Sqre)) / 2) + TtleHght) + (Sqre * 0.05), "px");//
+            document.getElementById("line").style.height = "0px";
+            document.getElementById("line").style.width = "".concat((Sqre * 0.9), "px");
+            document.getElementById("line").style.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) * 2) + TtleHght + Sqre), "px");
+            
             document.getElementById("gperilli").style.top = "0px";
-            document.getElementById("gperilli").style.left = "".concat((ScrnWdth - 24), "px");
+            document.getElementById("gperilli").style.left = "".concat(((((ScrnWdth - (TtleHght + 24 + Sqre)) / 2) + TtleHght) + Sqre), "px");
             document.getElementById("gperilli").style.width = "24px";
             document.getElementById("gperilli").style.height = "100%";
+            document.getElementById("gperilli").style.borderLeft = "1px solid #000";
+            document.getElementById("gperilli").style.borderTop = "0px solid #000";
             
             document.getElementById("ttle").style.top = "0px";
-            document.getElementById("ttle").style.left = "0px";
+            document.getElementById("ttle").style.left = "".concat(((ScrnWdth - (TtleHght + 24 + Sqre)) / 2), "px");
             document.getElementById("ttle").style.width = "".concat(TtleHght, "px");
             document.getElementById("ttle").style.height = "100%";
+             document.getElementById("ttle").style.borderRight = "1px solid #000";
+            document.getElementById("ttle").style.borderBotttom = "0px solid #000";
             
             document.getElementById("SqrsCnt").style.top = "0px";
-            document.getElementById("SqrsCnt").style.left = "".concat(TtleHght, "px");
-            document.getElementById("SqrsCnt").style.width = "".concat((ScrnWdth - (24 + TtleHght)), "px");
+            document.getElementById("SqrsCnt").style.left = "0px";
+            document.getElementById("SqrsCnt").style.width = "".concat(ScrnWdth, "px");
             document.getElementById("SqrsCnt").style.height = "100%";
             
             //document.getElementById("ttleimg").className = "ttleimgV";
@@ -760,20 +826,27 @@ function SetLyOut() {
             document.getElementById("DsplySqre").style.left = "".concat(((ScrnWdth - Sqre) / 2), "px");
             document.getElementById("DsplySqre").style.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) * 2) + TtleHght + Sqre), "px");
             
-            document.getElementById("gperilli").style.top = "".concat((ScrnHght - 24), "px");
+            document.getElementById("line").style.left = "".concat((Sqre * 0.05), "px");
+            document.getElementById("line").style.height = "0px";
+            document.getElementById("line").style.width = "".concat((Sqre * 0.9), "px");
+            document.getElementById("line").style.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) * 2) + TtleHght + Sqre), "px");
+            
+            document.getElementById("gperilli").style.top = "".concat((((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) * 2) + TtleHght + Sqre) + Sqre), "px");
             document.getElementById("gperilli").style.left = "0px";
             document.getElementById("gperilli").style.width = "100%";
             document.getElementById("gperilli").style.height = "24px";
+            document.getElementById("gperilli").style.borderTop = "1px solid #000";
             
-            document.getElementById("ttle").style.top = "0px";
+            document.getElementById("ttle").style.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) + TtleHght) - TtleHght), "px");
             document.getElementById("ttle").style.left = "0px";
             document.getElementById("ttle").style.width = "100%";
             document.getElementById("ttle").style.height = "".concat(TtleHght, "px");
+             document.getElementById("ttle").style.borderBottom = "1px solid #000";
             
-            document.getElementById("SqrsCnt").style.top = "".concat(TtleHght, "px");
+            document.getElementById("SqrsCnt").style.top = "0px";
             document.getElementById("SqrsCnt").style.left = "0px";
             document.getElementById("SqrsCnt").style.width = "100%";
-            document.getElementById("SqrsCnt").style.height = "".concat((ScrnHght - (TtleHght + 24)), "px");
+            document.getElementById("SqrsCnt").style.height = "".concat(ScrnHght, "px");
             
             //document.getElementById("ttleimg").className = "ttleimgH";
             
