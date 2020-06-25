@@ -564,50 +564,53 @@
         </svg>
     </div>
     
-    <div class="DspQrtrs" id="TmpoDspBx" style="">
-        <div id="PhseDspBx" style="border: 0px solid #000; position: absolute; background-color: #eee;">
-            <svg height=100%; width=100%; style="overflow: hidden;">
-                <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
-                <circle id="PhsePosCrclA" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
-                <circle id="PhsePosCrclB" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
-            </svg>
-        </div>
-        
-        <div id="PhsePreCntBx" style="border: 0px solid #000; position: absolute;">
-            <div class="PhseSlect" onClick="rotate(0)" id="PhsePre0Bx" style="border: 0px solid red; position: absolute; background-color: #eee;">
-                <svg height=100%; width=100%; style="overflow: hidden;">
-                    <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
-                    <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
-                    <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
-                </svg>
-            </div>
-            <div class="PhseSlect" onClick="rotate(90)" id="PhsePre1Bx" style="border: 0px solid #000; position: absolute; background-color: #eee;">
-                <svg height=100%; width=100%; style="overflow: hidden;">
-                    <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
-                    <circle id="" cx="75%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
-                    <circle id="" cx="-25%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
-                </svg>
-            </div>
-            <div class="PhseSlect" onClick="rotate(180)" id="PhsePre2Bx" style="border: 0px solid #000; position: absolute; background-color: #eee;">
-                <svg height=100%; width=100%; style="overflow: hidden;">
-                    <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
-                    <circle id="" cx="100%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
-                    <circle id="" cx="0%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
-                </svg>
-            </div>
-            <div class="PhseSlect" onClick="rotate(270)" id="PhsePre3Bx" style="border: 0px solid #000; position: absolute; background-color: #eee;">
-                <svg height=100%; width=100%; style="overflow: hidden;">
-                    <circle id="" cx="50%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
-                    <circle id="" cx="125%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
-                    <circle id="" cx="25%" cy="50%" r="50%" style="opacity: 0.5;" fill="#000" />
-                </svg>
-            </div>
-        </div>
+    <div class="DspQrtrs" id="TmpoDspBx" style="border: 0px solid #000;">
     </div>
     
-    <div class="DspQrtrs" id="PlaySeqBx" style="">
+     <div class="PhseSlect" onClick="rotate(0)" id="PhsePre0Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+                <svg height=100%; width=100%; style="overflow: hidden;">
+                    <circle id="" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+                    
+                </svg>
+            </div>
+        
+            <div class="PhseSlect" onClick="rotate(90)" id="PhsePre1Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+                <svg height=100%; width=100%; style="overflow: hidden;">
+                    <circle id="" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+                    <circle id="" cx="75%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+                    <circle id="" cx="-25%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+                </svg>
+            </div>
+        
+            <div class="PhseSlect" onClick="rotate(180)" id="PhsePre2Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+                <svg height=100%; width=100%; style="overflow: hidden;">
+                    <circle id="" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+                    <circle id="" cx="100%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+                    <circle id="" cx="0%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+                </svg>
+            </div>
+        
+            <div class="PhseSlect" onClick="rotate(270)" id="PhsePre3Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+                <svg height=100%; width=100%; style="overflow: hidden;">
+                    <circle id="" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+                    <circle id="" cx="125%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+                    <circle id="" cx="25%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+                </svg>
+            </div>
+    
+            <div id="PhseDspBx" style="border: 0px solid #000; position: absolute; background-color: #eee; z-index: 99;">
+                <svg height=100%; width=100%; style="overflow: hidden;">
+                    <circle id="" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+                    <circle id="PhsePosCrclA" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+                    <circle id="PhsePosCrclB" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+                </svg>
+            </div>
+    
+    <div class="DspQrtrs" id="PlaySeqBx" style="border: 0px solid #000;">
         <div id="SeqPlyTmpoBx" style="border: 1px solid #000; position: absolute;" onclick="seqitmchngr()"></div>
         <div id="SeqPlyBx" style="border: 1px solid #000; position: absolute;"></div>
+        
+        
     </div>
 
 </div>
@@ -1043,20 +1046,52 @@ function SetLyOut() {
         document.getElementById(PhsSeqPntRctX).setAttribute("y", "".concat((ypos - ((Sqre / 2) / SeqCrcleSz)), "px"));
     }
     
+    
+    
+    PhsePreBxWdthHght = ((Sqre / 2) / 4);
+    //for (i = 0; i < 4; i++) {
+      //  PhsePreXBx = "PhsePre".concat(i, "Bx");
+        //document.getElementById(PhsePreXBx).style.width = "".concat(PhsePreBxWdthHght, "px");
+        //document.getElementById(PhsePreXBx).style.height = "".concat(PhsePreBxWdthHght, "px");
+        //document.getElementById(PhsePreXBx).style.left = "".concat((PhsePreBxWdthHght * i), "px");
+        //document.getElementById(PhsePreXBx).style.top = "".concat((((Sqre / 16) * 3) / 2) - (((Sqre / 2) / 4) / 2), "px");
+    //}
+    
     //Phase Display Box Contents
-    PhseDspBxWdthHght = (Sqre / 4);
-    PhseDspBxLPos = (Sqre / 4) - (PhseDspBxWdthHght / 2);
-    PhseDspBxTPos = (PhseDspBxWdthHght / 4);
-    //
+    PhseDspBxWdthHght = (Sqre / 8);
+    PhseDspBxLPos = (PhseDspBxWdthHght - (PhseDspBxWdthHght / 2));
+    PhseDspBxTPos = (Sqre / 2) + (((Sqre / 8) * 3) - (Sqre / 32));
+
+    document.getElementById("PhsePre0Bx").style.left = "".concat(PhseDspBxLPos, "px");
+    document.getElementById("PhsePre0Bx").style.top = "".concat(PhseDspBxTPos, "px");
+    document.getElementById("PhsePre0Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
+    document.getElementById("PhsePre0Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
+    
+    document.getElementById("PhsePre1Bx").style.left = "".concat((PhseDspBxLPos * 4), "px");
+    document.getElementById("PhsePre1Bx").style.top = "".concat(PhseDspBxTPos, "px");
+    document.getElementById("PhsePre1Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
+    document.getElementById("PhsePre1Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
+    
+    document.getElementById("PhsePre2Bx").style.left = "".concat((PhseDspBxLPos * 7), "px");
+    document.getElementById("PhsePre2Bx").style.top = "".concat(PhseDspBxTPos, "px");
+    document.getElementById("PhsePre2Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
+    document.getElementById("PhsePre2Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
+    
+    document.getElementById("PhsePre3Bx").style.left = "".concat((PhseDspBxLPos * 10), "px");
+    document.getElementById("PhsePre3Bx").style.top = "".concat(PhseDspBxTPos, "px");
+    document.getElementById("PhsePre3Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
+    document.getElementById("PhsePre3Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
+    
+    document.getElementById("PhseDspBx").style.left = "".concat((PhseDspBxLPos * 13), "px");
+    document.getElementById("PhseDspBx").style.top = "".concat(PhseDspBxTPos, "px");
     document.getElementById("PhseDspBx").style.width = "".concat(PhseDspBxWdthHght, "px");
     document.getElementById("PhseDspBx").style.height = "".concat(PhseDspBxWdthHght, "px");
-    document.getElementById("PhseDspBx").style.left = "".concat(PhseDspBxLPos, "px");
-    document.getElementById("PhseDspBx").style.top = "".concat(PhseDspBxTPos, "px");
+    
     
     //SeqPlyBx
-    SeqPlyBxLPos = (((Sqre / 4) - (PhseDspBxWdthHght / 2)) / 2) * 3;
-    SeqPlyBxTPos = PhseDspBxTPos;
-    SeqDspBxWdthHght = PhseDspBxWdthHght;
+    SeqPlyBxLPos = (Sqre / 4) - (Sqre / 16);
+    SeqPlyBxTPos = (Sqre / 4) - ((Sqre / 16) * 3);
+    SeqDspBxWdthHght = (Sqre / 4);
     
     document.getElementById("SeqPlyBx").style.width = "".concat(SeqDspBxWdthHght, "px");
     document.getElementById("SeqPlyBx").style.height = "".concat(SeqDspBxWdthHght, "px");
@@ -1064,29 +1099,22 @@ function SetLyOut() {
     document.getElementById("SeqPlyBx").style.top = "".concat(SeqPlyBxTPos, "px");
     
     //SeqPlyTmpoBx
-    SeqPlyTmpoBxHght = PhseDspBxWdthHght;
+    SeqPlyTmpoBxHght = SeqDspBxWdthHght;
     SeqPlyTmpoBxWdth = (((Sqre / 4) - (PhseDspBxWdthHght / 2)) / 2);
-    SeqPlyTmpoBxLPos = (((Sqre / 4) - (PhseDspBxWdthHght / 2)) / 2);
-    SeqPlyTmpoBxTPos = PhseDspBxTPos;
+    SeqPlyTmpoBxLPos = ((Sqre / 4) - ((Sqre / 8) / 2) * 3);
+    SeqPlyTmpoBxTPos = SeqPlyBxTPos;
     document.getElementById("SeqPlyTmpoBx").style.width = "".concat(SeqPlyTmpoBxWdth, "px");
     document.getElementById("SeqPlyTmpoBx").style.height = "".concat(SeqPlyTmpoBxHght, "px");
     document.getElementById("SeqPlyTmpoBx").style.left = "".concat(SeqPlyTmpoBxLPos, "px");
     document.getElementById("SeqPlyTmpoBx").style.top = "".concat(SeqPlyTmpoBxTPos, "px");
     
     //Phase Display Preset Box
-    document.getElementById("PhsePreCntBx").style.width = "".concat((Sqre / 2), "px");
-    document.getElementById("PhsePreCntBx").style.height = "".concat(((Sqre / 16) * 3), "px");
-    document.getElementById("PhsePreCntBx").style.left = "".concat(0, "px");
-    document.getElementById("PhsePreCntBx").style.top = "".concat((PhseDspBxTPos + PhseDspBxWdthHght), "px");
+    //document.getElementById("PhsePreCntBx").style.width = "".concat((Sqre / 2), "px");
+    //document.getElementById("PhsePreCntBx").style.height = "".concat((Sqre / 4), "px");
+    //document.getElementById("PhsePreCntBx").style.left = "".concat(0, "px");
+    //document.getElementById("PhsePreCntBx").style.top = "".concat(0, "px");
     
-    PhsePreBxWdthHght = ((Sqre / 2) / 4);
-    for (i = 0; i < 4; i++) {
-        PhsePreXBx = "PhsePre".concat(i, "Bx");
-        document.getElementById(PhsePreXBx).style.width = "".concat(PhsePreBxWdthHght, "px");
-        document.getElementById(PhsePreXBx).style.height = "".concat(PhsePreBxWdthHght, "px");
-        document.getElementById(PhsePreXBx).style.left = "".concat((PhsePreBxWdthHght * i), "px");
-        document.getElementById(PhsePreXBx).style.top = "".concat((((Sqre / 16) * 3) / 2) - (((Sqre / 2) / 4) / 2), "px");
-    }
+    
     
     //document.getElementById("PhsePre1Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
     //document.getElementById("PhsePre1Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
