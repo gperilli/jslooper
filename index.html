@@ -124,9 +124,79 @@
     opacity: 1;
 }
 
+input[type="range"] { 
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: 200px;
+    cursor: pointer;
+    border-radius: 0; /* iOS */
+}
 
+::-webkit-slider-runnable-track {
+    background: #fff;
+}
 
-    
+/*
+ * 1. Set to 0 width and remove border for a slider without a thumb
+ */
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px; /* 1 */
+    height: 40px;
+    background: #808080;
+    box-shadow: -100vw 0 0 100vw #808080;
+    border: 0px solid #999; /* 1 */
+}
+
+::-moz-range-track {
+    height: 40px;
+    background: #ddd;
+}
+
+::-moz-range-thumb {
+    background: #fff;
+    height: 40px;
+    width: 20px;
+    border: 3px solid #999;
+    border-radius: 0 !important;
+    box-shadow: -100vw 0 0 100vw dodgerblue;
+    box-sizing: border-box;
+}
+
+::-ms-fill-lower { 
+    background: dodgerblue;
+}
+
+::-ms-thumb { 
+    background: #fff;
+    border: 2px solid #999;
+    height: 40px;
+    width: 20px;
+    box-sizing: border-box;
+}
+
+::-ms-ticks-after { 
+    display: none; 
+}
+
+::-ms-ticks-before { 
+    display: none; 
+}
+
+::-ms-track { 
+    background: #ddd;
+    color: transparent;
+    height: 40px;
+    border: none;
+}
+
+::-ms-tooltip { 
+    display: none;
+}
+
 
     
 /* Responsiveness */
@@ -138,6 +208,8 @@
 
 </style>
 <script src="js/siema.js"></script>
+<script type="text/javascript" src="https://www.cssscript.com/demo/clean-mobile-range-slider/rangeslider-js.min.js"></script>
+    
 </head>
     
 <body id="scrnbdy" onload="SetLyOut(), loadfunc()" onresize="SetLyOut()">
@@ -484,7 +556,20 @@
             </svg>
             
         </svg>
+        
+        <div id="phsestatbx" style="border: 0px solid #000; position: absolute; z-index: 99;">
+            <svg height=100%; width=100%; style="overflow: hidden;">
+                <circle id="" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+            </svg>
+        </div>
+        
+        <div id="phsestatdegbx" style="border: 0px solid #000; position: absolute; z-index: 99;" align="center">
+            <p id="phsestatdegtx" style="position: relative; margin: 0px; padding: 0px;">0&#176;</p>
+        </div>
+        
+        
     </div>
+    
     <div class="DspQrtrs" id="PhseSeqBx" style="">
         <svg height=100%; width=100%; style="overflow: visible;">
             <circle id="PhsSqCrcl" cx="50%" cy="50%" r="50%" stroke="#ccc" stroke-width="5" style="" fill="transparent" />
@@ -562,16 +647,74 @@
             </svg>
             
         </svg>
+        
+        <div id="phseshftantclkwse" style="border: 0px solid #000; position: absolute; z-index: 99;">
+            <svg height=100%; width=100%; viewBox="0 0 40 120" onclick="" style="overflow: hidden;">
+                <polygon points="40,0 40,120 0,60" style="fill:#808080;" onclick="rotate('bck')"/>
+                Sorry, your browser does not support inline SVG.
+            </svg>
+        </div>
+        
+        <div id="phseshftbx" style="border: 0px solid #000; position: absolute; z-index: 99;">
+            <svg height=100%; width=100%; style="overflow: hidden;">
+                    <circle id="" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+                    <circle id="PhsePosCrclA" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+                    <circle id="PhsePosCrclB" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+                </svg>
+        </div>
+        
+        <div id="phseshftclkwse" style="border: 0px solid #000; position: absolute; z-index: 99;">
+            <svg height=100%; width=100%; viewBox="0 0 40 120" onclick="" style="overflow: hidden;">
+                <polygon points="0,0 0,120 40,60" style="fill:#808080;" onclick="rotate('frd')"/>
+                Sorry, your browser does not support inline SVG.
+            </svg>
+        </div>
+        
+        <div id="phseshftdegbx" style="border: 0px solid #000; position: absolute; z-index: 99;" align="center">
+            <p id="phseshftdegtx" style="position: relative; margin: 0px; padding: 0px;"><span id="phseshftdegN">0</span>&#176;</p>
+        </div>
+        
     </div>
     
     <div class="DspQrtrs" id="TmpoDspBx" style="border: 0px solid #000;">
+        
+         
+        <div id="uibox1ico" style="border: 1px solid #eee; position: absolute;"></div>
+        
+        <div id="uibox1" style="border-right: 1px solid #eee; position: absolute;">
+            <input id="SeqPlyTmpoBxSl" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="0" max="100" step="2" value="40">
+        </div>
+        
+        <div id="uibox2ico" style="border: 1px solid #eee; position: absolute;"></div>
+        
+        <div id="uibox2" style="border-right: 1px solid #eee; position: absolute;">
+            <input id="" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="0" max="100" step="2" value="40">
+        </div>
+        
+        <div id="uibox3ico" style="border: 1px solid #eee; position: absolute;"></div>
+        
+        <div id="uibox3" style="border-right: 1px solid #eee; position: absolute;">
+            <input id="" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="0" max="100" step="2" value="40">
+        </div>
     </div>
+            
+            
     
-     <div class="PhseSlect" onClick="rotate(0)" id="PhsePre0Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+            <div class="PhseSlect" id="PhsePre0Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
                 <svg height=100%; width=100%; style="overflow: hidden;">
                     <circle id="" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
-                    
+                    <svg height=100%; width=100%; viewBox="0 0 120 120" onclick="" style="overflow: hidden;">
+                    <polygon points="40,20 40,100 100,60" style="fill:#808080;" />
+                    Sorry, your browser does not support inline SVG.
                 </svg>
+                </svg>
+            </div>
+    
+            <div id="arrwbx1" style="border: 0px solid #000; position: absolute; z-index: 99;">
+                <svg style="border: 0px solid #000; float: left; width: 100%; height: 100%;" viewBox="0 0 100 40">
+                    <polygon points="20,10 20,30 50,30 50,40 80,20 50,0 50,10" style="fill:#808080;" />
+                </svg>
+                
             </div>
         
             <div class="PhseSlect" onClick="rotate(90)" id="PhsePre1Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
@@ -581,7 +724,14 @@
                     <circle id="" cx="-25%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
                 </svg>
             </div>
-        
+            
+            <div id="arrwbx2" style="border: 0px solid #000; position: absolute; z-index: 99;">
+                <svg style="border: 0px solid #000; float: left; width: 100%; height: 100%;" viewBox="0 0 100 40">
+                    <polygon points="20,10 20,30 50,30 50,40 80,20 50,0 50,10" style="fill:#808080;" />
+                </svg>
+                
+            </div>
+    
             <div class="PhseSlect" onClick="rotate(180)" id="PhsePre2Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
                 <svg height=100%; width=100%; style="overflow: hidden;">
                     <circle id="" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
@@ -589,7 +739,14 @@
                     <circle id="" cx="0%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
                 </svg>
             </div>
-        
+            
+            <div id="arrwbx3" style="border: 0px solid #000; position: absolute; z-index: 99;">
+                <svg style="border: 0px solid #000; float: left; width: 100%; height: 100%;" viewBox="0 0 100 40">
+                    <polygon points="20,10 20,30 50,30 50,40 80,20 50,0 50,10" style="fill:#808080;" />
+                </svg>
+                
+            </div>
+            
             <div class="PhseSlect" onClick="rotate(270)" id="PhsePre3Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
                 <svg height=100%; width=100%; style="overflow: hidden;">
                     <circle id="" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
@@ -597,20 +754,32 @@
                     <circle id="" cx="25%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
                 </svg>
             </div>
+            
+            <div id="arrwbx4" style="border: 0px solid #000; position: absolute; z-index: 99;">
+                <svg style="border: 0px solid #000; float: left; width: 100%; height: 100%;" viewBox="0 0 100 40">
+                    <polygon points="20,10 20,30 50,30 50,40 80,20 50,0 50,10" style="fill:#808080;" />
+                </svg>
+                
+            </div>
     
-            <div id="PhseDspBx" style="border: 0px solid #000; position: absolute; background-color: #eee; z-index: 99;">
+            <div class="PhseSlect" onClick="rotate(360)" id="PhsePre4Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
                 <svg height=100%; width=100%; style="overflow: hidden;">
                     <circle id="" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
-                    <circle id="PhsePosCrclA" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
-                    <circle id="PhsePosCrclB" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
                 </svg>
             </div>
     
     <div class="DspQrtrs" id="PlaySeqBx" style="border: 0px solid #000;">
-        <div id="SeqPlyTmpoBx" style="border: 1px solid #000; position: absolute;" onclick="seqitmchngr()"></div>
-        <div id="SeqPlyBx" style="border: 1px solid #000; position: absolute;"></div>
         
         
+        <div id="SeqPlyBx" style="border: 0px solid #000; position: absolute;">
+            <svg height=100%; width=100%; style="overflow: hidden;">
+                <circle id="" cx="50%" cy="50%" r="48%" stroke="#808080" stroke-width="2" style="opacity: 1;" fill="#fff" />
+                <svg height=100%; width=100%; viewBox="0 0 120 120" onclick="" style="overflow: hidden;">
+                    <polygon points="40,20 40,100 100,60" style="fill:#808080;" />
+                    Sorry, your browser does not support inline SVG.
+                </svg>
+            </svg>
+        </div>
     </div>
 
 </div>
@@ -1067,25 +1236,54 @@ function SetLyOut() {
     document.getElementById("PhsePre0Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
     document.getElementById("PhsePre0Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
     
+    document.getElementById("arrwbx1").style.left = "".concat((PhseDspBxLPos + PhsePreBxWdthHght), "px");
+    document.getElementById("arrwbx1").style.top = "".concat(PhseDspBxTPos + (PhsePreBxWdthHght / 3), "px");
+    document.getElementById("arrwbx1").style.width = "".concat((PhseDspBxLPos * 4) - (PhseDspBxLPos + PhsePreBxWdthHght), "px");
+    document.getElementById("arrwbx1").style.height = "".concat((PhsePreBxWdthHght / 3), "px");
+    
+    //document.getElementById("arrwhd1").style.width = "40%";
+    //document.getElementById("arrwhd1").style.height = "100%";
+    //
+    
     document.getElementById("PhsePre1Bx").style.left = "".concat((PhseDspBxLPos * 4), "px");
     document.getElementById("PhsePre1Bx").style.top = "".concat(PhseDspBxTPos, "px");
     document.getElementById("PhsePre1Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
     document.getElementById("PhsePre1Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
+    
+    document.getElementById("arrwbx2").style.left = "".concat(((PhseDspBxLPos * 4) + PhsePreBxWdthHght), "px");
+    document.getElementById("arrwbx2").style.top = "".concat(PhseDspBxTPos + (PhsePreBxWdthHght / 3), "px");
+    document.getElementById("arrwbx2").style.width = "".concat((PhseDspBxLPos * 4) - (PhseDspBxLPos + PhsePreBxWdthHght), "px");
+    document.getElementById("arrwbx2").style.height = "".concat((PhsePreBxWdthHght / 3), "px");
     
     document.getElementById("PhsePre2Bx").style.left = "".concat((PhseDspBxLPos * 7), "px");
     document.getElementById("PhsePre2Bx").style.top = "".concat(PhseDspBxTPos, "px");
     document.getElementById("PhsePre2Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
     document.getElementById("PhsePre2Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
     
+    document.getElementById("arrwbx3").style.left = "".concat(((PhseDspBxLPos * 7) + PhsePreBxWdthHght), "px");
+    document.getElementById("arrwbx3").style.top = "".concat(PhseDspBxTPos + (PhsePreBxWdthHght / 3), "px");
+    document.getElementById("arrwbx3").style.width = "".concat((PhseDspBxLPos * 4) - (PhseDspBxLPos + PhsePreBxWdthHght), "px");
+    document.getElementById("arrwbx3").style.height = "".concat((PhsePreBxWdthHght / 3), "px");
+    
     document.getElementById("PhsePre3Bx").style.left = "".concat((PhseDspBxLPos * 10), "px");
     document.getElementById("PhsePre3Bx").style.top = "".concat(PhseDspBxTPos, "px");
     document.getElementById("PhsePre3Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
     document.getElementById("PhsePre3Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
     
-    document.getElementById("PhseDspBx").style.left = "".concat((PhseDspBxLPos * 13), "px");
-    document.getElementById("PhseDspBx").style.top = "".concat(PhseDspBxTPos, "px");
-    document.getElementById("PhseDspBx").style.width = "".concat(PhseDspBxWdthHght, "px");
-    document.getElementById("PhseDspBx").style.height = "".concat(PhseDspBxWdthHght, "px");
+    document.getElementById("arrwbx4").style.left = "".concat(((PhseDspBxLPos * 10) + PhsePreBxWdthHght), "px");
+    document.getElementById("arrwbx4").style.top = "".concat(PhseDspBxTPos + (PhsePreBxWdthHght / 3), "px");
+    document.getElementById("arrwbx4").style.width = "".concat((PhseDspBxLPos * 4) - (PhseDspBxLPos + PhsePreBxWdthHght), "px");
+    document.getElementById("arrwbx4").style.height = "".concat((PhsePreBxWdthHght / 3), "px");
+    
+    document.getElementById("PhsePre4Bx").style.left = "".concat((PhseDspBxLPos * 13), "px");
+    document.getElementById("PhsePre4Bx").style.top = "".concat(PhseDspBxTPos, "px");
+    document.getElementById("PhsePre4Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
+    document.getElementById("PhsePre4Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
+    
+    //document.getElementById("PhseDspBx").style.left = "".concat((PhseDspBxLPos * 13), "px");
+    //document.getElementById("PhseDspBx").style.top = "".concat(PhseDspBxTPos, "px");
+    //document.getElementById("PhseDspBx").style.width = "".concat(PhseDspBxWdthHght, "px");
+    //document.getElementById("PhseDspBx").style.height = "".concat(PhseDspBxWdthHght, "px");
     
     
     //SeqPlyBx
@@ -1099,27 +1297,112 @@ function SetLyOut() {
     document.getElementById("SeqPlyBx").style.top = "".concat(SeqPlyBxTPos, "px");
     
     //SeqPlyTmpoBx
-    SeqPlyTmpoBxHght = SeqDspBxWdthHght;
-    SeqPlyTmpoBxWdth = (((Sqre / 4) - (PhseDspBxWdthHght / 2)) / 2);
-    SeqPlyTmpoBxLPos = ((Sqre / 4) - ((Sqre / 8) / 2) * 3);
-    SeqPlyTmpoBxTPos = SeqPlyBxTPos;
-    document.getElementById("SeqPlyTmpoBx").style.width = "".concat(SeqPlyTmpoBxWdth, "px");
-    document.getElementById("SeqPlyTmpoBx").style.height = "".concat(SeqPlyTmpoBxHght, "px");
-    document.getElementById("SeqPlyTmpoBx").style.left = "".concat(SeqPlyTmpoBxLPos, "px");
-    document.getElementById("SeqPlyTmpoBx").style.top = "".concat(SeqPlyTmpoBxTPos, "px");
+    //SeqPlyTmpoBxHght = SeqDspBxWdthHght;
+    //SeqPlyTmpoBxWdth = (((Sqre / 4) - (PhseDspBxWdthHght / 2)) / 2);
+    //SeqPlyTmpoBxLPos = ((Sqre / 4) - ((Sqre / 8) / 2) * 3);
+    //SeqPlyTmpoBxTPos = SeqPlyBxTPos;
+    //document.getElementById("SeqPlyTmpoBx").style.width = "".concat(SeqPlyTmpoBxWdth, "px");
+    //document.getElementById("SeqPlyTmpoBx").style.height = "".concat(SeqPlyTmpoBxHght, "px");
+    //document.getElementById("SeqPlyTmpoBx").style.left = "".concat(SeqPlyTmpoBxLPos, "px");
+    //document.getElementById("SeqPlyTmpoBx").style.top = "".concat(SeqPlyTmpoBxTPos, "px");
     
-    //Phase Display Preset Box
-    //document.getElementById("PhsePreCntBx").style.width = "".concat((Sqre / 2), "px");
-    //document.getElementById("PhsePreCntBx").style.height = "".concat((Sqre / 4), "px");
-    //document.getElementById("PhsePreCntBx").style.left = "".concat(0, "px");
-    //document.getElementById("PhsePreCntBx").style.top = "".concat(0, "px");
+    //document.getElementById("SeqPlyTmpoBxSl").style.height = "".concat(SeqPlyTmpoBxWdth, "px");
+    //document.getElementById("SeqPlyTmpoBxSl").style.width = "".concat(SeqPlyTmpoBxHght, "px");
+    //document.getElementById("SeqPlyTmpoBxSl").style.top = "0px";
+    //document.getElementById("SeqPlyTmpoBxSl").style.left = "0px";
+    
+    //SeqPlyTmpoBxSl
+    playuitxthght = (SeqDspBxWdthHght / 4);
     
     
+    document.getElementById("uibox1").style.width = "".concat((Sqre / 3), "px");
+    document.getElementById("uibox1").style.height = "".concat(playuitxthght, "px");
+    document.getElementById("uibox1").style.left = "".concat(PhseDspBxLPos + (playuitxthght + (playuitxthght/2)), "px");
+    document.getElementById("uibox1").style.top = "".concat(SeqPlyBxTPos, "px");
     
-    //document.getElementById("PhsePre1Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
-    //document.getElementById("PhsePre1Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
-    //document.getElementById("PhsePre1Bx").style.left = "".concat(0, "px");
-    //document.getElementById("PhsePre1Bx").style.top = "".concat((((Sqre / 16) * 3) / 2) - (((Sqre / 2) / 4) / 2), "px");
+    document.getElementById("uibox1ico").style.width = "".concat(playuitxthght, "px");
+    document.getElementById("uibox1ico").style.height = "".concat(playuitxthght, "px");
+    document.getElementById("uibox1ico").style.left = "".concat(PhseDspBxLPos, "px");
+    document.getElementById("uibox1ico").style.top = "".concat(SeqPlyBxTPos, "px");
+    
+    document.getElementById("uibox2").style.width = "".concat((Sqre / 3), "px");
+    document.getElementById("uibox2").style.height = "".concat(playuitxthght, "px");
+    document.getElementById("uibox2").style.left = "".concat(PhseDspBxLPos + (playuitxthght + (playuitxthght/2)), "px");
+    document.getElementById("uibox2").style.top = "".concat(SeqPlyBxTPos + (playuitxthght + (playuitxthght / 2)), "px");
+    
+    document.getElementById("uibox2ico").style.width = "".concat(playuitxthght, "px");
+    document.getElementById("uibox2ico").style.height = "".concat(playuitxthght, "px");
+    document.getElementById("uibox2ico").style.left = "".concat(PhseDspBxLPos, "px");
+    document.getElementById("uibox2ico").style.top = "".concat(SeqPlyBxTPos + (playuitxthght + (playuitxthght / 2)), "px");
+    
+    document.getElementById("uibox3").style.width = "".concat(SeqDspBxWdthHght, "px");
+    document.getElementById("uibox3").style.height = "".concat(playuitxthght, "px");
+    document.getElementById("uibox3").style.left = "".concat(PhseDspBxLPos + (playuitxthght + (playuitxthght/2)), "px");
+    document.getElementById("uibox3").style.top = "".concat(SeqPlyBxTPos + (playuitxthght * 3), "px");
+    
+    document.getElementById("uibox3ico").style.width = "".concat(playuitxthght, "px");
+    document.getElementById("uibox3ico").style.height = "".concat(playuitxthght, "px");
+    document.getElementById("uibox3ico").style.left = "".concat(PhseDspBxLPos, "px");
+    document.getElementById("uibox3ico").style.top = "".concat(SeqPlyBxTPos + (playuitxthght * 3), "px");
+    
+    //<input id="slider" type="range" min="0" max="100" step="2" value="40" data-orientation="vertical">
+    
+
+      
+  
+    //rangeSliderJs.create(document.querySelector('#slider'), {
+      //vertical: true
+    //});
+    
+    
+    //document.getElementById("phsepostxt").style.font = "".concat(playuitxthght, "px arial,serif");
+    //document.getElementById("phseshftonofftxt").style.font = "".concat(playuitxthght, "px arial,serif");
+    //document.getElementById("seqrepsslcttxt").style.font = "".concat(playuitxthght, "px arial,serif");
+    
+    document.getElementById("phseshftbx").style.width = "".concat((Sqre / 8), "px");
+    document.getElementById("phseshftbx").style.height = "".concat((Sqre / 8), "px");
+    document.getElementById("phseshftbx").style.left = "".concat((Sqre / 4) - ((Sqre / 8) / 2), "px");
+    document.getElementById("phseshftbx").style.top = "".concat((Sqre / 4) - ((Sqre / 8) / 2), "px");
+    
+    document.getElementById("phseshftclkwse").style.width = "".concat(((Sqre / 8) / 3), "px");
+    document.getElementById("phseshftclkwse").style.height = "".concat((Sqre / 8), "px");
+    document.getElementById("phseshftclkwse").style.left = "".concat((Sqre / 4) - ((Sqre / 8) / 2) + (Sqre / 8) + (Sqre / 96), "px");
+    document.getElementById("phseshftclkwse").style.top = "".concat((Sqre / 4) - ((Sqre / 8) / 2), "px");
+    
+    document.getElementById("phseshftantclkwse").style.width = "".concat(((Sqre / 8) / 3), "px");
+    document.getElementById("phseshftantclkwse").style.height = "".concat((Sqre / 8), "px");
+    document.getElementById("phseshftantclkwse").style.left = "".concat((Sqre / 4) - ((Sqre / 8) / 2) - ((Sqre / 8) / 3) - (Sqre / 96), "px");
+    document.getElementById("phseshftantclkwse").style.top = "".concat((Sqre / 4) - ((Sqre / 8) / 2), "px");
+    
+    //phseshftdegbx
+    document.getElementById("phseshftdegbx").style.width = "".concat((Sqre / 8), "px");
+    document.getElementById("phseshftdegbx").style.height = "".concat(((Sqre / 8) / 3), "px");
+    document.getElementById("phseshftdegbx").style.left = "".concat((Sqre / 4) - ((Sqre / 8) / 2), "px");
+    document.getElementById("phseshftdegbx").style.top = "".concat((Sqre / 4) + ((Sqre / 8) / 2) + (Sqre / 96), "px");
+    
+    document.getElementById("phseshftdegtx").style.fontSize = "".concat(((Sqre / 8) / 3), "px");
+    //document.getElementById("phseshftdegtx").style.left = "0px";
+    //document.getElementById("phseshftdegtx").style.top = "0px";
+    
+    document.getElementById("phsestatbx").style.width = "".concat((Sqre / 8), "px");
+    document.getElementById("phsestatbx").style.height = "".concat((Sqre / 8), "px");
+    document.getElementById("phsestatbx").style.left = "".concat((Sqre / 4) - ((Sqre / 8) / 2), "px");
+    document.getElementById("phsestatbx").style.top = "".concat((Sqre / 4) - ((Sqre / 8) / 2), "px");
+    
+    document.getElementById("phsestatdegtx").style.fontSize = "".concat(((Sqre / 8) / 3), "px");
+    
+    document.getElementById("phsestatdegbx").style.width = "".concat((Sqre / 8), "px");
+    document.getElementById("phsestatdegbx").style.height = "".concat(((Sqre / 8) / 3), "px");
+    document.getElementById("phsestatdegbx").style.left = "".concat((Sqre / 4) - ((Sqre / 8) / 2), "px");
+    document.getElementById("phsestatdegbx").style.top = "".concat((Sqre / 4) + ((Sqre / 8) / 2) + (Sqre / 96), "px");
+    
+    
+    //document.getElementById("phsepostxt").style.left = "".concat(0, "px");
+    //document.getElementById("phsepostxt").style.top = "".concat(0, "px");
+    //<div id="phseshftonoffbx"></div>
+    //<div id="phseposndspbx"></div>
+    //<div id="seqrepsslctbx"></div>
+    
 }
     
 function degrees_to_radians(degrees) {
@@ -1226,8 +1509,9 @@ function loadfunc() {
             onInit: () => {},
             onChange: () => {},
 		});
-    
-
+  
+    SlctdSqItm = 0;
+    itmslct(0);
     
 }
     
@@ -1241,13 +1525,15 @@ function RtateStop() {
    
 function rotate(pos) {
   
-  
-  
   //forward / back rotate 30 dergees button;
-  if (pos == 'frd') {//stiil working on this
-      RtateDst = 30;
-      RtateDir = 1;
-  } else {
+  if (pos == 'frd') {
+      pos = PhsItmAnglPos[0] + 15;
+  }
+      
+ if (pos == 'bck') {
+      pos = PhsItmAnglPos[0] - 15;
+  }
+    
     if (RtateStat == "on") {
         RtateDst = 0;
         RtateDir = 0;
@@ -1266,23 +1552,37 @@ function rotate(pos) {
               RtateDst = RtateDst * -1;
           }
     }
-  } 
+  
+    if (RtateDst > 180) {
+        RtateDst = (360 - RtateDst) * -1;
+        RtateDir = -1;
+    }
+    
+    if (RtateDst < -180) {
+        RtateDst = (360 + RtateDst) * 1;
+        RtateDir = 1;
+    }
     
  //PhsePosCrclA
   //Phase display circles
   PhseDspShftDst[0] = ((pos / 360) * 100) + 50;
-  PhseDspShftDst[1] = (100 - PhseDspShftDst[0]) * -1;
+  
+  if (PhseDspShftDst[0] < 50) {
+      PhseDspShftDst[1] = (100 - PhseDspShftDst[0]) * -1;
+      PhseDspShftDst[1] = PhseDspShftDst[1] + 200;
+  }  else {
+      PhseDspShftDst[1] = (100 - PhseDspShftDst[0]) * -1;
+  }
+  
   
   PhseDspShftShft[0] = PhseDspShftDst[0] - PhseDspShftPos[0];
   PhseDspShftShft[1] = PhseDspShftDst[1] - PhseDspShftPos[1];
+  if (PhseDspShftShft[0] > 50) {
+      PhseDspShftShft[0] = PhseDspShftShft[0] - 100;
+  }
   
-  //PhseDspShftPos[0] = PhseDspShftPos[0] + ((RtateDst / 360) * 100);
-  //PhseDspShftPos[1] = (100 - PhseDspShftPos[0]) * -1;
-    
   PhseDspIncre = (PhseDspShftShft[0] / RtateDst) * RtateDir;
       
-  
-  
   console.log("rotate");
   console.log("Phase destination is: ".concat(pos));
   console.log("Angle position of item 0 is: ".concat(PhsItmAnglPos[0]));
@@ -1296,7 +1596,6 @@ function rotate(pos) {
   console.log("Calculated Phase display increment: ".concat(PhseDspIncre));
     
   //RadAngleIncre = 0;
-  
   var ani = setInterval(frame, 10);
   
   n = 0;
@@ -1315,14 +1614,16 @@ function rotate(pos) {
                     
                     j = [9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8];
                     PhsItmAnglPos[[j[i]]] = PhsItmAnglPos[[j[i]]] + RtateDir;
-
+                    
+                    if (PhsItmAnglPos[[j[i]]] < 0) {
+                        PhsItmAnglPos[[j[i]]] = 360 + PhsItmAnglPos[[j[i]]];
+                    }
+                    
                     xpos = (Sqre / 4) + ((((Sqre / 2) - SttcSeqPdng) / 2) - (((Sqre / 2) - SttcSeqPdng) / SeqCrcleSz)) * Math.cos(degrees_to_radians(PhsItmAnglPos[[j[i]]]));
 
                     ypos = (Sqre / 4) + ((((Sqre / 2) - SttcSeqPdng) / 2) - (((Sqre / 2) - SttcSeqPdng) / SeqCrcleSz)) * Math.sin(degrees_to_radians(PhsItmAnglPos[j[i]]));
 
-                    //console.log("Item: ".concat(i, " Angle Positon: ", PhsItmAnglPos[i]));
-
-                    if (PhsItmAnglPos[[j[i]]] == 360) {PhsItmAnglPos[[j[i]]] = 0;} 
+                    if (PhsItmAnglPos[[j[i]]] > 360) {PhsItmAnglPos[[j[i]]] = 1;} 
 
                     PhsSqPntX = "PhsSqPnt".concat(i);
                     document.getElementById(PhsSqPntX).setAttribute("cx", "".concat(xpos, "px"));
@@ -1332,16 +1633,28 @@ function rotate(pos) {
                     document.getElementById(PhsSeqPntRctX).setAttribute("x", "".concat((xpos - ((Sqre / 2) / SeqCrcleSz)), "px"));
                     document.getElementById(PhsSeqPntRctX).setAttribute("y", "".concat((ypos - ((Sqre / 2) / SeqCrcleSz)), "px"));
                     
-                    //
-                   
-                    
                 }
                 
                 //position phase seq display circles
                 PhseDspShftPos[0] = (PhseDspShftPos[0] + PhseDspIncre);
-                PhseDspShftPos[1] = (PhseDspShftPos[1] + PhseDspIncre);
-                //console.log("Calculated Phase display A shift is: ".concat(PhseDspShftPos[0]));
-                //console.log("Calculated Phase display B shift is: ".concat(PhseDspShftPos[1]));
+                
+                if (PhseDspShftPos[1] < -50 || PhseDspShftPos[1] > 150) {
+                    
+                    if (PhseDspShftPos[1] < -50) {
+                    PhseDspShftPos[1] = ((PhseDspShftPos[1] + 200) + PhseDspIncre);    
+                    } 
+                    
+                    if (PhseDspShftPos[1] > 150) {
+                    PhseDspShftPos[1] = ((PhseDspShftPos[1] - 200) + PhseDspIncre);    
+                    } 
+                    
+                } else {
+                    PhseDspShftPos[1] = (PhseDspShftPos[1] + PhseDspIncre);    
+                }
+                
+
+                document.getElementById("phseshftdegN").innerHTML = PhsItmAnglPos[0];
+                
                 document.getElementById("PhsePosCrclA").setAttribute("cx", "".concat(PhseDspShftPos[0], "%"));
                 document.getElementById("PhsePosCrclB").setAttribute("cx", "".concat(PhseDspShftPos[1], "%"));
             }
@@ -1502,5 +1815,11 @@ function SeqStIncre(dir) {
     seqitmchngr(SlctdSqItm, NxtCrSeqNte);
 }
 
+
+</script>
+
+<script type="text/javascript">
+
+  
 
 </script>
