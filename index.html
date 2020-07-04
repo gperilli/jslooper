@@ -28,39 +28,39 @@
     
 }
     
-    #SqrsCnt {
-        position: absolute;
-        background-color: #fff; 
-    }
-    
-    #CntrlSqre {
-        position: absolute; 
-        background-color: #fff; 
-        border: 0px solid #000;
-    }
-    
-    .DspQrtrs {
-        position: absolute;
-        background-color: #fff; 
-    }
-    
-    #gperilli {
-        position: absolute; 
-        background-color: #fff; 
-        border-top: 0px solid #000;   
-    }
-    
-    #ttle {
-        position: absolute; 
-        background-color: #fff; 
-        border-bottom: 0px solid #000;   
-    }
-    
-    #DsplySqre {
-        position: absolute; 
-        background-color: #fff; 
-        border: 0px solid #000;"
-    }
+#SqrsCnt {
+    position: absolute;
+    background-color: #fff; 
+}
+
+#CntrlSqre {
+    position: absolute; 
+    background-color: #fff; 
+    border: 0px solid #000;
+}
+
+.DspQrtrs {
+    position: absolute;
+    background-color: #fff; 
+}
+
+#gperilli {
+    position: absolute; 
+    background-color: #fff; 
+    border-top: 0px solid #000;   
+}
+
+#ttle {
+    position: absolute; 
+    background-color: #fff; 
+    border-bottom: 0px solid #000;   
+}
+
+#DsplySqre {
+    position: absolute; 
+    background-color: #fff; 
+    border: 0px solid #000;"
+}
         
 .gperillilink {
     opacity: 0;
@@ -73,6 +73,10 @@
     
 #PhseDspBx:hover {
     background-color: #ddd;    
+}
+    
+.PhseSlect {
+   
 }
     
 .PhseSlect:hover {
@@ -216,7 +220,7 @@ input[type="range"] {
 
 <div id="centralcolumn" class="centralcolumn">
     
-<div id="line" style="position: absolute; width: 0px; border: 0.6px solid #000; z-index: 90;"></div>
+<div id="line" style="position: absolute; width: 0px; border: 0.6px solid #ccc; z-index: 90;"></div>
 <div id="SqrsCnt"></div>
 <div id="CntrlSqre">
     
@@ -679,19 +683,50 @@ input[type="range"] {
     <div class="DspQrtrs" id="TmpoDspBx" style="border: 0px solid #000;">
         
          
-        <div id="uibox1ico" style="border: 1px solid #eee; position: absolute;"></div>
+        <div id="uibox1ico" style="border: 1px solid #eee; position: absolute;">
+               
+            <svg height=100%; width=100%; viewBox="0 0 120 120" onclick="" style="overflow: hidden;">
+                <polygon points="5,80 5,120 25,120 25,80" style="fill:#808080;" />
+                <polygon points="35,60 35,120 55,120 55,60" style="fill:#808080;" />
+                <polygon points="65,40 65,120 85,120 85,40" style="fill:#808080;" />
+                <polygon points="95,20 95,120 115,120 115,20" style="fill:#808080;" />
+                Sorry, your browser does not support inline SVG.
+            </svg>
+          
+        </div>
         
         <div id="uibox1" style="border-right: 1px solid #eee; position: absolute;">
             <input id="SeqPlyTmpoBxSl" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="0" max="100" step="2" value="40">
         </div>
         
-        <div id="uibox2ico" style="border: 1px solid #eee; position: absolute;"></div>
+        <div id="uibox2ico" style="border: 1px solid #eee; position: absolute;">
+        
+            <svg height=100%; width=100%; viewBox="0 0 120 120" onclick="" style="overflow: hidden;">
+                <polygon points="5,80 5,120 25,120 25,80" style="fill:#808080;" />
+                <polygon points="35,60 35,120 55,120 55,60" style="fill:#808080;" />
+                <polygon points="65,40 65,120 85,120 85,40" style="fill:#808080;" />
+                <polygon points="95,20 95,120 115,120 115,20" style="fill:#808080;" />
+                Sorry, your browser does not support inline SVG.
+            </svg>
+        
+        </div>
         
         <div id="uibox2" style="border-right: 1px solid #eee; position: absolute;">
             <input id="" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="0" max="100" step="2" value="40">
         </div>
         
-        <div id="uibox3ico" style="border: 1px solid #eee; position: absolute;"></div>
+        <div id="uibox3ico" style="border: 1px solid #eee; position: absolute;">
+        <svg class="" xmlns="http://www.w3.org/2000/svg" height=100%; width=100%; viewBox="0 0 300 300" style="border: 1px solid #ddd;">
+						<g style="fill: #808080;">
+						<rect transform="matrix(0.475650,0.000000,0.000000,0.475650,38.059428,28.233600)" height="32" width="32" y="64" x="222.728" />
+						<rect transform="matrix(0.475650,0.000000,0.000000,0.475650,38.059428,28.233600)" height="32" width="32" y="128" x="222.728" />
+						<rect transform="matrix(0.475650,0.000000,0.000000,0.475650,38.059428,28.233600)" height="32" width="32" y="192" x="222.728" />
+						<rect transform="matrix(0.475650,0.000000,0.000000,0.475650,38.059428,28.233600)" height="32" width="32" y="256" x="222.728" />
+						 
+						<path d="M253.42981 56.30074C253.42981 56.30074 240.56064 48.17284 240.56064 48.17284C240.56064 48.17284 233.41448 59.48188 233.41448 59.48188C231.58036 59.01003 229.693 58.67519 227.71429 58.67519C215.1267 58.67519 204.8831 68.91877 204.8831 81.50637C204.8831 87.07718 206.96834 92.12287 210.3017 96.0955C210.3017 96.0955 203.89376 106.24015 203.89376 106.24015C203.89376 106.24015 188.29243 28.2336 188.29243 28.2336C188.29243 28.2336 114.92823 28.2336 114.92823 28.2336C114.92823 28.2336 66.221696 271.76625 66.221696 271.76625C66.221696 271.76625 236.99135 271.76625 236.99135 271.76625C236.99135 271.76625 208.21645 127.89172 208.21645 127.89172C208.21645 127.89172 223.36876 103.90377 223.36876 103.90377C224.77667 104.17012 226.22266 104.33756 227.71429 104.33756C240.30188 104.33756 250.54547 94.09396 250.54547 81.50637C250.54547 76.44545 248.83313 71.80312 246.0325 68.01314C246.0325 68.01314 253.42981 56.30074 253.42981 56.30074M206.25297 195.6623C206.25297 195.6623 165.41558 195.6623 165.41558 195.6623C165.41558 195.6623 196.42796 146.55242 196.42796 146.55242C196.42796 146.55242 206.25297 195.6623 206.25297 195.6623M127.40928 43.45439C127.40928 43.45439 175.8114 43.45439 175.8114 43.45439C175.8114 43.45439 192.10524 124.90846 192.10524 124.90846C192.10524 124.90846 147.41701 195.6623 147.41701 195.6623C147.41701 195.6623 96.960083 195.6623 96.960083 195.6623C96.960083 195.6623 127.40928 43.45439 127.40928 43.45439M209.29712 210.88308C209.29712 210.88308 218.4296 256.54545 218.4296 256.54545C218.4296 256.54545 84.783451 256.54545 84.783451 256.54545C84.783451 256.54545 93.915925 210.88308 93.915925 210.88308C93.915925 210.88308 209.29712 210.88308 209.29712 210.88308M227.71429 89.11676C223.52095 89.11676 220.1039 85.70731 220.1039 81.50637C220.1039 77.30543 223.52095 73.89596 227.71429 73.89596C231.90762 73.89596 235.32468 77.30543 235.32468 81.50637C235.32468 85.70731 231.90762 89.11676 227.71429 89.11676C227.71429 89.11676 227.71429 89.11676 227.71429 89.11676" />
+						</g>
+					</svg>
+        </div>
         
         <div id="uibox3" style="border-right: 1px solid #eee; position: absolute;">
             <input id="" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="0" max="100" step="2" value="40">
@@ -700,73 +735,7 @@ input[type="range"] {
             
             
     
-            <div class="PhseSlect" id="PhsePre0Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
-                <svg height=100%; width=100%; style="overflow: hidden;">
-                    <circle id="" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
-                    <svg height=100%; width=100%; viewBox="0 0 120 120" onclick="" style="overflow: hidden;">
-                    <polygon points="40,20 40,100 100,60" style="fill:#808080;" />
-                    Sorry, your browser does not support inline SVG.
-                </svg>
-                </svg>
-            </div>
-    
-            <div id="arrwbx1" style="border: 0px solid #000; position: absolute; z-index: 99;">
-                <svg style="border: 0px solid #000; float: left; width: 100%; height: 100%;" viewBox="0 0 100 40">
-                    <polygon points="20,10 20,30 50,30 50,40 80,20 50,0 50,10" style="fill:#808080;" />
-                </svg>
-                
-            </div>
-        
-            <div class="PhseSlect" onClick="rotate(90)" id="PhsePre1Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
-                <svg height=100%; width=100%; style="overflow: hidden;">
-                    <circle id="" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
-                    <circle id="" cx="75%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
-                    <circle id="" cx="-25%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
-                </svg>
-            </div>
             
-            <div id="arrwbx2" style="border: 0px solid #000; position: absolute; z-index: 99;">
-                <svg style="border: 0px solid #000; float: left; width: 100%; height: 100%;" viewBox="0 0 100 40">
-                    <polygon points="20,10 20,30 50,30 50,40 80,20 50,0 50,10" style="fill:#808080;" />
-                </svg>
-                
-            </div>
-    
-            <div class="PhseSlect" onClick="rotate(180)" id="PhsePre2Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
-                <svg height=100%; width=100%; style="overflow: hidden;">
-                    <circle id="" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
-                    <circle id="" cx="100%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
-                    <circle id="" cx="0%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
-                </svg>
-            </div>
-            
-            <div id="arrwbx3" style="border: 0px solid #000; position: absolute; z-index: 99;">
-                <svg style="border: 0px solid #000; float: left; width: 100%; height: 100%;" viewBox="0 0 100 40">
-                    <polygon points="20,10 20,30 50,30 50,40 80,20 50,0 50,10" style="fill:#808080;" />
-                </svg>
-                
-            </div>
-            
-            <div class="PhseSlect" onClick="rotate(270)" id="PhsePre3Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
-                <svg height=100%; width=100%; style="overflow: hidden;">
-                    <circle id="" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
-                    <circle id="" cx="125%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
-                    <circle id="" cx="25%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
-                </svg>
-            </div>
-            
-            <div id="arrwbx4" style="border: 0px solid #000; position: absolute; z-index: 99;">
-                <svg style="border: 0px solid #000; float: left; width: 100%; height: 100%;" viewBox="0 0 100 40">
-                    <polygon points="20,10 20,30 50,30 50,40 80,20 50,0 50,10" style="fill:#808080;" />
-                </svg>
-                
-            </div>
-    
-            <div class="PhseSlect" onClick="rotate(360)" id="PhsePre4Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
-                <svg height=100%; width=100%; style="overflow: hidden;">
-                    <circle id="" cx="50%" cy="50%" r="48%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
-                </svg>
-            </div>
     
     <div class="DspQrtrs" id="PlaySeqBx" style="border: 0px solid #000;">
         
@@ -788,7 +757,88 @@ input[type="range"] {
     <img id="gperilliimg" style="height: 100%; float: right; position: absolute; bottom: 4px;" src=""/>
     <img id="gperilliLnimg" class="gperillilink" style="height: 100%; float: right; position: absolute; bottom: 4px;" src=""/>
 </div>
-<div id="ttle"><img id="ttleimg" style="" src=""/></div>
+    
+<div id="ttle">
+   
+    
+    <div class="PhseSlect" id="PhsePreB0Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+        <svg height=100%; width=100%; style="overflow: hidden;">
+            
+            <svg height="80%" width="80%" x="10%" y="10%" viewBox="0 0 47.624998 52.91667" style="left: 10%; top: 10%; fill: #808080">
+                <path d="M12.837841 27.502374C12.837841 27.502374 12.837841 6.1868764 12.837841 6.1868764C12.837841 6.1868764 20.279247 6.2237764 20.279247 6.2237764C28.313316 6.2635764 28.490005 6.2735764 30.590429 6.8050331C34.837978 7.8797665 37.519734 10.19882 38.788707 13.894519C39.291228 15.35803 39.436632 16.461854 39.436632 18.813152C39.436632 21.243667 39.284169 22.327601 38.715412 23.940642C37.278648 28.015431 34.030859 30.371396 28.701788 31.204583C27.92971 31.32529 26.72039 31.36732 23.02623 31.40183C18.730201 31.44193 18.319256 31.45953 18.183918 31.60911C18.052422 31.754407 18.033355 32.714434 18.011898 40.270059C18.011898 40.270059 17.987768 48.767591 17.987768 48.767591C17.987768 48.767591 15.412805 48.792691 15.412805 48.792691C15.412805 48.792691 12.837842 48.817791 12.837842 48.817791C12.837842 48.817791 12.837843 27.502314 12.837843 27.502314M26.531815 27.172014C30.554731 26.759187 33.214206 24.406919 33.86275 20.6879C34.044918 19.643286 34.044079 17.883588 33.86085 16.833244C33.229853 13.214875 30.594206 10.903127 26.58666 10.45299C26.118915 10.40049 24.097936 10.35709 22.095595 10.35669C18.952634 10.35603 18.426268 10.37599 18.244963 10.50301C18.244963 10.50301 18.034949 10.650107 18.034949 10.650107C18.034949 10.650107 18.034949 18.813082 18.034949 18.813082C18.034949 18.813082 18.034949 26.976054 18.034949 26.976054C18.034949 26.976054 18.244963 27.123154 18.244963 27.123154C18.426019 27.249974 18.945809 27.270254 22.014712 27.270254C23.972567 27.270254 26.005234 27.226054 26.531749 27.172054C26.531749 27.172054 26.531767 27.172054 26.531767 27.172054" />
+            </svg>
+            <circle id="" cx="50%" cy="50%" r="46%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+            Sorry, your browser does not support inline SVG.
+        </svg>
+    </div>
+    
+    <div class="PhseSlect" onClick="rotate(90)" id="PhsePreB1Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+        
+        <svg height=100%; width=100%; style="overflow: hidden; position: absolute;">
+            <svg height="80%" width="80%" x="10%" y="10%" viewBox="0 0 47.624998 52.91667" style="left: 10%; top: 10%; fill: #808080; position: absolute;">
+                <path d="M 10.720235,26.671387 V 5.2899497 h 2.806331 2.80633 v 8.8198493 8.819839 h 8.15172 8.151719 V 14.109799 5.2899497 h 2.806332 2.80633 v 21.3814373 21.38145 h -2.80633 -2.806332 V 37.763014 27.473194 h -8.151719 -8.15172 v 10.28982 10.289823 h -2.80633 -2.806331 z" />
+            </svg>
+            <circle id="" cx="50%" cy="50%" r="46%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+            <circle id="" cx="75%" cy="50%" r="46%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+            <circle id="" cx="-25%" cy="50%" r="46%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+            Sorry, your browser does not support inline SVG.
+        </svg>
+        
+        <svg height=100%; width=100%; x="0%" y="0%" style="overflow: hidden; position: absolute;">
+            
+        </svg>
+    </div>
+    
+    <div class="PhseSlect" onClick="rotate(180)" id="PhsePreB2Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+        
+        <svg height=100%; width=100%; style="overflow: hidden; position: absolute;">
+            <svg height="80%" width="80%" x="10%" y="10%" viewBox="0 0 47.624998 52.91667" style="left: 10%; top: 10%; fill: #808080; position: absolute;">
+                <path d="m 7.2945987,47.937187 c 0,-0.10086 2.8952853,-9.647066 6.4339673,-21.2138 C 17.267247,15.156653 20.207018,5.5441397 20.26139,5.3622397 20.3509,5.062803 20.689783,5.031513 23.843792,5.031513 c 1.915949,0 3.483544,0.0359 3.483544,0.0798 0,0.0439 2.884789,9.505943 6.410642,21.026817 3.525851,11.520864 6.469113,21.18 6.540577,21.46474 l 0.129937,0.517707 -2.902556,-1.1e-4 -2.902559,-10e-5 -1.373936,-4.866313 c -0.755666,-2.676475 -1.461545,-5.18618 -1.568619,-5.57713 l -0.194681,-0.710814 -7.676442,0.0494 -7.676443,0.0494 -1.52726,5.527617 -1.527261,5.5276 -2.882068,1.9e-4 c -1.7367122,2.4e-4 -2.8820683,-0.0725 -2.8820683,-0.18302 z M 29.973169,32.198127 c 0,-0.27752 -6.019413,-21.909767 -6.126408,-22.016767 -0.03989,-0.0399 -0.162318,0.20957 -0.272063,0.554347 -0.158057,0.496557 -3.58145,12.766388 -5.671911,20.328766 l -0.378751,1.370151 h 6.224567 c 4.857366,0 6.224566,-0.0519 6.224566,-0.236497 z" />
+            </svg>
+            <circle id="" cx="50%" cy="50%" r="46%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+            <circle id="" cx="100%" cy="50%" r="46%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+            <circle id="" cx="0%" cy="50%" r="46%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+            Sorry, your browser does not support inline SVG.
+        </svg>
+        
+        <svg height=100%; width=100%; style="overflow: hidden;">
+            
+        </svg>
+    </div>
+    
+    <div class="PhseSlect" onClick="rotate(270)" id="PhsePreB3Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+        
+        <svg height=100%; width=100%; style="overflow: hidden; position: absolute;">
+            <svg height="80%" width="80%" x="10%" y="10%" viewBox="0 0 47.624998 52.91667" style="left: 10%; top: 10%; fill: #808080; position: absolute;">
+                <path d="m 19.998398,48.800881 c -1.915751,-0.266307 -4.93815,-1.033564 -6.804337,-1.727318 l -1.547836,-0.575417 -0.03592,-3.021905 c -0.01975,-1.662051 -0.01087,-3.021902 0.01975,-3.021902 0.03062,0 0.46773,0.25086 0.971361,0.557457 5.024274,3.058692 10.612754,4.134786 15.120957,2.911622 1.970072,-0.534527 3.624239,-1.710538 4.534559,-3.223799 1.598052,-2.656505 1.142598,-7.136841 -0.913418,-8.985369 -1.430179,-1.285854 -2.684968,-1.779891 -7.336077,-2.888425 -3.703425,-0.882664 -5.545831,-1.484101 -7.273311,-2.374318 -2.863962,-1.475861 -4.542224,-3.460229 -5.320016,-6.290364 -0.416166,-1.514291 -0.411352,-4.811253 0.0095,-6.500421 1.016509,-4.0800387 4.048315,-7.2022989 8.293332,-8.540769 1.948325,-0.6143167 3.505758,-0.7895067 6.291624,-0.7077467 3.110591,0.0913 5.091045,0.4663967 8.72307,1.6521801 L 36.16821,6.5334031 V 9.3864966 12.239598 L 34.39755,11.324684 C 31.13856,9.6407333 28.766809,9.0127866 25.611063,8.9983466 c -2.323064,-0.0106 -3.559447,0.22819 -5.171029,0.9988267 -2.5394,1.2143207 -3.919559,3.3759487 -3.914159,6.1304437 0.0052,2.664065 0.918037,4.281796 3.044546,5.39566 1.365025,0.714994 2.764474,1.161294 5.917359,1.887108 1.50104,0.34555 3.339423,0.830237 4.085302,1.077074 6.501325,2.151558 9.367295,6.154907 9.086723,12.692848 -0.149694,3.488222 -1.062279,5.839317 -3.077933,7.929715 -1.73673,1.801141 -3.764049,2.830535 -6.926976,3.517262 -1.673056,0.363247 -6.583744,0.461737 -8.656493,0.173597 z" />
+            </svg>
+            <circle id="" cx="50%" cy="50%" r="46%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+            <circle id="" cx="125%" cy="50%" r="46%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+            <circle id="" cx="25%" cy="50%" r="46%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+            Sorry, your browser does not support inline SVG.
+        </svg>
+        
+        <svg height=100%; width=100%; style="overflow: hidden;">
+            
+            
+        </svg>
+    </div>
+    
+    <div class="PhseSlect" onClick="rotate(360)" id="PhsePreB4Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+        
+        <svg height=100%; width=100%; style="overflow: hidden; position: absolute;">
+            <svg height="80%" width="80%" x="10%" y="10%" viewBox="0 0 47.624998 52.91667" style="left: 10%; top: 10%; fill: #808080; position: absolute;">
+                <path d="M 11.717254,26.587087 V 5.042573 h 12.662202 12.662202 v 2.4568235 2.4568368 h -9.827381 -9.82738 v 6.4255637 6.425551 h 9.449404 9.449406 v 2.362338 2.362335 h -9.449406 -9.449404 v 7.937455 7.937455 h 10.110862 10.110864 v 2.362338 2.362338 H 24.662938 11.717254 Z" />
+            </svg>
+            <circle id="" cx="50%" cy="50%" r="46%" stroke="black" stroke-width="1" style="opacity: 0.5;" fill="#fff" />
+            Sorry, your browser does not support inline SVG.
+        </svg>
+        
+        <svg height=100%; width=100%; style="overflow: hidden;">
+            
+        </svg>
+    </div>
+</div>
 
 </div>
     
@@ -804,6 +854,7 @@ function SetLyOut() {
     ScrnHght = document.getElementById("centralcolumn").clientHeight;
     TtleHght = 48;
     GPerliPr = 340 / 100 ;
+    PhsBxMrgn = 20;
     //gperilli.png
     
     //Measure screen size, calculate box and header, footer orientation and size
@@ -836,15 +887,15 @@ function SetLyOut() {
             document.getElementById("gperilli").style.left = "0px";
             document.getElementById("gperilli").style.width = "100%";
             document.getElementById("gperilli").style.height = "24px";
-            document.getElementById("gperilli").style.borderTop = "1px solid #000";
-            document.getElementById("gperilli").style.borderLeft = "0px solid #000";
+            document.getElementById("gperilli").style.borderTop = "1px solid #ccc";
+            document.getElementById("gperilli").style.borderLeft = "0px solid #ccc";
             
             document.getElementById("ttle").style.top = "".concat(((((ScrnHght - (TtleHght + 24 + Sqre)) / 2) + TtleHght) - TtleHght), "px");
             document.getElementById("ttle").style.left = "0px";
             document.getElementById("ttle").style.width = "100%";
             document.getElementById("ttle").style.height = "".concat(TtleHght, "px");
-            document.getElementById("ttle").style.borderBottom = "1px solid #000";
-            document.getElementById("ttle").style.borderRight = "0px solid #000";
+            document.getElementById("ttle").style.borderBottom = "1px solid #ccc";
+            document.getElementById("ttle").style.borderRight = "0px solid #ccc";
             
             document.getElementById("SqrsCnt").style.left = "0px";
             document.getElementById("SqrsCnt").style.width = "100%";
@@ -853,9 +904,32 @@ function SetLyOut() {
             
             //document.getElementById("ttleimg").className = "ttleimgH"; //graphics/phasettle.png
             
-            document.getElementById("ttleimg").src = "graphics/phasettleH.png";
-            document.getElementById("ttleimg").style.height = "".concat(TtleHght, "px");
-            document.getElementById("ttleimg").style.width = "auto";
+            //document.getElementById("ttleimg").src = "";
+            //document.getElementById("ttleimg").style.height = "".concat(TtleHght, "px");
+            //document.getElementById("ttleimg").style.width = "auto";
+            
+            document.getElementById("PhsePreB0Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB0Bx").style.width = "".concat(TtleHght, "px");
+            
+            document.getElementById("PhsePreB1Bx").style.left = "".concat((TtleHght + PhsBxMrgn), "px");
+            document.getElementById("PhsePreB1Bx").style.top = "".concat(0, "px");
+            document.getElementById("PhsePreB1Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB1Bx").style.width = "".concat(TtleHght, "px");
+            
+            document.getElementById("PhsePreB2Bx").style.left = "".concat(((TtleHght + PhsBxMrgn) * 2), "px");
+            document.getElementById("PhsePreB2Bx").style.top = "".concat(0, "px");
+            document.getElementById("PhsePreB2Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB2Bx").style.width = "".concat(TtleHght, "px");
+            
+            document.getElementById("PhsePreB3Bx").style.left = "".concat(((TtleHght + PhsBxMrgn) * 3), "px");
+            document.getElementById("PhsePreB3Bx").style.top = "".concat(0, "px");
+            document.getElementById("PhsePreB3Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB3Bx").style.width = "".concat(TtleHght, "px");
+            
+            document.getElementById("PhsePreB4Bx").style.left = "".concat(((TtleHght + PhsBxMrgn) * 4), "px");
+            document.getElementById("PhsePreB4Bx").style.top = "".concat(0, "px");
+            document.getElementById("PhsePreB4Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB4Bx").style.width = "".concat(TtleHght, "px");
             
             document.getElementById("gperilliimg").src = "graphics/gperilliH.png";
             document.getElementById("gperilliimg").style.height = "20px";
@@ -894,15 +968,15 @@ function SetLyOut() {
             document.getElementById("gperilli").style.left = "".concat((((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3)*2) + TtleHght) + (Sqre * 2)), "px");
             document.getElementById("gperilli").style.width = "24px";
             document.getElementById("gperilli").style.height = "100%";
-            document.getElementById("gperilli").style.borderLeft = "0px solid #000";
-            document.getElementById("gperilli").style.borderTop = "1px solid #000";
+            document.getElementById("gperilli").style.borderLeft = "0px solid #ccc";
+            document.getElementById("gperilli").style.borderTop = "1px solid #ccc";
             
             document.getElementById("ttle").style.top = "0px";
             document.getElementById("ttle").style.left = "".concat(((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3) + TtleHght) - TtleHght), "px");
             document.getElementById("ttle").style.width = "".concat(TtleHght, "px");
             document.getElementById("ttle").style.height = "100%";
-            document.getElementById("ttle").style.borderRight = "1px solid #000";
-            document.getElementById("ttle").style.borderBottom = "0px solid #000";
+            document.getElementById("ttle").style.borderRight = "1px solid #ccc";
+            document.getElementById("ttle").style.borderBottom = "0px solid #ccc";
             
             document.getElementById("SqrsCnt").style.top = "0px";
             document.getElementById("SqrsCnt").style.left = "".concat(TtleHght, "px");
@@ -911,9 +985,32 @@ function SetLyOut() {
             
             //document.getElementById("ttleimg").className = "ttleimgV";
             
-            document.getElementById("ttleimg").src = "graphics/phasettleV.png";
-            document.getElementById("ttleimg").style.width = "".concat(TtleHght, "px");
-            document.getElementById("ttleimg").style.height = "auto";
+            //document.getElementById("ttleimg").src = "";
+            //document.getElementById("ttleimg").style.width = "".concat(TtleHght, "px");
+            //document.getElementById("ttleimg").style.height = "auto";
+            
+            document.getElementById("PhsePreB0Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB0Bx").style.width = "".concat(TtleHght, "px");
+            
+            document.getElementById("PhsePreB1Bx").style.top = "".concat((TtleHght + PhsBxMrgn), "px");
+            document.getElementById("PhsePreB1Bx").style.left = "".concat(0, "px");
+            document.getElementById("PhsePreB1Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB1Bx").style.width = "".concat(TtleHght, "px");
+            
+            document.getElementById("PhsePreB2Bx").style.top = "".concat(((TtleHght + PhsBxMrgn) * 2), "px");
+            document.getElementById("PhsePreB2Bx").style.left = "".concat(0, "px");
+            document.getElementById("PhsePreB2Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB2Bx").style.width = "".concat(TtleHght, "px");
+            
+            document.getElementById("PhsePreB3Bx").style.top = "".concat(((TtleHght + PhsBxMrgn) * 3), "px");
+            document.getElementById("PhsePreB3Bx").style.left = "".concat(0, "px");
+            document.getElementById("PhsePreB3Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB3Bx").style.width = "".concat(TtleHght, "px");
+            
+            document.getElementById("PhsePreB4Bx").style.top = "".concat(((TtleHght + PhsBxMrgn) * 4), "px");
+            document.getElementById("PhsePreB4Bx").style.left = "".concat(0, "px");
+            document.getElementById("PhsePreB4Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB4Bx").style.width = "".concat(TtleHght, "px");
             
             document.getElementById("gperilliimg").src = "graphics/gperilliV.png";
             document.getElementById("gperilliimg").style.width = "20px";
@@ -952,15 +1049,15 @@ function SetLyOut() {
             document.getElementById("gperilli").style.left = "".concat(((((ScrnWdth - (TtleHght + 24 + Sqre)) / 2) + TtleHght) + Sqre), "px");
             document.getElementById("gperilli").style.width = "24px";
             document.getElementById("gperilli").style.height = "100%";
-            document.getElementById("gperilli").style.borderLeft = "1px solid #000";
-            document.getElementById("gperilli").style.borderTop = "0px solid #000";
+            document.getElementById("gperilli").style.borderLeft = "1px solid #ccc";
+            document.getElementById("gperilli").style.borderTop = "0px solid #ccc";
             
             document.getElementById("ttle").style.top = "0px";
             document.getElementById("ttle").style.left = "".concat(((ScrnWdth - (TtleHght + 24 + Sqre)) / 2), "px");
             document.getElementById("ttle").style.width = "".concat(TtleHght, "px");
             document.getElementById("ttle").style.height = "100%";
-             document.getElementById("ttle").style.borderRight = "1px solid #000";
-            document.getElementById("ttle").style.borderBotttom = "0px solid #000";
+             document.getElementById("ttle").style.borderRight = "1px solid #ccc";
+            document.getElementById("ttle").style.borderBotttom = "0px solid #ccc";
             
             document.getElementById("SqrsCnt").style.top = "0px";
             document.getElementById("SqrsCnt").style.left = "0px";
@@ -969,9 +1066,32 @@ function SetLyOut() {
             
             //document.getElementById("ttleimg").className = "ttleimgV";
             
-            document.getElementById("ttleimg").src = "graphics/phasettleV.png";
-            document.getElementById("ttleimg").style.width = "".concat(TtleHght, "px");
-            document.getElementById("ttleimg").style.height = "auto";
+            //document.getElementById("ttleimg").src = "";
+            //document.getElementById("ttleimg").style.width = "".concat(TtleHght, "px");
+            //document.getElementById("ttleimg").style.height = "auto";
+            
+            document.getElementById("PhsePreB0Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB0Bx").style.width = "".concat(TtleHght, "px");
+            
+            document.getElementById("PhsePreB1Bx").style.top = "".concat((TtleHght + PhsBxMrgn), "px");
+            document.getElementById("PhsePreB1Bx").style.left = "".concat(0, "px");
+            document.getElementById("PhsePreB1Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB1Bx").style.width = "".concat(TtleHght, "px");
+            
+            document.getElementById("PhsePreB2Bx").style.top = "".concat(((TtleHght + PhsBxMrgn) * 2), "px");
+            document.getElementById("PhsePreB2Bx").style.left = "".concat(0, "px");
+            document.getElementById("PhsePreB2Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB2Bx").style.width = "".concat(TtleHght, "px");
+            
+            document.getElementById("PhsePreB3Bx").style.top = "".concat(((TtleHght + PhsBxMrgn) * 3), "px");
+            document.getElementById("PhsePreB3Bx").style.left = "".concat(0, "px");
+            document.getElementById("PhsePreB3Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB3Bx").style.width = "".concat(TtleHght, "px");
+            
+            document.getElementById("PhsePreB4Bx").style.top = "".concat(((TtleHght + PhsBxMrgn) * 4), "px");
+            document.getElementById("PhsePreB4Bx").style.left = "".concat(0, "px");
+            document.getElementById("PhsePreB4Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB4Bx").style.width = "".concat(TtleHght, "px");
             
             document.getElementById("gperilliimg").src = "graphics/gperilliV.png";
             document.getElementById("gperilliimg").style.width = "20px";
@@ -1007,13 +1127,13 @@ function SetLyOut() {
             document.getElementById("gperilli").style.left = "0px";
             document.getElementById("gperilli").style.width = "100%";
             document.getElementById("gperilli").style.height = "24px";
-            document.getElementById("gperilli").style.borderTop = "1px solid #000";
+            document.getElementById("gperilli").style.borderTop = "1px solid #ccc";
             
             document.getElementById("ttle").style.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) + TtleHght) - TtleHght), "px");
             document.getElementById("ttle").style.left = "0px";
             document.getElementById("ttle").style.width = "100%";
             document.getElementById("ttle").style.height = "".concat(TtleHght, "px");
-             document.getElementById("ttle").style.borderBottom = "1px solid #000";
+             document.getElementById("ttle").style.borderBottom = "1px solid #ccc";
             
             document.getElementById("SqrsCnt").style.top = "0px";
             document.getElementById("SqrsCnt").style.left = "0px";
@@ -1022,9 +1142,32 @@ function SetLyOut() {
             
             //document.getElementById("ttleimg").className = "ttleimgH";
             
-            document.getElementById("ttleimg").src = "graphics/phasettleH.png";
-            document.getElementById("ttleimg").style.height = "".concat(TtleHght, "px");
-            document.getElementById("ttleimg").style.width = "auto";
+            //document.getElementById("ttleimg").src = "";
+            //document.getElementById("ttleimg").style.height = "".concat(TtleHght, "px");
+            //document.getElementById("ttleimg").style.width = "auto";
+            
+            document.getElementById("PhsePreB0Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB0Bx").style.width = "".concat(TtleHght, "px");
+            
+            document.getElementById("PhsePreB1Bx").style.left = "".concat((TtleHght + PhsBxMrgn), "px");
+            document.getElementById("PhsePreB1Bx").style.top = "".concat(0, "px");
+            document.getElementById("PhsePreB1Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB1Bx").style.width = "".concat(TtleHght, "px");
+            
+            document.getElementById("PhsePreB2Bx").style.left = "".concat(((TtleHght + PhsBxMrgn) * 2), "px");
+            document.getElementById("PhsePreB2Bx").style.top = "".concat(0, "px");
+            document.getElementById("PhsePreB2Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB2Bx").style.width = "".concat(TtleHght, "px");
+            
+            document.getElementById("PhsePreB3Bx").style.left = "".concat(((TtleHght + PhsBxMrgn) * 3), "px");
+            document.getElementById("PhsePreB3Bx").style.top = "".concat(0, "px");
+            document.getElementById("PhsePreB3Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB3Bx").style.width = "".concat(TtleHght, "px");
+            
+            document.getElementById("PhsePreB4Bx").style.left = "".concat(((TtleHght + PhsBxMrgn) * 4), "px");
+            document.getElementById("PhsePreB4Bx").style.top = "".concat(0, "px");
+            document.getElementById("PhsePreB4Bx").style.height = "".concat(TtleHght, "px");
+            document.getElementById("PhsePreB4Bx").style.width = "".concat(TtleHght, "px");
             
             document.getElementById("gperilliimg").src = "graphics/gperilliH.png";
             document.getElementById("gperilliimg").style.height = "20px";
@@ -1231,54 +1374,54 @@ function SetLyOut() {
     PhseDspBxLPos = (PhseDspBxWdthHght - (PhseDspBxWdthHght / 2));
     PhseDspBxTPos = (Sqre / 2) + (((Sqre / 8) * 3) - (Sqre / 32));
 
-    document.getElementById("PhsePre0Bx").style.left = "".concat(PhseDspBxLPos, "px");
-    document.getElementById("PhsePre0Bx").style.top = "".concat(PhseDspBxTPos, "px");
-    document.getElementById("PhsePre0Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
-    document.getElementById("PhsePre0Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
+    //document.getElementById("PhsePre0Bx").style.left = "".concat(PhseDspBxLPos, "px");
+    //document.getElementById("PhsePre0Bx").style.top = "".concat(PhseDspBxTPos, "px");
+    //document.getElementById("PhsePre0Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
+    //document.getElementById("PhsePre0Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
     
-    document.getElementById("arrwbx1").style.left = "".concat((PhseDspBxLPos + PhsePreBxWdthHght), "px");
-    document.getElementById("arrwbx1").style.top = "".concat(PhseDspBxTPos + (PhsePreBxWdthHght / 3), "px");
-    document.getElementById("arrwbx1").style.width = "".concat((PhseDspBxLPos * 4) - (PhseDspBxLPos + PhsePreBxWdthHght), "px");
-    document.getElementById("arrwbx1").style.height = "".concat((PhsePreBxWdthHght / 3), "px");
+    //document.getElementById("arrwbx1").style.left = "".concat((PhseDspBxLPos + PhsePreBxWdthHght), "px");
+    //document.getElementById("arrwbx1").style.top = "".concat(PhseDspBxTPos + (PhsePreBxWdthHght / 3), "px");
+    //document.getElementById("arrwbx1").style.width = "".concat((PhseDspBxLPos * 4) - (PhseDspBxLPos + PhsePreBxWdthHght), "px");
+    //document.getElementById("arrwbx1").style.height = "".concat((PhsePreBxWdthHght / 3), "px");
     
     //document.getElementById("arrwhd1").style.width = "40%";
     //document.getElementById("arrwhd1").style.height = "100%";
     //
     
-    document.getElementById("PhsePre1Bx").style.left = "".concat((PhseDspBxLPos * 4), "px");
-    document.getElementById("PhsePre1Bx").style.top = "".concat(PhseDspBxTPos, "px");
-    document.getElementById("PhsePre1Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
-    document.getElementById("PhsePre1Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
+    //document.getElementById("PhsePre1Bx").style.left = "".concat((PhseDspBxLPos * 4), "px");
+    //document.getElementById("PhsePre1Bx").style.top = "".concat(PhseDspBxTPos, "px");
+    //document.getElementById("PhsePre1Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
+    //document.getElementById("PhsePre1Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
     
-    document.getElementById("arrwbx2").style.left = "".concat(((PhseDspBxLPos * 4) + PhsePreBxWdthHght), "px");
-    document.getElementById("arrwbx2").style.top = "".concat(PhseDspBxTPos + (PhsePreBxWdthHght / 3), "px");
-    document.getElementById("arrwbx2").style.width = "".concat((PhseDspBxLPos * 4) - (PhseDspBxLPos + PhsePreBxWdthHght), "px");
-    document.getElementById("arrwbx2").style.height = "".concat((PhsePreBxWdthHght / 3), "px");
+    //document.getElementById("arrwbx2").style.left = "".concat(((PhseDspBxLPos * 4) + PhsePreBxWdthHght), "px");
+    //document.getElementById("arrwbx2").style.top = "".concat(PhseDspBxTPos + (PhsePreBxWdthHght / 3), "px");
+    //document.getElementById("arrwbx2").style.width = "".concat((PhseDspBxLPos * 4) - (PhseDspBxLPos + PhsePreBxWdthHght), "px");
+    //document.getElementById("arrwbx2").style.height = "".concat((PhsePreBxWdthHght / 3), "px");
     
-    document.getElementById("PhsePre2Bx").style.left = "".concat((PhseDspBxLPos * 7), "px");
-    document.getElementById("PhsePre2Bx").style.top = "".concat(PhseDspBxTPos, "px");
-    document.getElementById("PhsePre2Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
-    document.getElementById("PhsePre2Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
+    //document.getElementById("PhsePre2Bx").style.left = "".concat((PhseDspBxLPos * 7), "px");
+    //document.getElementById("PhsePre2Bx").style.top = "".concat(PhseDspBxTPos, "px");
+    //document.getElementById("PhsePre2Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
+    //document.getElementById("PhsePre2Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
     
-    document.getElementById("arrwbx3").style.left = "".concat(((PhseDspBxLPos * 7) + PhsePreBxWdthHght), "px");
-    document.getElementById("arrwbx3").style.top = "".concat(PhseDspBxTPos + (PhsePreBxWdthHght / 3), "px");
-    document.getElementById("arrwbx3").style.width = "".concat((PhseDspBxLPos * 4) - (PhseDspBxLPos + PhsePreBxWdthHght), "px");
-    document.getElementById("arrwbx3").style.height = "".concat((PhsePreBxWdthHght / 3), "px");
+    //document.getElementById("arrwbx3").style.left = "".concat(((PhseDspBxLPos * 7) + PhsePreBxWdthHght), "px");
+    //document.getElementById("arrwbx3").style.top = "".concat(PhseDspBxTPos + (PhsePreBxWdthHght / 3), "px");
+    //document.getElementById("arrwbx3").style.width = "".concat((PhseDspBxLPos * 4) - (PhseDspBxLPos + PhsePreBxWdthHght), "px");
+    //document.getElementById("arrwbx3").style.height = "".concat((PhsePreBxWdthHght / 3), "px");
     
-    document.getElementById("PhsePre3Bx").style.left = "".concat((PhseDspBxLPos * 10), "px");
-    document.getElementById("PhsePre3Bx").style.top = "".concat(PhseDspBxTPos, "px");
-    document.getElementById("PhsePre3Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
-    document.getElementById("PhsePre3Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
+    //document.getElementById("PhsePre3Bx").style.left = "".concat((PhseDspBxLPos * 10), "px");
+    //document.getElementById("PhsePre3Bx").style.top = "".concat(PhseDspBxTPos, "px");
+    //document.getElementById("PhsePre3Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
+    //document.getElementById("PhsePre3Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
     
-    document.getElementById("arrwbx4").style.left = "".concat(((PhseDspBxLPos * 10) + PhsePreBxWdthHght), "px");
-    document.getElementById("arrwbx4").style.top = "".concat(PhseDspBxTPos + (PhsePreBxWdthHght / 3), "px");
-    document.getElementById("arrwbx4").style.width = "".concat((PhseDspBxLPos * 4) - (PhseDspBxLPos + PhsePreBxWdthHght), "px");
-    document.getElementById("arrwbx4").style.height = "".concat((PhsePreBxWdthHght / 3), "px");
+    //document.getElementById("arrwbx4").style.left = "".concat(((PhseDspBxLPos * 10) + PhsePreBxWdthHght), "px");
+    //document.getElementById("arrwbx4").style.top = "".concat(PhseDspBxTPos + (PhsePreBxWdthHght / 3), "px");
+    //document.getElementById("arrwbx4").style.width = "".concat((PhseDspBxLPos * 4) - (PhseDspBxLPos + PhsePreBxWdthHght), "px");
+    //document.getElementById("arrwbx4").style.height = "".concat((PhsePreBxWdthHght / 3), "px");
     
-    document.getElementById("PhsePre4Bx").style.left = "".concat((PhseDspBxLPos * 13), "px");
-    document.getElementById("PhsePre4Bx").style.top = "".concat(PhseDspBxTPos, "px");
-    document.getElementById("PhsePre4Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
-    document.getElementById("PhsePre4Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
+    //document.getElementById("PhsePre4Bx").style.left = "".concat((PhseDspBxLPos * 13), "px");
+    //document.getElementById("PhsePre4Bx").style.top = "".concat(PhseDspBxTPos, "px");
+    //document.getElementById("PhsePre4Bx").style.width = "".concat(PhsePreBxWdthHght, "px");
+    //document.getElementById("PhsePre4Bx").style.height = "".concat(PhsePreBxWdthHght, "px");
     
     //document.getElementById("PhseDspBx").style.left = "".concat((PhseDspBxLPos * 13), "px");
     //document.getElementById("PhseDspBx").style.top = "".concat(PhseDspBxTPos, "px");
@@ -1287,9 +1430,9 @@ function SetLyOut() {
     
     
     //SeqPlyBx
-    SeqPlyBxLPos = (Sqre / 4) - (Sqre / 16);
+    SeqPlyBxLPos = (Sqre / 4) - (Sqre / 6);
     SeqPlyBxTPos = (Sqre / 4) - ((Sqre / 16) * 3);
-    SeqDspBxWdthHght = (Sqre / 4);
+    SeqDspBxWdthHght = (Sqre / 3);
     
     document.getElementById("SeqPlyBx").style.width = "".concat(SeqDspBxWdthHght, "px");
     document.getElementById("SeqPlyBx").style.height = "".concat(SeqDspBxWdthHght, "px");
@@ -1315,7 +1458,7 @@ function SetLyOut() {
     playuitxthght = (SeqDspBxWdthHght / 4);
     
     
-    document.getElementById("uibox1").style.width = "".concat((Sqre / 3), "px");
+    document.getElementById("uibox1").style.width = "".concat((Sqre / 3.5), "px");
     document.getElementById("uibox1").style.height = "".concat(playuitxthght, "px");
     document.getElementById("uibox1").style.left = "".concat(PhseDspBxLPos + (playuitxthght + (playuitxthght/2)), "px");
     document.getElementById("uibox1").style.top = "".concat(SeqPlyBxTPos, "px");
@@ -1325,7 +1468,7 @@ function SetLyOut() {
     document.getElementById("uibox1ico").style.left = "".concat(PhseDspBxLPos, "px");
     document.getElementById("uibox1ico").style.top = "".concat(SeqPlyBxTPos, "px");
     
-    document.getElementById("uibox2").style.width = "".concat((Sqre / 3), "px");
+    document.getElementById("uibox2").style.width = "".concat((Sqre / 3.5), "px");
     document.getElementById("uibox2").style.height = "".concat(playuitxthght, "px");
     document.getElementById("uibox2").style.left = "".concat(PhseDspBxLPos + (playuitxthght + (playuitxthght/2)), "px");
     document.getElementById("uibox2").style.top = "".concat(SeqPlyBxTPos + (playuitxthght + (playuitxthght / 2)), "px");
@@ -1335,7 +1478,7 @@ function SetLyOut() {
     document.getElementById("uibox2ico").style.left = "".concat(PhseDspBxLPos, "px");
     document.getElementById("uibox2ico").style.top = "".concat(SeqPlyBxTPos + (playuitxthght + (playuitxthght / 2)), "px");
     
-    document.getElementById("uibox3").style.width = "".concat(SeqDspBxWdthHght, "px");
+    document.getElementById("uibox3").style.width = "".concat((Sqre / 4.5), "px");
     document.getElementById("uibox3").style.height = "".concat(playuitxthght, "px");
     document.getElementById("uibox3").style.left = "".concat(PhseDspBxLPos + (playuitxthght + (playuitxthght/2)), "px");
     document.getElementById("uibox3").style.top = "".concat(SeqPlyBxTPos + (playuitxthght * 3), "px");
