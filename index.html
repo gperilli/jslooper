@@ -1597,6 +1597,7 @@ function RtateStop() {
 function rotate(pos) {
   
   PlyFrmStat = "zero";
+  rotateincre = pos;
     
   for (i = 0; i < 12; i++) {
     StcSqItmInCrclX = "StcSqItmInCrcl".concat(i);
@@ -1951,12 +1952,12 @@ function playseqtst() {
     
     //create a synth and connect it to the master output (your speakers)
     
-synth = new Tone.Synth().toMaster();
+    synth = new Tone.Synth().toMaster();
     synthb = new Tone.Synth().toMaster();
     
     
     console.log("Play Seq test.");
-    tempo = 180;
+    tempo = 150;
     console.log("Tempo is: ".concat(tempo));
     
     
@@ -1998,8 +1999,8 @@ synth = new Tone.Synth().toMaster();
         }
         
         seqply = setInterval(function () {
-            seqplyfunc(tempo);
-            phsseqplyfunc(DelayTme, tempo);
+            seqplyfunc(DelayTme, tempo);
+            phsseqplyfunc(tempo);
         }, tempo);
         
 
@@ -2022,37 +2023,41 @@ synth = new Tone.Synth().toMaster();
 
     
 var seqplyn = 0;
-function seqplyfunc(tmpo) {
+var seqrtn = 0;
+var rotateincre = 0;
+function seqplyfunc(DelayTme, tmpo) {
     
     //tmpo = tmpo;
+    setTimeout(function () {
+        StcSqItmInCrclX = "StcSqItmInCrcl".concat(seqplyn);
+        document.getElementById(StcSqItmInCrclX).style.opacity = "1";
+
+        prvseqplyn = seqplyn - 1;
+        if (prvseqplyn < 0) {prvseqplyn = 11;}
+        PrevStcSqItmInCrclX = "StcSqItmInCrcl".concat(prvseqplyn);
+        document.getElementById(PrevStcSqItmInCrclX).style.opacity = "0";
+
+        //dur = tempo - 0;
+        //playIt(seqplyn, 0.05);
+        note = SeqNotes[seqplyn + 1];
+
+        dur = (tmpo * 0.001) - 0.025;
+        synth.triggerAttackRelease(note, dur);
+
+        seqplyn = seqplyn + 1;
+        if (seqplyn > 11) {seqplyn = 0;}
     
-    StcSqItmInCrclX = "StcSqItmInCrcl".concat(seqplyn);
-    document.getElementById(StcSqItmInCrclX).style.opacity = "1";
-    
-    prvseqplyn = seqplyn - 1;
-    if (prvseqplyn < 0) {prvseqplyn = 11;}
-    PrevStcSqItmInCrclX = "StcSqItmInCrcl".concat(prvseqplyn);
-    document.getElementById(PrevStcSqItmInCrclX).style.opacity = "0";
-    
-    //dur = tempo - 0;
-    //playIt(seqplyn, 0.05);
-    note = SeqNotes[seqplyn + 1];
-    
-    dur = (tmpo * 0.001) - 0.025;
-    synth.triggerAttackRelease(note, dur);
-    
-    seqplyn = seqplyn + 1;
-    if (seqplyn > 11) {seqplyn = 0;}
+    }, DelayTme);
 }
     
 
     
 var phsseqplyn = 0;
-function phsseqplyfunc(DelayTme, tmpo) {
+function phsseqplyfunc(tmpo) {
     
     //tmpo = tmpo;
     
-    setTimeout(function () {
+    
     
     PhsSqItmInCrclX = "PhsSqItmInCrcl".concat(phsseqplyn);
     document.getElementById(PhsSqItmInCrclX).style.opacity = "1";
@@ -2068,9 +2073,21 @@ function phsseqplyfunc(DelayTme, tmpo) {
     synthb.triggerAttackRelease(noteb, durb);
         
     phsseqplyn = phsseqplyn + 1;
-    if (phsseqplyn > 11) {phsseqplyn = 0;}
+    if (phsseqplyn > 11) {
+        phsseqplyn = 0;//seq rotation complete, return to step 1
+        seqrtn = seqrtn + 1;
+        console.log("Seq rotations: ".concat(seqrtn));
+        if (seqrtn == 3) {
+            DelayTme = DelayTme + (tempo * (1 / 6));
+            rotateincre = rotateincre + 5;
+            if (rotateincre == 360) {rotateincre = 0;}
+            rotate(rotateincre);
+            seqrtn = 0;
+        }
+    }
     
-    }, DelayTme);
+    
+    
 }
     
 </script>
