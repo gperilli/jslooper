@@ -3,6 +3,27 @@
 
 <head>
 <title>Phase</title>
+    
+<title>Phase: The Reichian Sequencer.</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+<meta name=”description” content="Phase; The Reichian sequencer. Phase any 12 note melody. 12 note melody phase machine for pure minimalist joy.">
+
+<!-- OG Facebook -->
+<meta property="og:url" content="https://gperilli.github.io/phase/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Phase" />
+<meta property="og:description" content="Phase" />
+<meta property="og:image" content="https://gperilli.github.io/phase/graphics/shareimg.png" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@flickr" />
+<meta name="twitter:title" content="Phase" />
+<meta name="twitter:description" content="Phase" />
+<meta name="twitter:image" content="https://gperilli.github.io/phase/graphics/shareimg.png" />
+
+<link rel="icon" href="graphics/monostfav.png">
 
 <meta content="width=device-width, initial-scale=1" name="viewport" />
  
@@ -809,7 +830,7 @@ input[type="range"] {
         </svg>
     </div>
     
-    <div class="PhseSlect" onClick="rotate(90)" id="PhsePreB1Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+    <div class="PhseSlect" onClick="rotate(90, 'usr')" id="PhsePreB1Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
         
         <svg height=100%; width=100%; style="overflow: hidden; position: absolute;">
             <circle id="" cx="50%" cy="50%" r="46%" stroke="#808080" stroke-width="1" style="opacity: 0.5;" fill="none" />
@@ -827,7 +848,7 @@ input[type="range"] {
         </svg>
     </div>
     
-    <div class="PhseSlect" onClick="rotate(180)" id="PhsePreB2Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+    <div class="PhseSlect" onClick="rotate(180, 'usr')" id="PhsePreB2Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
         
         <svg height=100%; width=100%; style="overflow: hidden; position: absolute;">
             <circle id="" cx="50%" cy="50%" r="46%" stroke="#808080" stroke-width="1" style="opacity: 0.5;" fill="none" />
@@ -845,7 +866,7 @@ input[type="range"] {
         </svg>
     </div>
     
-    <div class="PhseSlect" onClick="rotate(270)" id="PhsePreB3Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+    <div class="PhseSlect" onClick="rotate(270, 'usr')" id="PhsePreB3Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
         
         <svg height=100%; width=100%; style="overflow: hidden; position: absolute;">
             <circle id="" cx="50%" cy="50%" r="46%" stroke="#808080" stroke-width="1" style="opacity: 0.5;" fill="none" />
@@ -864,7 +885,7 @@ input[type="range"] {
         </svg>
     </div>
     
-    <div class="PhseSlect" onClick="rotate(360)" id="PhsePreB4Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+    <div class="PhseSlect" onClick="rotate(0, 'usr')" id="PhsePreB4Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
         
         <svg height=100%; width=100%; style="overflow: hidden; position: absolute;">
             <svg height="80%" width="80%" x="10%" y="10%" viewBox="0 0 47.624998 52.91667" style="left: 10%; top: 10%; fill: #808080; position: absolute;">
@@ -1482,7 +1503,7 @@ var SmplIco = ["m 31.978013,67.679715 c -3.348553,-1.476525 -3.041494,-5.552204 
 "m 32.838371,62.220118 c -1.715684,-0.359469 -3.213483,-1.976326 -3.548135,-3.830173 -0.05401,-0.299175 -0.122382,-0.586839 -0.151946,-0.639252 -0.02956,-0.05241 -0.424684,0.274027 -0.878045,0.725424 -0.45336,0.451397 -1.147173,0.97679 -1.541806,1.16754 -0.934077,0.451497 -2.364605,0.547595 -3.324448,0.223326 -2.223779,-0.751273 -3.753202,-3.223156 -3.363415,-5.436015 0.0844,-0.479146 0.134593,-0.890036 0.111541,-0.913089 -0.02305,-0.02305 -0.393235,0.09701 -0.822627,0.266812 -1.145629,0.453028 -2.952748,0.44665 -3.977873,-0.01403 -0.883787,-0.397175 -1.847167,-1.399687 -2.388003,-2.485004 -0.69192,-1.388509 -0.434955,-3.135481 0.691916,-4.704004 0.284027,-0.395345 0.516412,-0.74812 0.516412,-0.783944 0,-0.03583 -0.52028,-0.06399 -1.156178,-0.0626 -1.577671,0.0035 -2.459578,-0.307593 -3.2869114,-1.159337 -1.0778831,-1.109684 -1.3688021,-1.842576 -1.3686184,-3.44786 1.398e-4,-1.222122 0.043612,-1.449123 0.4198544,-2.192373 0.4284331,-0.846351 1.5025834,-1.981401 2.1574664,-2.279786 0.200382,-0.0913 0.363659,-0.204067 0.362837,-0.250593 -8.18e-4,-0.04653 -0.392783,-0.26668 -0.871025,-0.489233 C 9.3314109,35.40964 8.5026287,34.591323 8.0165962,33.543495 7.7087249,32.879762 7.6411135,32.525113 7.6432165,31.584975 7.6464092,30.157757 8.0877613,29.138425 9.1209907,28.171961 9.9564453,27.390491 10.659985,27.015783 11.743886,26.775 l 0.810756,-0.180105 -0.626317,-0.91483 c -1.045945,-1.52776 -1.310728,-2.98438 -0.821356,-4.518441 0.361798,-1.134151 1.960006,-2.736803 3.045144,-3.053611 1.177494,-0.343771 1.612192,-0.310235 3.693935,0.284979 0.310702,0.08884 0.310489,0.08597 -0.0611,-0.821582 -0.536446,-1.3102 -0.52384,-2.513475 0.03712,-3.542654 1.099711,-2.01763 3.147054,-3.074907 5.286998,-2.730279 0.973519,0.156781 2.021728,0.649839 2.522244,1.186418 0.191344,0.205129 0.390054,0.372962 0.44158,0.372962 0.05153,0 0.172272,-0.426511 0.268323,-0.947803 0.241337,-1.309786 0.669473,-2.1531669 1.534368,-3.0225392 0.54713,-0.5499621 0.935284,-0.8002018 1.50249,-0.9686441 0.993194,-0.294947 2.486357,-0.2894966 3.377802,0.01233 0.930882,0.3151785 2.171304,1.5661575 2.651004,2.6735633 0.193734,0.447241 0.384531,0.814115 0.423995,0.815275 0.03946,0.0012 0.258011,-0.354357 0.485662,-0.790036 0.544997,-1.0430175 1.738659,-2.1261807 2.692053,-2.4428475 1.730481,-0.5747738 4.086908,0.1470782 5.175377,1.5853909 0.641155,0.8472276 0.994479,1.8170936 1.107681,3.0405576 l 0.08216,0.888016 0.857003,-0.564521 c 1.169941,-0.770657 1.633895,-0.89788 2.999648,-0.822552 1.383151,0.07629 2.277287,0.470559 3.239038,1.42826 0.9411,0.937137 1.296149,1.814118 1.297711,3.20538 0.0011,0.978153 -0.06213,1.28208 -0.427317,2.054018 -0.404815,0.855702 -0.411947,0.900708 -0.128487,0.810741 1.207306,-0.383184 3.158719,-0.285066 4.111468,0.206727 1.121437,0.578869 2.160163,2.080323 2.484075,3.590671 0.289015,1.347628 -0.55784,3.393988 -1.842912,4.453253 l -0.509283,0.419794 0.417156,0.0853 c 1.675369,0.342588 2.923275,0.983613 3.504871,1.80039 1.051581,1.476809 1.311489,3.481012 0.629023,4.850543 -0.521924,1.047365 -1.467068,1.935068 -2.719122,2.553866 -0.588153,0.290681 -1.06937,0.549666 -1.06937,0.575523 0,0.02586 0.246567,0.1728 0.547924,0.326542 0.655566,0.334444 1.469518,1.20445 1.919563,2.051757 0.492982,0.928146 0.47217,2.758042 -0.04373,3.845167 -0.499479,1.052511 -1.362664,1.996402 -2.300999,2.516135 -0.703807,0.38983 -0.883557,0.425243 -2.134771,0.420571 l -1.366256,-0.0051 0.498361,0.937871 c 0.432605,0.814125 0.506229,1.101709 0.558002,2.17961 0.0525,1.093061 0.01713,1.333611 -0.295369,2.00904 -0.419688,0.90709 -1.501302,2.012406 -2.405309,2.458018 -0.522072,0.257351 -0.893172,0.318326 -1.937298,0.318326 -1.172757,0 -1.376111,-0.04289 -2.211339,-0.466384 -0.505897,-0.256511 -0.925643,-0.466384 -0.932768,-0.466384 -0.0071,0 -0.01296,0.629619 -0.01296,1.399152 0,1.282692 -0.03543,1.463122 -0.425673,2.167669 -0.521378,0.941306 -1.467299,1.804235 -2.516135,2.295382 -0.651111,0.304902 -1.002776,0.37017 -2.009039,0.37287 -1.770152,0.0047 -2.639291,-0.490182 -3.848007,-2.191248 l -0.440561,-0.620017 -0.164912,0.620017 c -0.442128,1.662265 -1.571874,3.051653 -2.829926,3.480315 -0.838854,0.285826 -2.235224,0.388351 -3.027735,0.222304 z m 1.986403,-12.230907 c 0.30047,-0.256511 0.92421,-0.659285 1.386088,-0.895052 1.056651,-0.539371 2.267976,-0.574127 3.556192,-0.102037 0.46798,0.171499 0.863644,0.296491 0.879253,0.277758 0.01561,-0.01873 0.169918,-0.314657 0.34291,-0.657609 0.73369,-1.45452 2.607756,-2.699446 4.293795,-2.852329 l 0.841541,-0.07631 0.07585,-1.106685 c 0.133667,-1.950161 0.97284,-3.21682 2.635449,-3.977987 l 0.748593,-0.342718 -0.341052,-0.600433 c -0.736224,-1.296143 -0.54293,-2.979123 0.563663,-4.90772 l 0.490563,-0.854966 -0.624534,-0.694631 c -0.969187,-1.077969 -1.270699,-2.007236 -1.278897,-3.941598 l -0.0068,-1.610566 -0.756393,-0.37693 C 46.225114,26.568825 45.10317,25.122654 44.678672,23.463926 44.484989,22.707114 44.471207,22.692349 43.994635,22.731082 42.193384,22.877478 39.713975,21.60481 38.916883,20.1247 l -0.265202,-0.49245 -0.72877,0.476472 c -1.108973,0.725048 -1.75004,0.866732 -2.950743,0.652155 -0.723732,-0.129338 -1.244973,-0.336539 -1.881406,-0.747885 -0.484179,-0.312941 -0.91028,-0.539029 -0.946891,-0.502418 -0.03661,0.03661 -0.180878,0.282141 -0.320595,0.545624 -0.330705,0.623652 -1.477547,1.493137 -2.355695,1.785985 -0.615541,0.205271 -2.414607,0.314103 -2.943079,0.178035 -0.120374,-0.03099 -0.26109,0.167789 -0.370991,0.524079 -0.607644,1.969944 -2.046544,3.424457 -3.79967,3.840899 -0.63903,0.151797 -0.733467,0.21756 -0.66635,0.464026 0.34118,1.252865 0.386406,2.084601 0.156377,2.875873 -0.198848,0.684015 -0.408578,0.98629 -1.309222,1.886934 l -1.072442,1.072443 0.419295,0.477551 c 1.152954,1.313143 1.179074,3.847196 0.06004,5.824495 -0.0258,0.04559 0.100052,0.150888 0.279681,0.233986 0.753917,0.348768 1.693137,1.371722 2.198765,2.394791 0.417803,0.845366 0.525874,1.24409 0.571162,2.107293 l 0.05586,1.064646 0.544191,0.09506 c 1.068731,0.186692 2.184181,0.712856 2.926923,1.380645 0.714704,0.64258 1.415605,1.81001 1.418691,2.362992 0.0018,0.32406 0.188338,0.31629 1.146099,-0.04773 1.236403,-0.469928 2.108597,-0.426719 3.242307,0.160624 0.649689,0.336586 1.094663,0.689669 1.393389,1.105636 0.241385,0.336122 0.466101,0.611131 0.499371,0.611131 0.03327,0 0.306327,-0.209873 0.606798,-0.466384 z"];
     
 function loadfunc() {
-console.log("load func");
+//console.log("load func");
     RtateStat = "off";
     PhsItmAnglPos = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330];  
     
@@ -1594,10 +1615,14 @@ function RtateStop() {
 }
     
    
-function rotate(pos) {
+function rotate(pos, src) {
   
-  PlyFrmStat = "zero";
-  rotateincre = pos;
+  if (src == 'usr') {
+      var ofstseq = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+      var ofstseqrf = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  }
+  //PlyFrmStat = "zero";
+  //rotateincre = pos;
     
   for (i = 0; i < 12; i++) {
     StcSqItmInCrclX = "StcSqItmInCrcl".concat(i);
@@ -1609,20 +1634,23 @@ function rotate(pos) {
   //forward / back rotate 30 dergees button;
   if (pos == 'frd') {
       pos = PhsItmAnglPos[0] + 15;
+      //console.log("bang");
   }
       
  if (pos == 'bck') {
       pos = PhsItmAnglPos[0] - 15;
   }
+    rotateincre = pos;
     
+    console.log("Phase position: ".concat(pos, '\u00B0'));
+    //Check for interrupted rotate command
     if (RtateStat == "on") {
         RtateDst = 0;
         RtateDir = 0;
         console.log("interupted");
         RtateStat = "inter";
         //rotate(pos);
-    } else {
-          
+    } else {//
           RtateDst = PhsItmAnglPos[0] - pos;
 
           if (RtateDst < 0) {
@@ -1663,18 +1691,20 @@ function rotate(pos) {
   }
   
   PhseDspIncre = (PhseDspShftShft[0] / RtateDst) * RtateDir;
-      
-  console.log("rotate");
-  console.log("Phase destination is: ".concat(pos));
-  console.log("Angle position of item 0 is: ".concat(PhsItmAnglPos[0]));
-  console.log("Calculated rotation angle is: ".concat(RtateDst));
-  console.log("Calculated rotation direction is: ".concat(RtateDir));
   
-  console.log("Calculated Phase display A destination is: ".concat(PhseDspShftDst[0]));
-  console.log("Calculated Phase display B destination is: ".concat(PhseDspShftDst[1]));
-  console.log("Calculated Phase display A shift is: ".concat(PhseDspShftShft[0]));
-  console.log("Calculated Phase display B shift is: ".concat(PhseDspShftShft[1]));
-  console.log("Calculated Phase display increment: ".concat(PhseDspIncre));
+    //console.log("rotate");
+    
+    
+  //console.log("Phase destination is: ".concat(pos));
+  //console.log("Angle position of item 0 is: ".concat(PhsItmAnglPos[0]));
+  //console.log("Calculated rotation angle is: ".concat(RtateDst));
+  //console.log("Calculated rotation direction is: ".concat(RtateDir));
+  
+  //console.log("Calculated Phase display A destination is: ".concat(PhseDspShftDst[0]));
+  //console.log("Calculated Phase display B destination is: ".concat(PhseDspShftDst[1]));
+  //console.log("Calculated Phase display A shift is: ".concat(PhseDspShftShft[0]));
+  //console.log("Calculated Phase display B shift is: ".concat(PhseDspShftShft[1]));
+  //console.log("Calculated Phase display increment: ".concat(PhseDspIncre));
     
   //RadAngleIncre = 0;
   var ani = setInterval(frame, 10);
@@ -1683,12 +1713,12 @@ function rotate(pos) {
     
       function frame() {
           RtateStat = "on";
-          console.log("Rotate status is: ".concat(RtateStat));
+          //console.log("Rotate status is: ".concat(RtateStat));
             //RadAngleXi = 0 + RtateDir;
             if (n == RtateDst) {
                 clearInterval(ani);
                 RtateStat = "off";
-                console.log("Rotate status is: ".concat(RtateStat));
+                //console.log("Rotate status is: ".concat(RtateStat));
             } else {
                 //position seq circles    
                 for (i = 0; i < 12; i++) {
@@ -1705,7 +1735,7 @@ function rotate(pos) {
                     ypos = (Sqre / 4) + ((((Sqre / 2) - SttcSeqPdng) / 2) - (((Sqre / 2) - SttcSeqPdng) / SeqCrcleSz)) * Math.sin(degrees_to_radians(PhsItmAnglPos[j[i]]));
 
                     if (PhsItmAnglPos[[j[i]]] > 360) {PhsItmAnglPos[[j[i]]] = 1;} 
-
+                    
                     PhsSqPntX = "PhsSqPnt".concat(i);
                     document.getElementById(PhsSqPntX).setAttribute("cx", "".concat(xpos, "px"));
                     document.getElementById(PhsSqPntX).setAttribute("cy", "".concat(ypos, "px"));
@@ -1744,8 +1774,7 @@ function rotate(pos) {
     
     if (RtateStat == "inter") {
         RtateStat = "off";
-       // rotate(pos);
-        console.log("readytorotateagain");
+        //ready to rotate again
         setTimeout(function() { rotate(pos) },100);
         
     }
@@ -1770,7 +1799,6 @@ function SmplNteChngr(noteclr) {
 function SmplClrChnge(noteclr) {
 	
 	//Sample selector
-	
 	for (var i = 3; i < 6; i++) {
 		SmpleTpXDspPth = document.getElementsByClassName("SmplTp".concat(i));
 		SmpleTpXDspPth[0].setAttribute('d', SmplIco[i-1]);
@@ -1812,8 +1840,7 @@ function seqitmchngr(SlctdSqItm, NxtCrSeqNte) {
     seqitmincrcleX = "seqitmincrcle".concat(SlctdSqItm);
     document.getElementById(seqitmincrcleX).style.fill = NteClrs[NxtCrSeqNte];
 
-    //document.getElementById(seqitmincrcleX).setAttribute("r", "31%");
-    //seqitmincrcle
+
     if (NtePltteOctv[NxtCrSeqItm] == 2) {
         document.getElementById(seqitmX).setAttribute('d', SmplIco[1]);
         document.getElementById(stcseqitmX).setAttribute('d', SmplIco[1]);
@@ -1853,8 +1880,7 @@ function seqitmfdr(n, mouse) {
 }
     
 function itmslct(n) {
-        
-    //console.log(n);
+
     for (i = 0; i < 12; i++) {
         seqitmslctbxX = "seqitmslctbx".concat(i);
         document.getElementById(seqitmslctbxX).style.opacity = "0";
@@ -1864,41 +1890,24 @@ function itmslct(n) {
 }
     
 function StCarPs(n) {
-    //console.log(n);
-    //goton = NtePltteSq[SeqNotes[n + 1]];
+
     SlctdSqItm = n;
-    console.log(NtePltteSq[SeqNotes[n + 1]]);
     Siema.goTo(NtePltteSq[SeqNotes[n + 1]]);
 }
     
 function SeqStIncre(dir) {
+    
     if (dir == 'up') {dir = 1;} else {dir = -1;}
-    console.log("The direction: ".concat(dir)); //SlctdSqItm
-    console.log("The current seq item selected: ".concat(SlctdSqItm));
-    console.log(SeqNotes[SlctdSqItm + 1]);
-    
-    
     
     CrntPlttepos = NtePltteSq[SeqNotes[SlctdSqItm + 1]];
-    console.log("The current palette position: ".concat(CrntPlttepos));
     
     if (CrntPlttepos == 9 && dir == 1) {CrntPlttepos = -1;}
     if (CrntPlttepos == 0 && dir == -1) {CrntPlttepos = 10;}
-    
-    //NtePltte = ["e4", "e5", "fs4", "fs5", "b4", "b5", "cs4", "cs5", "d4", "d5"];
-    //NtePltteSq = {e4: 0, e5: 1, fs4: 2, fs5: 3, b4: 4, b5: 5, cs4: 6, cs5: 7, d4: 8, d5: 9,};
-    //SeqNotes = {1: NtePltte[0], 2: NtePltte[2], 3: NtePltte[4], 4: NtePltte[7], 5: NtePltte[9], 6: NtePltte[2], 7: NtePltte[0], 8: NtePltte[7], 9: NtePltte[4], 10: NtePltte[2], 11: NtePltte[9], 12: NtePltte[7],};
-    //NteClrs = {e4: "#d35400", e5: "#d35400", fs4: "#e74c3c", fs5: "#e74c3c", b4: "#8e44ad", b5: "#8e44ad", cs4: "#34495e", cs5: "#34495e", d4: "#1abc9c", d5: "#1abc9c",};
-    //NtePltteOctv = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
-    
+       
     SeqNotes[SlctdSqItm + 1] = NtePltte[CrntPlttepos + dir];
     
     NxtCrSeqNte = SeqNotes[SlctdSqItm + 1];
-    console.log("The next Seq item note: ".concat(NxtCrSeqNte));
-    
     NxtCrSeqItm = NtePltteSq[SeqNotes[SlctdSqItm + 1]];
-    console.log("The next Seq item on palette: ".concat(NxtCrSeqItm));
-    
     
     seqitmchngr(SlctdSqItm, NxtCrSeqNte);
 }
@@ -1906,8 +1915,7 @@ function SeqStIncre(dir) {
 
 function playIt(n, dur) {
     SlctdSqItm = n;
-    //SeqNotes[SlctdSqItm + 1];
-   // console.log("note bang");
+
    var osc = new Tone.OmniOscillator().toMaster();
    osc.frequency.value = SeqNotes[SlctdSqItm + 1];
    osc.volume.value = -20;
@@ -1918,8 +1926,6 @@ function playIt(n, dur) {
 
 var plybtnstat = 0;
 function plybtnhvr(itm, pos) {
-    
-    //console.log(itm);
     
     if (itm == 'crcl') {
         if (pos == 'over') {
@@ -1947,17 +1953,14 @@ function plybtnhvr(itm, pos) {
     }
 }
 
-PlyFrmStat = "zero";
+
 function playseqtst() {
     
     //create a synth and connect it to the master output (your speakers)
-    
     synth = new Tone.Synth().toMaster();
     synthb = new Tone.Synth().toMaster();
     
-    
-    console.log("Play Seq test.");
-    tempo = 150;
+    tempo = 120;
     console.log("Tempo is: ".concat(tempo));
     
     
@@ -1966,98 +1969,120 @@ function playseqtst() {
         icoswtchB = "block";
         plybtnstat = 1;
         
-        
         CrntDeg = document.getElementById("phseshftdegN").innerHTML;
         Twlvepntshift = Math.floor(parseInt(CrntDeg) / 30);
         UnRndedShift = parseInt(CrntDeg) / 30;
-
-        j = [9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8];
-
-        NrstToZroItm = 3 - Twlvepntshift;
-        if (NrstToZroItm < 0) {NrstToZroItm = 11 - (Twlvepntshift - 4)} 
-
-        console.log(PhsItmAnglPos[[j[3]]]);
-        console.log("Shifted within 12: ".concat(Twlvepntshift));
-        console.log("Unrounded shift is: ".concat(UnRndedShift));
-        console.log("target itm is: ".concat(j[NrstToZroItm]));
         
+        seqplyn = 0;
+        seqrtn = 0;
+        phsseqplyn = Twlvepntshift;
         DelayTme = (UnRndedShift - Twlvepntshift) * tempo;
-        console.log("Delay time is: ".concat(DelayTme));
-        //PhsSqItmInCrcl
-
-        //PhsSqItmInCrclX = "PhsSqItmInCrcl".concat(j[NrstToZroItm]);
-        //document.getElementById(PhsSqItmInCrclX).style.opacity = "1";
-
-        //If play from paused resume
-        if (PlyFrmStat == "paused") {
-            //must calculate phsseqplyn from seqplyn
-            phsseqplyn = seqplyn - Twlvepntshift;
-            if (phsseqplyn < 0) {phsseqplyn = 12 + (seqplyn - Twlvepntshift)} 
-        } else {
-            phsseqplyn = j[NrstToZroItm];
-            seqplyn = 0;
-        }
         
         seqply = setInterval(function () {
-            seqplyfunc(DelayTme, tempo);
+            delayfunc();
+            seqplyfunc(tempo);
             phsseqplyfunc(tempo);
         }, tempo);
-        
-
         
     } else {//switch back to play icon, PAUSE
         icoswtchA = "block";
         icoswtchB = "none";
         plybtnstat = 0;
-        PlyFrmStat = "paused";
+
         clearInterval(seqply);
-        //clearInterval(phsseqply);
+        
+        setTimeout(function () {
+            for (i = 0; i < 12; i++) {
+                StcSqItmInCrclX = "StcSqItmInCrcl".concat(i);
+                PhsSqItmInCrclX = "PhsSqItmInCrcl".concat(i);
+                document.getElementById(StcSqItmInCrclX).style.opacity = "0";
+                document.getElementById(PhsSqItmInCrclX).style.opacity = "0";
+            }
+            
+            ofstseq = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+            ofstseqrf = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+        }, DelayTme);
     }
     document.getElementById("plytri").style.display = icoswtchA;
     document.getElementById("plybar1").style.display = icoswtchB;
     document.getElementById("plybar2").style.display = icoswtchB;
     
-    
 }
 
+var ofstseq = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var ofstseqrf = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    
+function delayfunc() {
+        
+        if (seqrtn == 3) {//incrememt phase
+            DelayTme = DelayTme + (tempo * (1 / 6));
+            
+            rotateincre = rotateincre + 5;
+            if (rotateincre == 360) {rotateincre = 0;}
+            
+            rotate(rotateincre, 'cmptr');
+            seqrtn = 0;
+        }
+    
+        if (DelayTme == tempo && seqrtn == 0) {//phased 1 step forward
+            console.log("1 step phase");
+            for (i = 0; i < 12; i++) {  
+                if (i == 0) {
+                    ofstseq[0] = ofstseqrf[11];} 
+                else {
+                    ofstseq[i] = ofstseqrf[i - 1];   
+                }
+            }
+            
+            DelayTme = 0;
 
+            for (i = 0; i < 12; i++) {  
+                ofstseqrf[i] = ofstseq[i];
+            }
+        }
+}
     
 var seqplyn = 0;
 var seqrtn = 0;
 var rotateincre = 0;
-function seqplyfunc(DelayTme, tmpo) {
     
-    //tmpo = tmpo;
+function seqplyfunc(tmpo) {
+    
     setTimeout(function () {
-        StcSqItmInCrclX = "StcSqItmInCrcl".concat(seqplyn);
+        StcSqItmInCrclX = "StcSqItmInCrcl".concat(ofstseq[seqplyn]);
         document.getElementById(StcSqItmInCrclX).style.opacity = "1";
 
-        prvseqplyn = seqplyn - 1;
+        prvseqplyn = ofstseq[seqplyn] - 1;
         if (prvseqplyn < 0) {prvseqplyn = 11;}
         PrevStcSqItmInCrclX = "StcSqItmInCrcl".concat(prvseqplyn);
         document.getElementById(PrevStcSqItmInCrclX).style.opacity = "0";
 
-        //dur = tempo - 0;
-        //playIt(seqplyn, 0.05);
-        note = SeqNotes[seqplyn + 1];
-
+        note = SeqNotes[ofstseq[seqplyn + 1]];
         dur = (tmpo * 0.001) - 0.025;
         synth.triggerAttackRelease(note, dur);
-
+        
+        if (seqplyn == 0) {
+            console.log("Seq rotations: ".concat(seqrtn + 1), "of 3");
+        }
+        
         seqplyn = seqplyn + 1;
-        if (seqplyn > 11) {seqplyn = 0;}
-    
+        
+        if (seqplyn > 11) {
+            seqplyn = 0;
+            
+            seqrtn = seqrtn + 1;
+            
+        }  
+
     }, DelayTme);
+    
 }
     
-
+    
     
 var phsseqplyn = 0;
+
 function phsseqplyfunc(tmpo) {
-    
-    //tmpo = tmpo;
-    
-    
     
     PhsSqItmInCrclX = "PhsSqItmInCrcl".concat(phsseqplyn);
     document.getElementById(PhsSqItmInCrclX).style.opacity = "1";
@@ -2073,20 +2098,7 @@ function phsseqplyfunc(tmpo) {
     synthb.triggerAttackRelease(noteb, durb);
         
     phsseqplyn = phsseqplyn + 1;
-    if (phsseqplyn > 11) {
-        phsseqplyn = 0;//seq rotation complete, return to step 1
-        seqrtn = seqrtn + 1;
-        console.log("Seq rotations: ".concat(seqrtn));
-        if (seqrtn == 3) {
-            DelayTme = DelayTme + (tempo * (1 / 6));
-            rotateincre = rotateincre + 5;
-            if (rotateincre == 360) {rotateincre = 0;}
-            rotate(rotateincre);
-            seqrtn = 0;
-        }
-    }
-    
-    
+    if (phsseqplyn > 11) {phsseqplyn = 0;}
     
 }
     
