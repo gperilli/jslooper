@@ -2,6 +2,7 @@
 <html>
 
 <head>
+<title>Phase</title>
     
 <title>Phase: The Reichian Sequencer.</title>
 
@@ -13,14 +14,14 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Phase" />
 <meta property="og:description" content="Phase" />
-<meta property="og:image" content="https://gperilli.github.io/phase/graphics/Phase-ShreImg.png" />
+<meta property="og:image" content="https://gperilli.github.io/phase/graphics/shareimg.png" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@flickr" />
 <meta name="twitter:title" content="Phase" />
 <meta name="twitter:description" content="Phase" />
-<meta name="twitter:image" content="https://gperilli.github.io/phase/graphics/Phase-ShreImg.png" />
+<meta name="twitter:image" content="https://gperilli.github.io/phase/graphics/shareimg.png" />
 
 <link rel="icon" href="graphics/phasefav.png">
 
@@ -1009,10 +1010,10 @@ function SetScreenPostns() {
                 PhsePreBXBx = "PhsePreB".concat(i, "Bx");
                 document.getElementById(PhsePreBXBx).style.height = "".concat(TtleHght, "px");
                 document.getElementById(PhsePreBXBx).style.width = "".concat(TtleHght, "px");    
-                if (i > 0) {
+                
                     document.getElementById(PhsePreBXBx).style.left = "".concat(((TtleHght + PhsBxMrgn) * i), "px");
                     document.getElementById(PhsePreBXBx).style.top = "".concat(0, "px");
-                }        
+                        
             } 
             
             //gperilli text image
@@ -1040,7 +1041,7 @@ function SetScreenPostns() {
             CntrlSqreStle.top = "".concat(((ScrnHght - Sqre) / 2), "px");
             CntrlSqreStle.left = "".concat((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3) + TtleHght), "px");
             DsplySqreStle.top = "".concat(((ScrnHght - Sqre) / 2), "px");
-            DsplySqreStle.left = "".concat((((( (ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3)*2) + TtleHght) + Sqre), "px");
+            DsplySqreStle.left = "".concat((((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3) * 2) + TtleHght) + Sqre), "px");
             
             lineStle.left = "".concat((((( (ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3)*2) + TtleHght) + Sqre), "px");
             lineStle.height = "".concat((Sqre * 0.9), "px");
@@ -1053,7 +1054,8 @@ function SetScreenPostns() {
             gperilliStle.width = "".concat(GPerHght, "px");
             gperilliStle.height = "100%";
             gperilliStle.borderLeft = lne;
-            gperilliStle.borderTop = "".concat(lne, "px solid #ccc");
+            gperilliStle.borderTop = "".concat("0px solid #ccc");
+            
             
             ttleStle.top = "0px";
             ttleStle.left = "".concat(((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3) + TtleHght) - TtleHght), "px");
@@ -1061,21 +1063,41 @@ function SetScreenPostns() {
             ttleStle.height = "100%";
             ttleStle.borderRight = lne;
             ttleStle.borderBottom = "0px solid #ccc";
+            ttleStle.borderTop = "0px solid #ccc";
             
             SqrsCntStle.top = "0px";
             SqrsCntStle.left = "".concat(TtleHght, "px");
             SqrsCntStle.width = "".concat((ScrnWdth-(TtleHght + 24)), "px");
             SqrsCntStle.height = "100%";
             
+            NwPhsBxMrgn = 10;
+            NwTtlHght = (((ScrnHght - (NwPhsBxMrgn * 4)) - 10) / 5);
+            OldTtlHght = TtleHght;
+            console.log("New title height: ".concat(NwTtlHght));
+            if (ScrnHght < ((TtleHght * 5) + ((PhsBxMrgn * 5) + 10))) {
+                TtleHght = NwTtlHght;
+                PhsBxMrgn = NwPhsBxMrgn;
+                CntrlSqreStle.left = "".concat(((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 2) * 1) + TtleHght), "px");
+                ttleStle.width = "".concat(TtleHght, "px");
+                ttleStle.left = "".concat(((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 2) * 1) + 0), "px");
+                DsplySqreStle.left = "".concat((((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 2) * 1) + TtleHght) + Sqre), "px");
+                lineStle.left = "".concat((((( (ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 2) * 1) + TtleHght) + Sqre), "px");
+                gperilliStle.left = "".concat((((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 2) * 1) + TtleHght) + (Sqre * 2)), "px");
+            
+            }
             
             for (i = 0; i < 5; i++) {  
                 PhsePreBXBx = "PhsePreB".concat(i, "Bx");
                 document.getElementById(PhsePreBXBx).style.height = "".concat(TtleHght, "px");
                 document.getElementById(PhsePreBXBx).style.width = "".concat(TtleHght, "px");    
-                if (i > 0) {
-                    document.getElementById(PhsePreBXBx).style.left = "".concat(0, "px");
-                    document.getElementById(PhsePreBXBx).style.top = "".concat(((TtleHght + PhsBxMrgn) * i), "px");
-                }        
+                
+                if (ScrnHght < ((TtleHght * 5) + ((PhsBxMrgn * 5) + 10))) {
+                    document.getElementById(PhsePreBXBx).style.left = "0px";
+                } else {
+                   document.getElementById(PhsePreBXBx).style.left = "".concat((OldTtlHght - TtleHght), "px"); 
+                }
+                
+                document.getElementById(PhsePreBXBx).style.top = "".concat((((TtleHght + PhsBxMrgn) * i) + 5), "px");
             } 
             
             gperilliimgdc.src = "graphics/gperilliV.png";
