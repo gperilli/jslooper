@@ -177,10 +177,11 @@ input[type="range"] {
     width: 200px;
     cursor: pointer;
     border-radius: 0; /* iOS */
+    background: #ddd;
 }
 
 ::-webkit-slider-runnable-track {
-    background: #fff;
+    background: #ddd;
 }
 
 /*
@@ -188,10 +189,10 @@ input[type="range"] {
  */
 ::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 20px; /* 1 */
+    width: 10px; /* 1 */
     height: 40px;
-    background: #808080;
-    box-shadow: -100vw 0 0 100vw #808080;
+    background: #999;
+    box-shadow: -100vw 0 0 100vw #999;
     border: 0px solid #999; /* 1 */
 }
 
@@ -201,7 +202,7 @@ input[type="range"] {
 }
 
 ::-moz-range-thumb {
-    background: #fff;
+    background: #999;
     height: 40px;
     width: 20px;
     border: 3px solid #999;
@@ -215,7 +216,7 @@ input[type="range"] {
 }
 
 ::-ms-thumb { 
-    background: #fff;
+    background: #999;
     border: 2px solid #999;
     height: 40px;
     width: 20px;
@@ -252,8 +253,7 @@ input[type="range"] {
 
 </style>
 <script src="js/siema.js"></script>
-<script type="text/javascript" src="https://www.cssscript.com/demo/clean-mobile-range-slider/rangeslider-js.min.js"></script>
-<script src="https://www.guitarland.com/javascripts/Tone.js"></script>
+<script src="js/Tone.js"></script>
     
 </head>
     
@@ -749,7 +749,7 @@ input[type="range"] {
         </div>
         
         <div id="uibox1" style="border-right: 1px solid #eee; position: absolute;">
-            <input id="SeqPlyTmpoBxSl" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="0" max="100" step="2" value="40">
+            <input id="" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="100" max="200" step="20" value="200">
         </div>
         
         <div id="uibox2ico" style="border: 1px solid #eee; position: absolute;">
@@ -782,10 +782,12 @@ input[type="range"] {
         </div>
         
         <div id="uibox3" style="border-right: 1px solid #eee; position: absolute;">
-            <input id="" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="0" max="100" step="2" value="40">
+            <input id="SeqPlyTmpoBxSl" onchange="TmpoChnger()" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="100" max="200" step="20" value="120">
         </div>
     </div>
             
+    
+    
             
     
             
@@ -821,8 +823,8 @@ input[type="range"] {
 <div id="ttle">
    
     
-    <div class="PhseSlect" id="PhsePreB0Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
-        <svg height=100%; width=100%; style="overflow: hidden;">
+    <div class="PhseSlect" id="PhsePreB0Bx" style="border: 0px solid #000; position: absolute; background-color: transparent; z-index: 99;">
+        <svg height=100%; width=100%; style="overflow: hidden; position: absolute;">
             <circle id="" cx="50%" cy="50%" r="46%" stroke="#808080" stroke-width="1" style="opacity: 0.5;" fill="none" />
             <svg height="80%" width="80%" x="10%" y="10%" viewBox="0 0 47.624998 52.91667" style="left: 10%; top: 10%; fill: #808080">
                 <path d="M12.837841 27.502374C12.837841 27.502374 12.837841 6.1868764 12.837841 6.1868764C12.837841 6.1868764 20.279247 6.2237764 20.279247 6.2237764C28.313316 6.2635764 28.490005 6.2735764 30.590429 6.8050331C34.837978 7.8797665 37.519734 10.19882 38.788707 13.894519C39.291228 15.35803 39.436632 16.461854 39.436632 18.813152C39.436632 21.243667 39.284169 22.327601 38.715412 23.940642C37.278648 28.015431 34.030859 30.371396 28.701788 31.204583C27.92971 31.32529 26.72039 31.36732 23.02623 31.40183C18.730201 31.44193 18.319256 31.45953 18.183918 31.60911C18.052422 31.754407 18.033355 32.714434 18.011898 40.270059C18.011898 40.270059 17.987768 48.767591 17.987768 48.767591C17.987768 48.767591 15.412805 48.792691 15.412805 48.792691C15.412805 48.792691 12.837842 48.817791 12.837842 48.817791C12.837842 48.817791 12.837843 27.502314 12.837843 27.502314M26.531815 27.172014C30.554731 26.759187 33.214206 24.406919 33.86275 20.6879C34.044918 19.643286 34.044079 17.883588 33.86085 16.833244C33.229853 13.214875 30.594206 10.903127 26.58666 10.45299C26.118915 10.40049 24.097936 10.35709 22.095595 10.35669C18.952634 10.35603 18.426268 10.37599 18.244963 10.50301C18.244963 10.50301 18.034949 10.650107 18.034949 10.650107C18.034949 10.650107 18.034949 18.813082 18.034949 18.813082C18.034949 18.813082 18.034949 26.976054 18.034949 26.976054C18.034949 26.976054 18.244963 27.123154 18.244963 27.123154C18.426019 27.249974 18.945809 27.270254 22.014712 27.270254C23.972567 27.270254 26.005234 27.226054 26.531749 27.172054C26.531749 27.172054 26.531767 27.172054 26.531767 27.172054" />
@@ -832,7 +834,7 @@ input[type="range"] {
         </svg>
     </div>
     
-    <div class="PhseSlect" onClick="rotate(90, 'usr')" id="PhsePreB1Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+    <div class="PhseSlect" onClick="rotate(90, 'usr')" id="PhsePreB1Bx" style="border: 0px solid #000; position: absolute; background-color: transparent;">
         
         <svg height=100%; width=100%; style="overflow: hidden; position: absolute;">
             <circle id="" cx="50%" cy="50%" r="46%" stroke="#808080" stroke-width="1" style="opacity: 0.5;" fill="none" />
@@ -850,7 +852,7 @@ input[type="range"] {
         </svg>
     </div>
     
-    <div class="PhseSlect" onClick="rotate(180, 'usr')" id="PhsePreB2Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+    <div class="PhseSlect" onClick="rotate(180, 'usr')" id="PhsePreB2Bx" style="border: 0px solid #000; position: absolute; background-color: transparent; z-index: 99;">
         
         <svg height=100%; width=100%; style="overflow: hidden; position: absolute;">
             <circle id="" cx="50%" cy="50%" r="46%" stroke="#808080" stroke-width="1" style="opacity: 0.5;" fill="none" />
@@ -868,7 +870,7 @@ input[type="range"] {
         </svg>
     </div>
     
-    <div class="PhseSlect" onClick="rotate(270, 'usr')" id="PhsePreB3Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+    <div class="PhseSlect" onClick="rotate(270, 'usr')" id="PhsePreB3Bx" style="border: 0px solid #000; position: absolute; background-color: transparent; z-index: 99;">
         
         <svg height=100%; width=100%; style="overflow: hidden; position: absolute;">
             <circle id="" cx="50%" cy="50%" r="46%" stroke="#808080" stroke-width="1" style="opacity: 0.5;" fill="none" />
@@ -887,7 +889,7 @@ input[type="range"] {
         </svg>
     </div>
     
-    <div class="PhseSlect" onClick="rotate(0, 'usr')" id="PhsePreB4Bx" style="border: 0px solid #000; position: absolute; background-color: #fff; z-index: 99;">
+    <div class="PhseSlect" onClick="rotate(0, 'usr')" id="PhsePreB4Bx" style="border: 0px solid #000; position: absolute; background-color: transparent; z-index: 99;">
         
         <svg height=100%; width=100%; style="overflow: hidden; position: absolute;">
             <svg height="80%" width="80%" x="10%" y="10%" viewBox="0 0 47.624998 52.91667" style="left: 10%; top: 10%; fill: #808080; position: absolute;">
@@ -976,12 +978,17 @@ function SetScreenPostns() {
             }
             
             //Control square, Display Square
-            CntrlSqreStle.left = "".concat(((ScrnWdth - (Sqre * 2)) / 3), "px");
+            //CntrlSqreStle.left = "".concat(((ScrnWdth - (Sqre * 2)) / 3), "px");
+            CntrlSqreStle.left = "".concat(( ( ((ScrnWdth - (Sqre * 2)) / 2) * 1)), "px");
             CntrlSqreStle.top = "".concat((((ScrnHght - (TtleHght + 24 + Sqre)) / 2) + TtleHght), "px");
-            DsplySqreStle.left = "".concat((Sqre + (((ScrnWdth - (Sqre * 2)) / 3) * 2)), "px");
+            //DsplySqreStle.left = "".concat((Sqre + (((ScrnWdth - (Sqre * 2)) / 3) * 2)), "px");
+            //DsplySqreStle.left = "".concat((((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 2) * 1) + TtleHght) + Sqre), "px");
+            
+            DsplySqreStle.left = "".concat((ScrnWdth / 2), "px");
             DsplySqreStle.top = "".concat((((ScrnHght - (TtleHght + 24 + Sqre)) / 2) + TtleHght), "px");
             //Dividing line
-            lineStle.left = "".concat((Sqre + (((ScrnWdth - (Sqre * 2)) / 3) * 2)), "px");
+            //lineStle.left = "".concat((Sqre + (((ScrnWdth - (Sqre * 2)) / 3) * 2)), "px");
+            lineStle.left = "".concat((ScrnWdth / 2), "px");
             lineStle.height = "".concat((Sqre * 0.9), "px");
             lineStle.width = "0px";
             lineStle.top = "".concat((((ScrnHght - (TtleHght + 24 + Sqre)) / 2) + TtleHght) + (Sqre * 0.05), "px");
@@ -1011,8 +1018,8 @@ function SetScreenPostns() {
                 document.getElementById(PhsePreBXBx).style.height = "".concat(TtleHght, "px");
                 document.getElementById(PhsePreBXBx).style.width = "".concat(TtleHght, "px");    
                 
-                    document.getElementById(PhsePreBXBx).style.left = "".concat(((TtleHght + PhsBxMrgn) * i), "px");
-                    document.getElementById(PhsePreBXBx).style.top = "".concat(0, "px");
+                document.getElementById(PhsePreBXBx).style.left = "".concat(((TtleHght + PhsBxMrgn) * i), "px");
+                document.getElementById(PhsePreBXBx).style.top = "".concat(0, "px");
                         
             } 
             
@@ -1039,11 +1046,14 @@ function SetScreenPostns() {
             
             //space at left side
             CntrlSqreStle.top = "".concat(((ScrnHght - Sqre) / 2), "px");
-            CntrlSqreStle.left = "".concat((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3) + TtleHght), "px");
+            //CntrlSqreStle.left = "".concat((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3) + TtleHght), "px");
+            CntrlSqreStle.left = "".concat(((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 2) * 1) + TtleHght), "px");
             DsplySqreStle.top = "".concat(((ScrnHght - Sqre) / 2), "px");
-            DsplySqreStle.left = "".concat((((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3) * 2) + TtleHght) + Sqre), "px");
+            //DsplySqreStle.left = "".concat((((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3) * 2) + TtleHght) + Sqre), "px");
+            DsplySqreStle.left = "".concat((((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 2) * 1) + TtleHght) + Sqre), "px");
             
-            lineStle.left = "".concat((((( (ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3)*2) + TtleHght) + Sqre), "px");
+            //lineStle.left = "".concat((((( (ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3)*2) + TtleHght) + Sqre), "px");
+            lineStle.left = "".concat((((( (ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 2) * 1) + TtleHght) + Sqre), "px");
             lineStle.height = "".concat((Sqre * 0.9), "px");
             lineStle.width = "0px";
             lineStle.top = "".concat((Sqre * 0.05), "px");
@@ -1058,7 +1068,8 @@ function SetScreenPostns() {
             
             
             ttleStle.top = "0px";
-            ttleStle.left = "".concat(((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3) + TtleHght) - TtleHght), "px");
+            //ttleStle.left = "".concat(((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3) + TtleHght) - TtleHght), "px");
+            ttleStle.left = "".concat(((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 2) * 1) + 0), "px");
             ttleStle.width = "".concat(TtleHght, "px");
             ttleStle.height = "100%";
             ttleStle.borderRight = lne;
@@ -1073,7 +1084,7 @@ function SetScreenPostns() {
             NwPhsBxMrgn = 10;
             NwTtlHght = (((ScrnHght - (NwPhsBxMrgn * 4)) - 10) / 5);
             OldTtlHght = TtleHght;
-            console.log("New title height: ".concat(NwTtlHght));
+            //console.log("New title height: ".concat(NwTtlHght));
             if (ScrnHght < ((TtleHght * 5) + ((PhsBxMrgn * 5) + 10))) {
                 TtleHght = NwTtlHght;
                 PhsBxMrgn = NwPhsBxMrgn;
@@ -1098,7 +1109,11 @@ function SetScreenPostns() {
                 }
                 
                 document.getElementById(PhsePreBXBx).style.top = "".concat((((TtleHght + PhsBxMrgn) * i) + 5), "px");
+                
             } 
+            
+            //console.log("New title0 top: ".concat(document.getElementById("PhsePreB0Bx").style.top));
+            //console.log("New titlediv top: ".concat(document.getElementById("ttle").style.margintop));
             
             gperilliimgdc.src = "graphics/gperilliV.png";
             gperilliimgdc.style.width = "20px";
@@ -1123,15 +1138,18 @@ function SetScreenPostns() {
             }
             
             //space at left side
-            CntrlSqreStle.top = "".concat(((ScrnHght - (Sqre * 2)) / 3), "px");
+            //CntrlSqreStle.top = "".concat(((ScrnHght - (Sqre * 2)) / 3), "px");
+            CntrlSqreStle.top = "".concat((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 2) + TtleHght), "px");
             CntrlSqreStle.left = "".concat((((ScrnWdth - (TtleHght + 24 + Sqre)) / 2) + TtleHght), "px");
-            DsplySqreStle.top = "".concat(((((ScrnHght - (Sqre * 2)) / 3) * 2) + Sqre), "px");
+            //DsplySqreStle.top = "".concat(((((ScrnHght - (Sqre * 2)) / 3) * 2) + Sqre), "px");
+            DsplySqreStle.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 2) * 1) + TtleHght + Sqre), "px");
             DsplySqreStle.left = "".concat((((ScrnWdth - (TtleHght + 24 + Sqre)) / 2) + TtleHght), "px");
             
             lineStle.left =  "".concat((((ScrnWdth - (TtleHght + 24 + Sqre)) / 2) + TtleHght) + (Sqre * 0.05), "px");//
             lineStle.height = "0px";
             lineStle.width = "".concat((Sqre * 0.9), "px");
-            lineStle.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) * 2) + TtleHght + Sqre), "px");
+            //lineStle.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) * 2) + TtleHght + Sqre), "px");
+            lineStle.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 2) * 1) + TtleHght + Sqre), "px");
             
             gperilliStle.top = "0px";
             gperilliStle.left = "".concat(((((ScrnWdth - (TtleHght + 24 + Sqre)) / 2) + TtleHght) + Sqre), "px");
@@ -1157,10 +1175,10 @@ function SetScreenPostns() {
                 PhsePreBXBx = "PhsePreB".concat(i, "Bx");
                 document.getElementById(PhsePreBXBx).style.height = "".concat(TtleHght, "px");
                 document.getElementById(PhsePreBXBx).style.width = "".concat(TtleHght, "px");    
-                if (i > 0) {
-                    document.getElementById(PhsePreBXBx).style.left = "".concat(0, "px");
-                    document.getElementById(PhsePreBXBx).style.top = "".concat(((TtleHght + PhsBxMrgn) * i), "px");
-                }        
+                
+                document.getElementById(PhsePreBXBx).style.left = "".concat(0, "px");
+                document.getElementById(PhsePreBXBx).style.top = "".concat(((TtleHght + PhsBxMrgn) * i), "px");
+                        
             }
             
             
@@ -1186,41 +1204,73 @@ function SetScreenPostns() {
             
             //space at top
             CntrlSqreStle.left = "".concat(((ScrnWdth - Sqre) / 2), "px");
-            CntrlSqreStle.top = "".concat((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) + TtleHght), "px");
+            //CntrlSqreStle.top = "".concat((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) + TtleHght), "px");
+            CntrlSqreStle.top = "".concat((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 2) + TtleHght), "px");
             DsplySqreStle.left = "".concat(((ScrnWdth - Sqre) / 2), "px");
-            DsplySqreStle.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) * 2) + TtleHght + Sqre), "px");
+            //DsplySqreStle.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) * 2) + TtleHght + Sqre), "px");
+            DsplySqreStle.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 2) * 1) + TtleHght + Sqre), "px");
             
             lineStle.left = "".concat((Sqre * 0.05), "px");
             lineStle.height = "0px";
             lineStle.width = "".concat((Sqre * 0.9), "px");
-            lineStle.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) * 2) + TtleHght + Sqre), "px");
+            //lineStle.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) * 2) + TtleHght + Sqre), "px");
+            lineStle.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 2) * 1) + TtleHght + Sqre), "px");
             
-            gperilliStle.top = "".concat((((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) * 2) + TtleHght + Sqre) + Sqre), "px");
+            
+            gperilliStle.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 2) * 1) + TtleHght + (Sqre * 2)), "px");
+            //gperilliStle.left = "".concat((((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3)*2) + TtleHght) + (Sqre * 2)), "px");
+            //gperilliStle.left = "".concat((((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 3)*2) + TtleHght) + (Sqre * 2)), "px");
             gperilliStle.left = "0px";
             gperilliStle.width = "100%";
             gperilliStle.height = "".concat(GPerHght, "px");
             gperilliStle.borderTop = lne;
+            gperilliStle.borderLeft = "0px solid #ccc";
             
-            ttleStle.top = "".concat(((((ScrnHght - (TtleHght + 24 + (Sqre * 2))) / 3) + TtleHght) - TtleHght), "px");
+            ttleStle.top = "".concat((((ScrnHght - ((Sqre * 2) + TtleHght + 24)) / 2) + 0), "px");
+            //ttleStle.left = "".concat(((((ScrnWdth - ((Sqre * 2) + TtleHght + 24)) / 2) * 1) + 0), "px");
             ttleStle.left = "0px";
             ttleStle.width = "100%";
             ttleStle.height = "".concat(TtleHght, "px");
             ttleStle.borderBottom = lne;
             
+            
             SqrsCntStle.top = "0px";
             SqrsCntStle.left = "0px";
             SqrsCntStle.width = "100%";
             SqrsCntStle.height = "".concat(ScrnHght, "px");
-
+            
+            NwPhsBxMrgn = 10;
+            NwTtlHght = (((ScrnWdth - (NwPhsBxMrgn * 4)) - 10) / 5);
+            OldTtlHght = TtleHght;
+            console.log("New title height: ".concat(NwTtlHght));
+            if (ScrnWdth < ((TtleHght * 5) + ((PhsBxMrgn * 5) + 10))) {
+                TtleHght = NwTtlHght;
+                PhsBxMrgn = NwPhsBxMrgn;
+                CntrlSqreStle.top = "".concat(((((ScrnHght - ((Sqre * 2) + TtleHght + 24)) / 2) * 1) + TtleHght), "px");
+                ttleStle.height = "".concat(TtleHght, "px");
+                ttleStle.top = "".concat(((((ScrnHght - ((Sqre * 2) + TtleHght + 24)) / 2) * 1) + 0), "px");
+                DsplySqreStle.top = "".concat((((((ScrnHght - ((Sqre * 2) + TtleHght + 24)) / 2) * 1) + TtleHght) + Sqre), "px");
+                lineStle.top = "".concat((((( (ScrnHght - ((Sqre * 2) + TtleHght + 24)) / 2) * 1) + TtleHght) + Sqre), "px");
+                gperilliStle.top = "".concat((((((ScrnHght - ((Sqre * 2) + TtleHght + 24)) / 2) * 1) + TtleHght) + (Sqre * 2)), "px");
+            
+            }
+            
             
             for (i = 0; i < 5; i++) {  
                 PhsePreBXBx = "PhsePreB".concat(i, "Bx");
                 document.getElementById(PhsePreBXBx).style.height = "".concat(TtleHght, "px");
                 document.getElementById(PhsePreBXBx).style.width = "".concat(TtleHght, "px");    
-                if (i > 0) {
-                    document.getElementById(PhsePreBXBx).style.left = "".concat(((TtleHght + PhsBxMrgn) * i), "px");
-                    document.getElementById(PhsePreBXBx).style.top = "".concat(0, "px");
-                }        
+                
+                if (ScrnWdth < ((TtleHght * 5) + ((PhsBxMrgn * 5) + 10))) {
+                    document.getElementById(PhsePreBXBx).style.top = "0px";
+                } else {
+                    document.getElementById(PhsePreBXBx).style.top = "".concat((OldTtlHght - TtleHght), "px"); 
+                }
+                
+                document.getElementById(PhsePreBXBx).style.left = "".concat((((TtleHght + PhsBxMrgn) * i) + 5), "px");
+                //document.getElementById(PhsePreBXBx).style.top = "".concat((((TtleHght + PhsBxMrgn) * i) + 5), "px");
+                //document.getElementById(PhsePreBXBx).style.top = "".concat(0, "px");
+                        
             }
             
             
@@ -1803,6 +1853,16 @@ function rotate(pos, src) {
     }
    
 }
+
+function TmpoChnger() {
+    
+    tmpsldervl = document.getElementById("SeqPlyTmpoBxSl").value;
+    console.log("tempo change: ".concat(tmpsldervl));
+    slctdtmpo = 100 + (200 - tmpsldervl);
+    console.log("inverted tempo: ".concat(slctdtmpo));
+    
+}   
+
     
 function SmplNteChngr(noteclr) {
 		
@@ -1983,7 +2043,7 @@ function playseqtst() {
     synth = new Tone.Synth().toMaster();
     synthb = new Tone.Synth().toMaster();
     
-    tempo = 120;
+    tempo = slctdtmpo;
     console.log("Tempo is: ".concat(tempo));
     
     
