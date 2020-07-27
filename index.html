@@ -749,7 +749,7 @@ input[type="range"] {
         </div>
         
         <div id="uibox1" style="border-right: 1px solid #eee; position: absolute;">
-            <input id="" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="100" max="200" step="20" value="200">
+            <input id="StcSqVolChanger" onchange="VolChnger('StcSq')" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="0" max="0.8" step="0.1" value="0.5">
         </div>
         
         <div id="uibox2ico" style="border: 1px solid #eee; position: absolute;">
@@ -765,7 +765,7 @@ input[type="range"] {
         </div>
         
         <div id="uibox2" style="border-right: 1px solid #eee; position: absolute;">
-            <input id="" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="0" max="100" step="2" value="40">
+            <input id="PhsSqVolChanger" onchange="VolChnger('PhsSq')" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="0" max="0.8" step="0.1" value="0.5">
         </div>
         
         <div id="uibox3ico" style="border: 1px solid #eee; position: absolute;">
@@ -782,7 +782,7 @@ input[type="range"] {
         </div>
         
         <div id="uibox3" style="border-right: 1px solid #eee; position: absolute;">
-            <input id="SeqPlyTmpoBxSl" onchange="TmpoChnger()" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="100" max="200" step="20" value="120">
+            <input id="SeqPlyTmpoBxSl" onchange="TmpoChnger()" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="100" max="200" step="20" value="180">
         </div>
     </div>
             
@@ -1854,6 +1854,7 @@ function rotate(pos, src) {
    
 }
 
+var slctdtmpo = 120;
 function TmpoChnger() {
     
     tmpsldervl = document.getElementById("SeqPlyTmpoBxSl").value;
@@ -1863,6 +1864,19 @@ function TmpoChnger() {
     
 }   
 
+
+function VolChnger(XxxSq) {
+    //XxxSqVol = window["".concat(XxxSq, "Vol")];
+    
+    //StcSqVol = document.getElementById("StcSqVolChanger").value;//StcSqVolChanger
+    //PhsSqVol = document.getElementById("PhsSqVolChanger").value;
+    
+    //console.log("StcSqVol volume change: ".concat(StcSqVol));  //PhsSqVolChanger
+    //console.log("PhsSqVol volume change: ".concat(PhsSqVol));
+    //console.log("volume change: ".concat(XxxSqVol));
+    //PhsSqVol
+    
+}
     
 function SmplNteChngr(noteclr) {
 		
@@ -2039,6 +2053,9 @@ function plybtnhvr(itm, pos) {
 
 function playseqtst() {
     
+    //DbVol = 6 * (Math.log2(0.1));
+    //console.log("Db vol is: ".concat(DbVol));
+    
     //create a synth and connect it to the master output (your speakers)
     synth = new Tone.Synth().toMaster();
     synthb = new Tone.Synth().toMaster();
@@ -2108,7 +2125,10 @@ function delayfunc() {
         }
     
         if (DelayTme == tempo && seqrtn == 0) {//phased 1 step forward
+            //console.log(ofstseq);
             console.log("1 step phase");
+            
+            
             for (i = 0; i < 12; i++) {  
                 if (i == 0) {
                     ofstseq[0] = ofstseqrf[11];} 
@@ -2118,10 +2138,11 @@ function delayfunc() {
             }
             
             DelayTme = 0;
-
+            
             for (i = 0; i < 12; i++) {  
                 ofstseqrf[i] = ofstseq[i];
             }
+            console.log(ofstseq);
         }
 }
     
@@ -2140,8 +2161,16 @@ function seqplyfunc(tmpo) {
         PrevStcSqItmInCrclX = "StcSqItmInCrcl".concat(prvseqplyn);
         document.getElementById(PrevStcSqItmInCrclX).style.opacity = "0";
 
-        note = SeqNotes[ofstseq[seqplyn + 1]];
+        //console.log(seqplyn);
+        //noteN = ofstseq[seqplyn] + 1;
+        
+        note = SeqNotes[ofstseq[seqplyn] + 1];
         dur = (tmpo * 0.001) - 0.025;
+        
+        StcSqVol = document.getElementById("StcSqVolChanger").value;
+        StcSqVolDb = 6 * (Math.log2(StcSqVol));
+        
+        synth.volume.value = StcSqVolDb;
         synth.triggerAttackRelease(note, dur);
         
         if (seqplyn == 0) {
@@ -2176,8 +2205,14 @@ function phsseqplyfunc(tmpo) {
     document.getElementById(PrevPhsSqItmInCrclX).style.opacity = "0";
     
     noteb = SeqNotes[phsseqplyn + 1];
-    //play a middle 'C' for the duration of an 8th note
     durb = (tmpo * 0.001) - 0.025;
+    
+    //DbVol = 6 * (Math.log2(PhsSqVol));
+    //StcSqVol = document.getElementById("StcSqVolChanger").value;//StcSqVolChanger
+    PhsSqVol = document.getElementById("PhsSqVolChanger").value;
+    PhsSqVolDb = 6 * (Math.log2(PhsSqVol));
+    
+    synthb.volume.value = PhsSqVolDb;
     synthb.triggerAttackRelease(noteb, durb);
         
     phsseqplyn = phsseqplyn + 1;
