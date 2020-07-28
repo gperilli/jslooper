@@ -242,7 +242,9 @@ input[type="range"] {
     display: none;
 }
 
-
+.uicvrbx {
+    display: none;
+}
     
 /* Responsiveness */
 @media (max-width: 1024px) {
@@ -749,7 +751,7 @@ input[type="range"] {
         </div>
         
         <div id="uibox1" style="border-right: 1px solid #eee; position: absolute;">
-            <input id="StcSqVolChanger" onchange="VolChnger('StcSq')" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="0" max="0.8" step="0.1" value="0.5">
+            <input id="StcSqVolChanger" onchange="VolChnger('StcSq')" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="0" max="0.6" step="0.1" value="0.5">
         </div>
         
         <div id="uibox2ico" style="border: 1px solid #eee; position: absolute;">
@@ -765,7 +767,7 @@ input[type="range"] {
         </div>
         
         <div id="uibox2" style="border-right: 1px solid #eee; position: absolute;">
-            <input id="PhsSqVolChanger" onchange="VolChnger('PhsSq')" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="0" max="0.8" step="0.1" value="0.5">
+            <input id="PhsSqVolChanger" onchange="VolChnger('PhsSq')" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="0" max="0.6" step="0.1" value="0.5">
         </div>
         
         <div id="uibox3ico" style="border: 1px solid #eee; position: absolute;">
@@ -779,10 +781,12 @@ input[type="range"] {
 						<path d="M253.42981 56.30074C253.42981 56.30074 240.56064 48.17284 240.56064 48.17284C240.56064 48.17284 233.41448 59.48188 233.41448 59.48188C231.58036 59.01003 229.693 58.67519 227.71429 58.67519C215.1267 58.67519 204.8831 68.91877 204.8831 81.50637C204.8831 87.07718 206.96834 92.12287 210.3017 96.0955C210.3017 96.0955 203.89376 106.24015 203.89376 106.24015C203.89376 106.24015 188.29243 28.2336 188.29243 28.2336C188.29243 28.2336 114.92823 28.2336 114.92823 28.2336C114.92823 28.2336 66.221696 271.76625 66.221696 271.76625C66.221696 271.76625 236.99135 271.76625 236.99135 271.76625C236.99135 271.76625 208.21645 127.89172 208.21645 127.89172C208.21645 127.89172 223.36876 103.90377 223.36876 103.90377C224.77667 104.17012 226.22266 104.33756 227.71429 104.33756C240.30188 104.33756 250.54547 94.09396 250.54547 81.50637C250.54547 76.44545 248.83313 71.80312 246.0325 68.01314C246.0325 68.01314 253.42981 56.30074 253.42981 56.30074M206.25297 195.6623C206.25297 195.6623 165.41558 195.6623 165.41558 195.6623C165.41558 195.6623 196.42796 146.55242 196.42796 146.55242C196.42796 146.55242 206.25297 195.6623 206.25297 195.6623M127.40928 43.45439C127.40928 43.45439 175.8114 43.45439 175.8114 43.45439C175.8114 43.45439 192.10524 124.90846 192.10524 124.90846C192.10524 124.90846 147.41701 195.6623 147.41701 195.6623C147.41701 195.6623 96.960083 195.6623 96.960083 195.6623C96.960083 195.6623 127.40928 43.45439 127.40928 43.45439M209.29712 210.88308C209.29712 210.88308 218.4296 256.54545 218.4296 256.54545C218.4296 256.54545 84.783451 256.54545 84.783451 256.54545C84.783451 256.54545 93.915925 210.88308 93.915925 210.88308C93.915925 210.88308 209.29712 210.88308 209.29712 210.88308M227.71429 89.11676C223.52095 89.11676 220.1039 85.70731 220.1039 81.50637C220.1039 77.30543 223.52095 73.89596 227.71429 73.89596C231.90762 73.89596 235.32468 77.30543 235.32468 81.50637C235.32468 85.70731 231.90762 89.11676 227.71429 89.11676C227.71429 89.11676 227.71429 89.11676 227.71429 89.11676" />
 						</g>
 					</svg>
+            <div class="uicvrbx" id="" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background-color: #fff; opacity: 0.5;"></div>
         </div>
         
         <div id="uibox3" style="border-right: 1px solid #eee; position: absolute;">
             <input id="SeqPlyTmpoBxSl" onchange="TmpoChnger()" type="range" class="" style="position: relative; width: 100%; height: 100%;" min="100" max="200" step="20" value="180">
+            <div class="uicvrbx" id="SqPlyTmpoBxCvr" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background-color: #fff; opacity: 0.5;"></div>
         </div>
     </div>
             
@@ -2053,8 +2057,8 @@ function plybtnhvr(itm, pos) {
 
 function playseqtst() {
     
-    //DbVol = 6 * (Math.log2(0.1));
-    //console.log("Db vol is: ".concat(DbVol));
+    document.getElementsByClassName("uicvrbx")[0].style.display = "block";
+    document.getElementsByClassName("uicvrbx")[1].style.display = "block";
     
     //create a synth and connect it to the master output (your speakers)
     synth = new Tone.Synth().toMaster();
@@ -2085,6 +2089,10 @@ function playseqtst() {
         }, tempo);
         
     } else {//switch back to play icon, PAUSE
+        
+        document.getElementsByClassName("uicvrbx")[0].style.display = "none";
+        document.getElementsByClassName("uicvrbx")[1].style.display = "none";
+        
         icoswtchA = "block";
         icoswtchB = "none";
         plybtnstat = 0;
@@ -2153,23 +2161,22 @@ var rotateincre = 0;
 function seqplyfunc(tmpo) {
     
     setTimeout(function () {
+        
+        StcSqVol = document.getElementById("StcSqVolChanger").value;
+        StcSqItmOp = StcSqVol / 0.6;
+        
         StcSqItmInCrclX = "StcSqItmInCrcl".concat(ofstseq[seqplyn]);
-        document.getElementById(StcSqItmInCrclX).style.opacity = "1";
+        document.getElementById(StcSqItmInCrclX).style.opacity = StcSqItmOp;
 
         prvseqplyn = ofstseq[seqplyn] - 1;
         if (prvseqplyn < 0) {prvseqplyn = 11;}
         PrevStcSqItmInCrclX = "StcSqItmInCrcl".concat(prvseqplyn);
         document.getElementById(PrevStcSqItmInCrclX).style.opacity = "0";
-
-        //console.log(seqplyn);
-        //noteN = ofstseq[seqplyn] + 1;
         
         note = SeqNotes[ofstseq[seqplyn] + 1];
         dur = (tmpo * 0.001) - 0.025;
         
-        StcSqVol = document.getElementById("StcSqVolChanger").value;
         StcSqVolDb = 6 * (Math.log2(StcSqVol));
-        
         synth.volume.value = StcSqVolDb;
         synth.triggerAttackRelease(note, dur);
         
@@ -2196,20 +2203,20 @@ var phsseqplyn = 0;
 
 function phsseqplyfunc(tmpo) {
     
+    PhsSqVol = document.getElementById("PhsSqVolChanger").value;
+    PhsSqItmOp = PhsSqVol / 0.6;
+    
     PhsSqItmInCrclX = "PhsSqItmInCrcl".concat(phsseqplyn);
-    document.getElementById(PhsSqItmInCrclX).style.opacity = "1";
+    document.getElementById(PhsSqItmInCrclX).style.opacity = PhsSqItmOp;
     
     prvphsseqplyn = phsseqplyn - 1;
     if (prvphsseqplyn < 0) {prvphsseqplyn = 11;}
     PrevPhsSqItmInCrclX = "PhsSqItmInCrcl".concat(prvphsseqplyn);
-    document.getElementById(PrevPhsSqItmInCrclX).style.opacity = "0";
+    document.getElementById(PrevPhsSqItmInCrclX).style.opacity = 0;
     
     noteb = SeqNotes[phsseqplyn + 1];
     durb = (tmpo * 0.001) - 0.025;
     
-    //DbVol = 6 * (Math.log2(PhsSqVol));
-    //StcSqVol = document.getElementById("StcSqVolChanger").value;//StcSqVolChanger
-    PhsSqVol = document.getElementById("PhsSqVolChanger").value;
     PhsSqVolDb = 6 * (Math.log2(PhsSqVol));
     
     synthb.volume.value = PhsSqVolDb;
