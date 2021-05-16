@@ -1,5 +1,5 @@
 # Phase
-<img src="https://raw.githubusercontent.com/gperilli/phase/master/graphics/Phase-PortImg.png" height="50%"/> 
+<img src="https://raw.githubusercontent.com/gperilli/phase/master/graphics/Phase-PortImg.png" height="50%" width="50%"/> 
 
 [Phase](https://gperilli.github.io/phase/index.html) is a melodic loop machine based on Steve Reich's Piano Phase composition from 1967. Using the same set of notes, users can create their own patterns which are slowly "phased" against one another.
 
