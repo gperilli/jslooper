@@ -1,0 +1,224 @@
+html, body {
+height: 100%;
+margin: 0px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.border {
+border: 0px solid blue;
+}
+
+.centralcolumn {
+background-color: white;
+width: 1024px;
+height: 100%;
+border: 0px solid blue;
+position: relative;
+margin: auto;
+
+}
+
+#SqrsCnt {
+position: absolute;
+background-color: #fff;
+}
+
+#ASqre {
+position: absolute;
+background-color: #fff;
+border: 0px solid #000;
+}
+
+.DspQrtrs {
+position: absolute;
+background-color: #fff;
+}
+
+#LnkTxt {
+position: absolute;
+background-color: #fff;
+border-top: 0px solid #000;
+}
+
+#UICol {
+position: absolute;
+background-color: #fff;
+border-bottom: 0px solid #000;
+}
+
+#BSqre {
+position: absolute;
+background-color: #fff;
+border: 0px solid #000;"
+}
+
+.LnkTxtlink {
+opacity: 0;
+cursor: pointer;
+}
+
+.LnkTxtlink:hover {
+opacity: 1;
+}
+
+#PhseDspBx:hover {
+background-color: #ddd;
+}
+
+.PhseSlect {
+
+}
+
+.PhseSlect:hover {
+background-color: #ddd;
+}
+
+
+.FdeImgCvr {
+opacity: 0;
+fill: #fff;
+width: 100%;
+height: 100%;
+}
+
+
+
+
+.seqitmslctbx {
+opacity: 0;
+}
+
+.seqitmincrcle {
+opacity: 0;
+}
+
+.seqitmundrcrcle {
+opacity: 0;
+}
+
+.seqitmundrcrcle.transi {
+-webkit-transition: 1s;
+-moz-transition: 1s;
+-ms-transition: 1s;
+-o-transition: 1s;
+transition: 2s;
+opacity: 1;
+}
+
+.SeqItmPth {
+opacity: 0;
+}
+
+.SeqItmPth.transi {
+-webkit-transition: 1s;
+-moz-transition: 1s;
+-ms-transition: 1s;
+-o-transition: 1s;
+transition: 2s;
+opacity: 1;
+}
+
+#playbtncrcle {
+fill: none;
+}
+
+#playbtnico {
+fill: #808080;
+}
+
+#plybar1 {
+fill: #808080;
+display: none;
+}
+
+#plybar2 {
+fill: #808080;
+display: none;
+}
+
+
+input[type="range"] {
+margin: auto;
+-webkit-appearance: none;
+position: relative;
+overflow: hidden;
+height: 40px;
+width: 200px;
+cursor: pointer;
+border-radius: 0; /* iOS */
+background: #ddd;
+}
+
+::-webkit-slider-runnable-track {
+background: #ddd;
+}
+
+/*
+* 1. Set to 0 width and remove border for a slider without a thumb
+*/
+::-webkit-slider-thumb {
+-webkit-appearance: none;
+width: 10px; /* 1 */
+height: 40px;
+background: #999;
+box-shadow: -100vw 0 0 100vw #999;
+border: 0px solid #999; /* 1 */
+}
+
+::-moz-range-track {
+height: 40px;
+background: #ddd;
+}
+
+::-moz-range-thumb {
+background: #999;
+height: 40px;
+width: 20px;
+border: 3px solid #999;
+border-radius: 0 !important;
+box-shadow: -100vw 0 0 100vw dodgerblue;
+box-sizing: border-box;
+}
+
+::-ms-fill-lower {
+background: dodgerblue;
+}
+
+::-ms-thumb {
+background: #999;
+border: 2px solid #999;
+height: 40px;
+width: 20px;
+box-sizing: border-box;
+}
+
+::-ms-ticks-after {
+display: none;
+}
+
+::-ms-ticks-before {
+display: none;
+}
+
+::-ms-track {
+background: #ddd;
+color: transparent;
+height: 40px;
+border: none;
+}
+
+::-ms-tooltip {
+display: none;
+}
+
+.uicvrbx {
+display: none;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+.centralcolumn {
+width: 100%;
+}
+}
